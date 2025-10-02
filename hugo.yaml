@@ -35,6 +35,11 @@ markup:
 params:
   description: AI-powered flashcard management for Anki using Model Context Protocol
 
+  analytics:
+    umami:
+      src: https://analytics.anatoly.dev/script.js
+      websiteId: 0d1e55ed-613e-4e07-bd8d-4710717b40fc
+
   navbar:
     displayTitle: true
     displayLogo: false
