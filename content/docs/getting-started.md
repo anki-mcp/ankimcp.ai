@@ -54,5 +54,6 @@ Claude can now:
 ## Need Help?
 
 **Questions?** Join our community:
-- [Discord Server](https://discord.gg/JVNcxNB3e7) - Real-time chat
 - [GitHub Discussions](https://github.com/anki-mcp/anki-mcp-desktop/discussions) - Questions & ideas
+- [Discord Server](https://discord.gg/JVNcxNB3e7) - Real-time chat
+- [Email](mailto:support@ankimcp.ai) - Write to us

@@ -24,8 +24,9 @@ Our goal is to make spaced repetition learning more accessible and powerful by i
 
 Join our community to connect with other users, ask questions, and share your experience:
 
-- **[Discord Server](https://discord.gg/JVNcxNB3e7)** - Real-time chat and support
 - **[GitHub Discussions](https://github.com/anki-mcp/anki-mcp-desktop/discussions)** - Questions, ideas, and feedback
+- **[Discord Server](https://discord.gg/JVNcxNB3e7)** - Real-time chat and support
+- **[Email](mailto:support@ankimcp.ai)** - Write to us
 
 ### Contributing
 
