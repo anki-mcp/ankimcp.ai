@@ -42,8 +42,9 @@ params:
 
   analytics:
     umami:
-      src: https://analytics.anatoly.dev/script.js
-      websiteId: 0d1e55ed-613e-4e07-bd8d-4710717b40fc
+      serverURL: https://analytics.anatoly.dev
+      websiteID: 0d1e55ed-613e-4e07-bd8d-4710717b40fc
+      scriptName: script.js
 
   navbar:
     displayTitle: true
