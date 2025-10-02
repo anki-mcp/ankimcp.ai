@@ -23,20 +23,20 @@ layout: hextra-home
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="Natural Language Learning"
-    subtitle="Like having a private tutor - the AI explains concepts, provides context, and adapts to your learning style"
+    title="Engaged Natural Language Learning"
+    subtitle="Review cards through natural conversation - AI evaluates your answers, provides guidance, and helps you understand mistakes like a real tutor"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Dynamic Study Sessions"
-    subtitle="Create and edit notes on the fly, turning your reviews into engaging conversations"
+    title="Instant Card Creation"
+    subtitle="Skip manual HTML formatting - AI creates flashcards instantly while you read books, watch lectures, or do homework"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-lg:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="More Coming Soon"
-    subtitle="Free, open source, and actively developed - join us in shaping the future of AI-powered learning"
+    subtitle="Free, open source, and actively developed - more engaging features on the horizon"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
   >}}
