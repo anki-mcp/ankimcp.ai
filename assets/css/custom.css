@@ -1,0 +1,22 @@
+/* Custom styles for Anki MCP site */
+
+/* Hero buttons spacing and centering */
+.hero-buttons {
+  display: flex !important;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* Override inline-block from Hextra theme */
+.hero-buttons a {
+  display: block !important;
+  flex-shrink: 0;
+}
+
+/* Center hero section content on mobile */
+@media (max-width: 768px) {
+  .hx\:flex.hx\:flex-col.hx\:items-start {
+    align-items: center !important;
+  }
+}
