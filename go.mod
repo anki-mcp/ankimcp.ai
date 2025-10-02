@@ -1,4 +1,4 @@
-module github.com/anki-mcp-organization/ankimcp.ai
+module github.com/anki-mcp/ankimcp.ai
 
 go 1.24.4
 

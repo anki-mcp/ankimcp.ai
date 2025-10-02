@@ -21,4 +21,4 @@ Check out the [Getting Started](getting-started) guide to begin using Anki MCP w
 
 ## Important Note
 
-**Anki® is a registered trademark of Anki Universal.** This is an independent community project not affiliated with or endorsed by Anki Universal.
+**Anki® is a registered trademark of Ankitects Pty Ltd.** This is an independent community project not affiliated with or endorsed by Ankitects.

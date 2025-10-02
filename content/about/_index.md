@@ -18,8 +18,8 @@ Our goal is to make spaced repetition learning more accessible and powerful by i
 
 ### Legal Notice
 
-**Anki® is a registered trademark of Anki Universal.** This project is an independent community effort and is NOT affiliated with, endorsed by, or officially connected to Anki Universal or the official Anki ecosystem.
+**Anki® is a registered trademark of Ankitects Pty Ltd.** This project is an independent community effort and is NOT affiliated with, endorsed by, or officially connected to Ankitects or the official Anki ecosystem.
 
 ### Contributing
 
-This is an open-source project. Visit our [GitHub repository](https://github.com/anki-mcp-organization/anki-mcp-desktop) to contribute, report issues, or suggest features.
+This is an open-source project. Visit our [GitHub repository](https://github.com/anki-mcp/anki-mcp-desktop) to contribute, report issues, or suggest features.

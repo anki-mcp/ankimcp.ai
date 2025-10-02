@@ -23,7 +23,7 @@ menu:
         type: search
     - name: GitHub
       weight: 5
-      url: "https://github.com/anki-mcp-organization/anki-mcp-desktop"
+      url: "https://github.com/anki-mcp/anki-mcp-desktop"
       params:
         icon: github
 

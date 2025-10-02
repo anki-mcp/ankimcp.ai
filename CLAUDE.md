@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Hugo static site for documenting the Anki MCP Desktop project, hosted at `ankimcp.ai`. The site uses the Hextra theme via Hugo Modules and will be deployed to GitHub Pages (initially, later self-hosted).
 
-**Important**: "Anki" is a registered trademark of Anki Universal. This is an independent community project NOT affiliated with Anki Universal. Always include trademark disclaimers when adding content.
+**Important**: "Anki" is a registered trademark of Ankitects Pty Ltd. This is an independent community project NOT affiliated with Ankitects. Always include trademark disclaimers when adding content.
 
 ## Technology Stack
 
