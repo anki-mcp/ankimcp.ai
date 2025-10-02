@@ -30,3 +30,7 @@ Join our community to connect with other users, ask questions, and share your ex
 ### Contributing
 
 This is an open-source project. Visit our [GitHub repository](https://github.com/anki-mcp/anki-mcp-desktop) to contribute, report issues, or suggest features.
+
+### Credits
+
+This website is built with [Hextra](https://imfing.github.io/hextra/), a modern, fast, and flexible Hugo theme.
