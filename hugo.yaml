@@ -40,6 +40,9 @@ params:
     title: Anki MCP - AI-powered flashcard management
     description: Transform your Anki experience with AI - natural language reviews and instant card creation
 
+  images:
+    - /images/og-image.jpg
+
   banner:
     key: 'release-v0.2.0'
     message: |
