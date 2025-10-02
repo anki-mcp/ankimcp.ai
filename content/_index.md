@@ -15,7 +15,8 @@ layout: hextra-home
 {{< /hextra/hero-subtitle >}}
 </div>
 
-<div class="hx:mb-6">
+<div class="hx:mb-6" style="display: flex; gap: 20px;">
+{{< hextra/hero-button text="Download" link="https://github.com/anki-mcp/anki-mcp-desktop/releases/latest" >}}
 {{< hextra/hero-button text="Get Started" link="docs" >}}
 </div>
 
