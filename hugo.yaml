@@ -35,6 +35,11 @@ markup:
 params:
   description: AI-powered flashcard management for Anki using Model Context Protocol
 
+  banner:
+    key: 'release-v0.2.0'
+    message: |
+      🎉 **v0.2.0 Released!** Check out the latest version with new features and improvements. [Download now →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.2.0)
+
   analytics:
     umami:
       src: https://analytics.anatoly.dev/script.js
