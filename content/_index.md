@@ -3,23 +3,23 @@ title: Anki MCP
 layout: hextra-home
 ---
 
-<div class="hx-mt-6 hx-mb-6">
+<div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  Transform your Anki experience&nbsp;<br class="sm:hx-block hx-hidden" />with AI
+  Transform your Anki experience&nbsp;<br class="hx:sm:block hx:hidden" />with AI
 {{< /hextra/hero-headline >}}
 </div>
 
-<div class="hx-mb-12">
+<div class="hx:mb-12">
 {{< hextra/hero-subtitle >}}
-  AI-powered flashcard management for Anki&nbsp;<br class="sm:hx-block hx-hidden" />using Model Context Protocol
+  AI-powered flashcard management for Anki&nbsp;<br class="hx:sm:block hx:hidden" />using Model Context Protocol
 {{< /hextra/hero-subtitle >}}
 </div>
 
-<div class="hx-mb-6">
+<div class="hx:mb-6">
 {{< hextra/hero-button text="Get Started" link="docs" >}}
 </div>
 
-<div class="hx-mt-6"></div>
+<div class="hx:mt-6"></div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
