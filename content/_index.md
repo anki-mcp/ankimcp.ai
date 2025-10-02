@@ -23,20 +23,20 @@ layout: hextra-home
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="Easy Integration"
-    subtitle="Seamlessly connect Claude AI with your Anki decks through Claude Desktop"
+    title="Natural Language Learning"
+    subtitle="Like having a private tutor - the AI explains concepts, provides context, and adapts to your learning style"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Powerful Tools"
-    subtitle="Review sessions, deck management, note creation, and template customization"
+    title="Dynamic Study Sessions"
+    subtitle="Create and edit notes on the fly, turning your reviews into engaging conversations"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-lg:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Open Source"
-    subtitle="Free, community-driven, and actively maintained on GitHub"
+    title="More Coming Soon"
+    subtitle="Free, open source, and actively developed - join us in shaping the future of AI-powered learning"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
   >}}
