@@ -35,6 +35,11 @@ markup:
 params:
   description: AI-powered flashcard management for Anki using Model Context Protocol
 
+  # OpenGraph metadata for social sharing (WhatsApp, Facebook, etc)
+  opengraph:
+    title: Anki MCP - AI-powered flashcard management
+    description: Transform your Anki experience with AI - natural language reviews and instant card creation
+
   banner:
     key: 'release-v0.2.0'
     message: |
