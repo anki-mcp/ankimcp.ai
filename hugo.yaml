@@ -44,9 +44,9 @@ params:
     - /images/og-image.jpg
 
   banner:
-    key: 'release-v0.2.0'
+    key: 'release-v0.3.0'
     message: |
-      🎉 **v0.2.0 Released!** Check out the latest version with new features and improvements. [Download now →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.2.0)
+      🎉 **v0.3.0 Released!** Check out the latest version with new features and improvements. [Download now →](https://github.com/anki-mcp/anki-mcp-desktop/releases/tag/v0.3.0)
 
   analytics:
     umami:
