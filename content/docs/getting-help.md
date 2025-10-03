@@ -1,6 +1,6 @@
 ---
 title: Getting Help
-weight: 2
+weight: 3
 ---
 
 ## Community Support

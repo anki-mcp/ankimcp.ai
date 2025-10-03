@@ -6,18 +6,32 @@ Welcome to Anki MCP documentation.
 
 ## What is Anki MCP?
 
-Anki MCP Desktop is an MCP (Model Context Protocol) server that enables AI assistants like Claude to interact with your Anki flashcards. Built with NestJS, it provides a powerful set of tools for managing your study workflow.
+Anki MCP lets AI assistants like Claude or ChatGPT talk to your Anki flashcards. Think of it as a bridge between your AI assistant and your study cards.
 
-## Features
+## What can it do?
 
-- **Review Sessions**: Get due cards, present them, and rate your performance
-- **Deck Management**: List, create, and organize your decks
-- **Note Management**: Add, find, update, and delete notes
-- **Model Templates**: Manage card templates and note types
+- **Review cards** - Study with your AI assistant guiding you
+- **Create notes** - Ask AI to make flashcards from what you're learning
+- **Search cards** - Find specific cards or topics
+- **Manage decks** - Organize your study materials
 
-## Getting Started
+## Choose Your Setup
 
-Check out the [Getting Started](getting-started) guide to begin using Anki MCP with Claude Desktop.
+Pick the one that matches how you use AI:
+
+### Desktop Mode
+**Best for: Claude Desktop users**
+
+Install once, use anytime. Your AI assistant runs on your computer and connects directly to Anki.
+
+→ [Desktop Installation Guide](installation/desktop)
+
+### Web Mode
+**Best for: ChatGPT, Claude.ai, or any web-based AI**
+
+Run a small server on your computer. Your web-based AI connects to it over the internet.
+
+→ [Web Installation Guide](installation/web)
 
 ## Important Note
 
