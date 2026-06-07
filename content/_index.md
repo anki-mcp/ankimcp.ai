@@ -8,7 +8,7 @@ sitemap_priority: 1.0
 
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
-  Connect Claude & ChatGPT&nbsp;<br class="hx:sm:block hx:hidden" />to Your Anki Flashcards
+  AnkiMCP — Connect Claude & ChatGPT&nbsp;<br class="hx:sm:block hx:hidden" />to Your Anki Flashcards
 {{< /hextra/hero-headline >}}
 </div>
 

@@ -79,14 +79,14 @@ The Anki trademark text lives in `i18n/en.yaml` as the `copyright` key (used by 
 ### Banner System
 - Uses key-based dismissal (`params.banner.key` in hugo.yaml)
 - Stores dismissal state in localStorage
-- **Always change key** when updating message (e.g., `release-v0.6.0` → `release-v0.7.0`)
+- **Always change key** when updating message (current key is `naming-update-2025`; use any unique slug, e.g. `release-v0.7.0` or `naming-update-2026`)
 - This forces banner to reappear for users who dismissed previous version
 
 ### Custom Layouts
 Key overrides in `/layouts/`:
 - `partials/custom/head-end.html` — Canonical URLs, MailerLite script, Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization), preconnect hints
 - `blog/single.html` — Custom blog layout with breadcrumb, author attribution, tags (E-E-A-T SEO)
-- `partials/footer.html` — Newsletter/contact/Discord/GitHub links (replaces Hextra's "Powered by" section)
+- `partials/footer.html` — Adds Newsletter/contact/Discord/GitHub links; keeps Hextra's `displayPoweredBy`/copyright logic (driven by `params.footer` in hugo.yaml)
 - `shortcodes/newsletter.html` — Inline newsletter embed
 - `_default/sitemap.xml` — Custom sitemap with per-section priorities
 
