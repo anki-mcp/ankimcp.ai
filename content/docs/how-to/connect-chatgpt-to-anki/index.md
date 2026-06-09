@@ -9,7 +9,7 @@ keywords:
   - anki ai remote access
   - claude anki
   - anki mcp tunnel
-weight: 2
+weight: 4
 sitemap_priority: 0.8
 aliases:
   - /docs/installation/web/
@@ -23,7 +23,7 @@ Web AIs run in the cloud, so they can't see Anki on your computer. The AnkiMCP *
 
 - A **web-based AI that supports MCP connectors**, such as ChatGPT or [Claude.ai](https://claude.ai). It must let you add a custom MCP server.
 - **Anki** installed and open on your computer. Get it from [apps.ankiweb.net](https://apps.ankiweb.net/).
-- The **AnkiConnect plugin** in Anki. See [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/) for the one-minute install (code `2055492159`).
+- The **AnkiConnect plugin** in Anki. See [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) for the one-minute install (code `2055492159`).
 - **Node.js** to run the server. Get it from [nodejs.org](https://nodejs.org/).
 - An **AnkiMCP account**. The managed tunnel is a paid subscription. You sign in the first time you start it.
 
@@ -93,12 +93,12 @@ Anki itself may be closed, or AnkiConnect isn't installed. Open Anki and confirm
 The terminal prints a backup link and code. Open the link and enter the code to approve.
 
 **Do I have to pay?**
-The managed tunnel is a paid subscription. The local desktop path for Claude Desktop is separate. See [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/).
+The managed tunnel is a paid subscription. The local desktop path for Claude Desktop is separate. See [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/).
 
 ## Next steps
 
 - New to local vs. remote? Read [Remote vs local access](/docs/concepts/remote-vs-local/) to choose the right path.
-- Use Claude Desktop instead? The [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/) guide skips the tunnel entirely.
+- Use Claude Desktop instead? The [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) guide skips the tunnel entirely.
 - Prefer to run your own tunnel? The [ngrok option](https://github.com/ankimcp/anki-mcp-server#ngrok-unauthenticated-alternative) on GitHub is an unauthenticated alternative for advanced users.
 
 ---

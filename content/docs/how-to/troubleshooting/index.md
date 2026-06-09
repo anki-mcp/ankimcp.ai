@@ -8,7 +8,7 @@ keywords:
   - anki mcp connection
   - anki mcp not connecting
   - fix anki mcp
-weight: 7
+weight: 9
 sitemap_priority: 0.7
 aliases:
   - /docs/known-issues/

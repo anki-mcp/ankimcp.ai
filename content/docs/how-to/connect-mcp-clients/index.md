@@ -9,7 +9,7 @@ keywords:
   - connect cursor to anki
   - mcp server anki
   - anki cli
-weight: 3
+weight: 5
 sitemap_priority: 0.8
 aliases:
   - /docs/installation/mcp-clients/
@@ -128,7 +128,7 @@ Check that your config JSON is valid: no trailing commas, matching quotes and br
 ## Next steps
 
 - New to the difference between the add-on and the CLI server? See [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
-- Use Claude Desktop too? The [AnkiMCP bundle](/docs/how-to/connect-claude-to-anki/) is a faster, drag-and-drop path for it.
+- Use Claude Desktop too? The [AnkiMCP bundle](/docs/how-to/connect-claude-desktop/) is a faster, drag-and-drop path for it.
 - Want your assistant to reach Anki from another device? That uses a subscription-based [remote tunnel](https://github.com/ankimcp/anki-mcp-server#tunnel--recommended).
 
 ---

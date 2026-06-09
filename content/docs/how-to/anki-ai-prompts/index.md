@@ -9,7 +9,7 @@ keywords:
   - ai prompt for anki cards
   - ai flashcard prompt
   - anki ai assistant
-weight: 4
+weight: 6
 sitemap_priority: 0.8
 aliases:
   - /docs/prompts/
@@ -21,7 +21,7 @@ AnkiMCP ships with ready-made prompts that coach the AI on how to write good car
 
 ## What you need
 
-- **Claude connected to Anki.** Finish [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/) first.
+- **Claude connected to Anki.** Finish [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) first.
 - **Anki open**, with at least one deck of notes.
 
 **Time:** about 2 minutes.
@@ -81,7 +81,7 @@ Open Anki and look at your deck. With `twenty_rules`, you should see new, short,
 ## Fix common problems
 
 **I don't see any prompts in the attachment menu.**
-The AnkiMCP server isn't connected. Open Claude Desktop, confirm the AnkiMCP extension is installed, and restart Claude. See [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/).
+The AnkiMCP server isn't connected. Open Claude Desktop, confirm the AnkiMCP extension is installed, and restart Claude. See [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/).
 
 **Claude made cards but ignored the rules.**
 Re-attach the `twenty_rules` prompt and ask again. The prompt only guides chats where it's attached, so start a fresh request with it on.
@@ -94,7 +94,7 @@ Use `twenty_rules`. It's built for creating well-formed flashcards. Use `anki_re
 
 ## Next steps
 
-- New here? Start with [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/).
+- New here? Start with [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/).
 - Want to study, not just build? Re-read the `anki_review` flow above.
 - Read the source of the card rules: [Twenty Rules of Formulating Knowledge](https://www.supermemo.com/en/blog/twenty-rules-of-formulating-knowledge).
 

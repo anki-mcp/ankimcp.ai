@@ -9,7 +9,7 @@ keywords:
   - anki text to speech
   - anki voice
   - does anki support audio flashcards
-weight: 6
+weight: 8
 sitemap_priority: 0.8
 aliases:
   - /docs/audio-flashcards/
@@ -21,7 +21,7 @@ AnkiMCP doesn't make voice audio itself. Instead, you point your AI to an audio 
 
 ## What you need
 
-- **Your AI connected to Anki.** Do the [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/) guide first.
+- **Your AI connected to Anki.** Do the [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) guide first.
 - **Anki open** on the same computer.
 - **An audio file** you want on a card. This can be a file on your computer, a public URL, or a file made by a separate audio MCP server (see below).
 

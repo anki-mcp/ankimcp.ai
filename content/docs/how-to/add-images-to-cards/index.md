@@ -8,7 +8,7 @@ keywords:
   - anki image flashcards
   - anki picture flashcards
   - anki flashcards with images
-weight: 5
+weight: 7
 sitemap_priority: 0.8
 aliases:
   - /docs/image-flashcards/
@@ -20,7 +20,7 @@ You don't paste pictures or edit HTML by hand. You tell the AI where the image i
 
 ## What you need
 
-- **The AI already connected to Anki.** If you haven't done this yet, see [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/).
+- **The AI already connected to Anki.** If you haven't done this yet, see [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/).
 - **Anki open** on your computer.
 - **An image**, either a web link or a file saved on your computer.
 
@@ -90,7 +90,7 @@ Resize or shrink the image before you add it, then ask the AI to add the smaller
 
 ## Next steps
 
-- New here? Start with [Connect Claude to Anki](/docs/how-to/connect-claude-to-anki/).
+- New here? Start with [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/).
 - Want better cards faster? See [Anki AI prompts](/docs/how-to/anki-ai-prompts/).
 
 ---
