@@ -86,7 +86,7 @@ The Anki trademark text lives in `i18n/en.yaml` as the `copyright` key (used by 
 Key overrides in `/layouts/`:
 - `partials/custom/head-end.html` — Canonical URLs, MailerLite script, Schema.org structured data (SoftwareApplication, WebSite, BlogPosting, Organization), preconnect hints
 - `blog/single.html` — Custom blog layout with breadcrumb, author attribution, tags (E-E-A-T SEO)
-- `partials/footer.html` — Adds Newsletter/contact/Discord/GitHub links; keeps Hextra's `displayPoweredBy`/copyright logic (driven by `params.footer` in hugo.yaml)
+- `partials/footer.html` — Adds Newsletter/Email/Community Forum links; keeps Hextra's `displayPoweredBy`/copyright logic (driven by `params.footer` in hugo.yaml)
 - `shortcodes/newsletter.html` — Inline newsletter embed
 - `_default/sitemap.xml` — Custom sitemap with per-section priorities
 

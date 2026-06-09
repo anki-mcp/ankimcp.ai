@@ -40,8 +40,7 @@ Our goal is to make spaced repetition learning more accessible and powerful by i
 
 The following channels are available:
 
-- **[GitHub Discussions](https://github.com/ankimcp/anki-mcp-server/discussions)** - Questions, ideas, and feedback
-- **[Discord Server](https://discord.gg/JVNcxNB3e7)** - Real-time chat and support
+- **[Community Forum](https://forum.ankimcp.ai/)** - Questions, ideas, and feedback
 - **[Email](mailto:support@ankimcp.ai)** - Write to us
 
 ### Contributing
