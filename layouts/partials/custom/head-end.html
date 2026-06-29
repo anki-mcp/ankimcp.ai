@@ -1,6 +1,35 @@
 <!-- Canonical URL for SEO -->
 <link rel="canonical" href="{{ .Permalink }}" />
 
+<!-- Deep-linkable Hextra tabs: open the tab matching the URL hash.
+     Inline (non-deferred) here in <head>, but the work runs on DOMContentLoaded,
+     which fires AFTER the deferred core bundle (tabs.js) has attached its click
+     listeners. So programmatically clicking a .hextra-tabs-toggle triggers
+     Hextra's own handler. Generic: works on any tabbed page. -->
+<script>
+  (function () {
+    function tabKey(s) {
+      return (s || "").trim().toLowerCase().replace(/\s+/g, "-");
+    }
+    function activateFromHash() {
+      var hash = (window.location.hash || "").replace(/^#/, "");
+      if (!hash) return;
+      var wanted = tabKey(decodeURIComponent(hash));
+      if (!wanted) return;
+      var toggles = document.querySelectorAll(".hextra-tabs-toggle");
+      for (var i = 0; i < toggles.length; i++) {
+        if (tabKey(toggles[i].textContent) === wanted) {
+          toggles[i].click();
+          return;
+        }
+      }
+    }
+    document.addEventListener("DOMContentLoaded", activateFromHash);
+    // Also respond to in-page hash links (e.g. cross-tab links on the same page).
+    window.addEventListener("hashchange", activateFromHash);
+  })();
+</script>
+
 <!-- MailerLite Universal -->
 <script>
     (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])

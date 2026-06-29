@@ -27,6 +27,10 @@ In the 1880s, German psychologist Hermann Ebbinghaus ran the first memory experi
 
 The key point isn't an exact percentage. It's the *shape*. You lose most of what you forget early. That's why reading a chapter once feels productive but rarely sticks.
 
+![A line chart titled "How memory fades without review": memory retained drops steeply in the first day after learning, then the decline slows toward zero by day six.](forgetting-curve.svg)
+
+*The forgetting curve: without a refresher, most of what you'll forget is gone within a day.*
+
 > Ebbinghaus published his work in 1885.[\[1\]](#ref-1) It is one of the most replicated findings in psychology. In 2015, researchers redid his experiment with his original method and got strikingly similar results,[\[2\]](#ref-2) confirming the curve still describes how memory fades today.
 
 ## What is the spacing effect?
@@ -35,7 +39,7 @@ The **spacing effect** is simple: you remember far more when study sessions are 
 
 Picture two students. One studies four hours in one night. The other studies one hour a week for four weeks. Same total time, yet weeks later the second student remembers much more.
 
-This is one of the most solid findings in learning science. A large 2006 review by Cepeda and colleagues looked at hundreds of experiments and confirmed that spacing reliably improves what you keep.[\[3\]](#ref-3) They also found that the longer you want to remember something, the longer the gaps between reviews should be.
+This is one of the most solid findings in learning science. A large 2006 review by Cepeda and colleagues looked at hundreds of experiments and confirmed that spacing reliably improves what you keep.[\[3\]](#ref-3) They also found that **the longer you want to remember something, the longer the gaps between reviews should be**.
 
 That insight, *space your reviews and stretch the gaps*, is the heart of every spaced repetition system, including Anki.
 
@@ -60,6 +64,10 @@ Here's what happens each time you review a card:
 3. **Intervals grow.** Each success stretches the gap. You review hard cards often and easy cards rarely.
 
 So you tend to see each card right when you'd otherwise forget it. That's the best moment to refresh a memory.
+
+![A line chart titled "How each review flattens the curve": each review resets memory to full, and each following decline is slower, so retention stays high. A dashed line shows that without review, memory falls to near zero within days.](spaced-repetition.svg)
+
+*Every review catches the memory and resets it. Each time, it fades more slowly, so retention stays high while a never-reviewed memory (dashed) collapses.*
 
 ### What is FSRS?
 

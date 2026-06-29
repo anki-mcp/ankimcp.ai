@@ -19,9 +19,9 @@ This page explains both paths and helps you choose. You need no technical backgr
 
 ## The short version
 
-The **add-on** installs like any other Anki add-on and starts on its own. It's the easiest setup and reaches the most of Anki.
+The **add-on** installs like any other Anki add-on and starts on its own. **It's the easiest setup and reaches the most of Anki.**
 
-The **CLI** is a separate program you run yourself. Pick it when you connect through coding tools, or you already use Node.js. Whichever you choose, Anki must be open and running.
+The **CLI** is a separate program you run yourself. You only need it for **STDIO**, the direct connection that some coding tools require. Whichever you choose, Anki must be open and running.
 
 ## What is the add-on?
 
@@ -31,15 +31,15 @@ It reaches your cards through Anki's own built-in tools directly. There's nothin
 
 The add-on is also the **more capable** of the two. Because it lives inside Anki, it can reach deep parts the other path can't. That includes **FSRS scheduling** (Anki's modern review-timing system) and the review scheduler itself. It also exposes extra **resources**, like your stats, your collection schema, and query help.
 
-It connects over **HTTP** (a standard web connection) and the managed tunnel. One caveat: it has no read-only mode yet, so it can change your collection.
+It connects over **HTTP** (local) and the **managed tunnel** (remote).
 
 ## What is the CLI?
 
 The CLI is a standalone **MCP server** written in **Node.js** that runs as a **separate program**, outside of Anki. MCP, the Model Context Protocol, is the open standard that lets AI assistants connect to outside apps.
 
-The CLI reaches Anki through **AnkiConnect**, a separate Anki plugin you must install first. So this path has two pieces to set up: Node.js and AnkiConnect. Anki still has to be open the whole time.
+The CLI reaches Anki through **[AnkiConnect](https://ankiweb.net/shared/info/2055492159)**, a separate Anki plugin you must install first. So this path has two pieces to set up: Node.js and AnkiConnect. Anki still has to be open the whole time.
 
-What the CLI adds is **STDIO**, a direct, no-open-port connection that many coding tools prefer. It also supports HTTP and the managed tunnel. On top of that, it has a **read-only mode** and a few extra tools for Anki's window. It's slightly more mature.
+What the CLI adds is **STDIO**, a direct, no-open-port connection that many coding tools prefer. It also supports **HTTP** (local) and the **managed tunnel** (remote).
 
 ## How the two compare
 
@@ -49,36 +49,33 @@ Here's a side-by-side look at the main differences.
 |---|---|---|
 | **Setup** | Install like any Anki add-on; auto-starts | Install Node.js and AnkiConnect, then run it |
 | **How it reaches Anki** | Anki's built-in tools, directly | Through the AnkiConnect plugin |
-| **Connection type** | HTTP + managed tunnel | STDIO + HTTP + managed tunnel |
-| **What it can do** | More: FSRS scheduling, review scheduler, extra resources | Read-only mode, a few extra window tools |
-| **Maturity** | Newer; no read-only mode yet | Slightly more mature |
+| **Connection type** | **HTTP** (local) + **managed tunnel** (remote) | STDIO + **HTTP** (local) + **managed tunnel** (remote) |
+| **What it can do** | More: FSRS scheduling, review scheduler, extra resources | A few tools not yet in the add-on |
 
 Both need **Anki open and running**. Neither works on its own without Anki.
 
 ## Which should you choose?
 
-For most people, **start with the add-on**. It's the simplest to install and reaches the most of Anki, so it's the best default for most people.
+**Use the add-on.** It's the simplest to install, reaches the most of Anki, and is the right choice for almost everyone.
 
-Pick the **CLI** when one of these is true:
+Only reach for the **CLI** if you need **STDIO** — the direct, no-open-port connection that some coding tools like Cursor or Cline require. It also covers the occasional tool that isn't in the add-on yet.
 
-- You connect through a **coding tool** like Cursor or Cline that prefers **STDIO**.
-- You're already set up with **Node.js** and comfortable running a separate program.
-- You need a **read-only mode** today, so the AI can't change your cards.
-
-You don't have to pick one forever. They're complementary, and the same author maintains both.
+If you don't need STDIO, the add-on is the answer.
 
 ## Connecting remotely
 
-Want your AI assistant to reach Anki from another device or service? Both paths can connect through the same secure managed **tunnel**, using an OAuth login (you sign in to grant access). This managed tunnel is a subscription-based service, so you skip the manual network setup yourself.
+Want your AI assistant to reach Anki from another device or service? Both paths can connect through the same secure managed **tunnel**, using an OAuth login (you sign in to grant access). This managed tunnel has free and paid tiers, so you skip the manual network setup yourself.
 
 <!-- TODO: link to dedicated remote/tunnel page when it exists -->
 
-For setup steps, configuration, and developer details, see the [anki-mcp-server repository on GitHub](https://github.com/ankimcp/anki-mcp-server). The add-on lives in its own companion repository under the same project.
+Ready to set it up? Follow the step-by-step guide for your AI assistant: [Claude on the web](/docs/how-to/connect-claude/#claude-web), [Claude Desktop](/docs/how-to/connect-claude/#claude-desktop), [Claude Code](/docs/how-to/connect-claude/#claude-code), or [other MCP clients](/docs/how-to/connect-mcp-clients/).
+
+If you're a developer who wants to read the source or contribute, the code lives in the [anki-mcp-server repository on GitHub](https://github.com/ankimcp/anki-mcp-server), with the add-on in its own companion repository.
 
 ## Common questions
 
 **Do I need both the add-on and the CLI?**
-No. Pick one. The add-on suits most people. Choose the CLI if you need STDIO, a read-only mode, or you already run Node.js.
+No. Pick one. Use the add-on unless you need STDIO, the connection some coding tools require.
 
 **Does either one work without Anki open?**
 No. Both need the Anki desktop app open and running. They act on your real collection, so Anki has to be there.

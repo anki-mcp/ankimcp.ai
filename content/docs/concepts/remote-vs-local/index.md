@@ -37,7 +37,7 @@ This works with desktop AI apps like **Claude Desktop** and coding tools like **
 
 It also reaches **web-based assistants** like the **ChatGPT website** or **claude.ai**. These run in your browser, not on your computer, so they can't see localhost on their own.
 
-To connect the tunnel, you **sign in** once. You choose which AI clients to authorize, and you're responsible for anyone you share the tunnel address with. The tunnel is a **subscription-based** service. Both the add-on and the CLI support it.
+To connect the tunnel, you **sign in** once. You choose which AI clients to authorize, and you're responsible for anyone you share the tunnel address with. The tunnel has **free and paid tiers**. Both the add-on and the CLI support it.
 
 ## How local and remote compare
 
@@ -46,29 +46,18 @@ Here's a side-by-side look at the main differences.
 | | Local | Remote |
 |---|---|---|
 | **Where AI + Anki run** | Same computer | Different devices, or a web AI |
-| **Cost** | Free | Subscription-based |
+| **Cost** | Free | Free & paid tiers |
 | **Login needed** | None | One-time sign-in |
 | **Who can reach it** | Only your machine | Clients you authorize |
 | **Your data** | Never leaves your computer | Relayed through the tunnel, encrypted |
 
-## Which do you need?
-
-Start with **local**. If your AI assistant and Anki are on the same computer, local does everything, for free, with nothing to set up.
-
-Choose **remote** when one of these is true:
-
-- You want to reach Anki from **another device**, like your phone or a second laptop.
-- You use a **web-based AI** like the ChatGPT website or claude.ai that can't see your computer.
-
-Remote adds reach. The cost is a subscription and relaying your data through the service.
+Remote adds reach, with free and paid tiers, and relays your data through the service.
 
 ## Is your data private?
 
 With **local**, nothing leaves your machine, so there's nothing to relay and nothing to worry about.
 
 With the **tunnel**, your data passes through ankimcp.ai's server in real time. It's **encrypted while it travels** and is **never stored, logged, or read** as content. The service is a pass-through, not a place your cards are kept. For the full detail, see [the privacy policy](/privacy/).
-
-If you want the AI to view but not change your cards, the CLI offers a **read-only mode** (the add-on doesn't have this yet). See the [anki-mcp-server repository on GitHub](https://github.com/ankimcp/anki-mcp-server) for setup.
 
 ## Either way, Anki must stay open
 
@@ -83,7 +72,7 @@ No. Your collection stays on your computer. The tunnel relays to your local Anki
 No. Web-based assistants run in your browser, not on your computer, so they can't see localhost. Use the remote tunnel for those.
 
 **Is local access really free?**
-Yes. Local needs no account and no login, and nothing leaves your machine. Only the remote tunnel is subscription-based.
+Yes. Local needs no account and no login, and nothing leaves your machine. The remote tunnel adds free and paid tiers.
 
 **Does remote work if Anki is closed?**
 No. The tunnel relays to your local Anki, so Anki must be open on your computer for either local or remote to work.

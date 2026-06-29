@@ -1,13 +1,13 @@
 ---
-title: "How to Connect ChatGPT (and Web AI) to Anki"
+title: "How to Connect ChatGPT to Anki"
 linkTitle: "Connect ChatGPT to Anki"
-description: "Connect ChatGPT, Claude.ai, or any web AI to Anki with the AnkiMCP managed tunnel for secure remote access to your flashcards."
+description: "Connect ChatGPT to Anki with the AnkiMCP add-on's built-in tunnel, so ChatGPT can read your decks and build cards. No Node.js, no extra plugins."
 keywords:
   - chatgpt anki
   - connect chatgpt to anki
   - anki chatgpt
+  - chatgpt anki flashcards
   - anki ai remote access
-  - claude anki
   - anki mcp tunnel
 weight: 4
 sitemap_priority: 0.8
@@ -15,91 +15,93 @@ aliases:
   - /docs/installation/web/
 ---
 
-**Connect a web-based AI like ChatGPT or Claude.ai to Anki using the AnkiMCP tunnel, so the AI can read your decks and build cards from your browser.**
+**Connect ChatGPT to Anki with the AnkiMCP add-on's built-in tunnel, so ChatGPT can read your decks and build cards from your browser.**
 
-Web AIs run in the cloud, so they can't see Anki on your computer. The AnkiMCP **tunnel** fixes this. It gives your local Anki a secure public web address that a browser AI can reach. You start a small server, sign in, and paste the address into your AI.
+ChatGPT runs in the cloud, so it can't see Anki on your computer. The AnkiMCP **add-on** fixes this. It runs inside Anki and, with one click, gives your collection a secure public web address that ChatGPT can reach. You turn on the tunnel, sign in once, and paste the address into ChatGPT.
 
 ## What you need
 
-- A **web-based AI that supports MCP connectors**, such as ChatGPT or [Claude.ai](https://claude.ai). It must let you add a custom MCP server.
-- **Anki** installed and open on your computer. Get it from [apps.ankiweb.net](https://apps.ankiweb.net/).
-- The **AnkiConnect plugin** in Anki. See [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) for the one-minute install (code `2055492159`).
-- **Node.js** to run the server. Get it from [nodejs.org](https://nodejs.org/).
-- An **AnkiMCP account**. The managed tunnel is a paid subscription. You sign in the first time you start it.
+- A **ChatGPT account** that supports custom apps (MCP connectors). You'll add the tunnel as one.
+- **Anki 25.07 or later**, open on your computer. Get it from [apps.ankiweb.net](https://apps.ankiweb.net/).
+- The **AnkiMCP add-on** for Anki, code `124672614`. You'll install it below.
+- An **AnkiMCP account**. The tunnel has a free tier and a paid tier. You sign in the first time you connect it.
 
 **Time:** about 5 minutes.
 
 ## Why a tunnel?
 
-A browser AI runs on a remote server, not on your machine. It has no way to reach `localhost`, where Anki lives. The tunnel relays messages between the AI and your local Anki over a secure, signed-in connection. Your cards never leave your control, and the link is private to your account.
+ChatGPT runs on a remote server, not on your machine. It has no way to reach `localhost`, where Anki lives. The add-on's tunnel relays messages between ChatGPT and your local Anki over a secure, signed-in connection. Your cards never leave your control, and the link is private to your account.
 
-## Step 1: Start the tunnel
+## Step 1: Install the AnkiMCP add-on
 
-Open your terminal and run this command:
+The add-on starts a small server inside Anki. It launches on its own every time you open Anki.
 
-```bash
-npx @ankimcp/anki-mcp-server --tunnel
+1. Open Anki.
+2. Go to **Tools → Add-ons → Get Add-ons...**
+3. Enter this code: `124672614`
+4. Click **OK**, then restart Anki.
+
+<!-- screenshot: Anki "Install Add-on" dialog with the code 124672614 entered -->
+
+## Step 2: Connect the tunnel and sign in
+
+Now turn on the tunnel so your Anki gets a public web address.
+
+1. Go to **Tools → AnkiMCP Server Settings...**
+2. Click **Connect Tunnel**.
+3. A login dialog shows a one-time code. Click **Open Browser** and enter that code on the page that opens.
+4. Approve the sign-in. The add-on saves your login, so you won't repeat this each time.
+
+<!-- screenshot: AnkiMCP Server Settings dialog with the "Connect Tunnel" button and one-time code -->
+
+## Step 3: Copy your public tunnel URL
+
+Once connected, the settings dialog shows your public tunnel address. It looks like a normal web link:
+
+```text
+https://tunnel.ankimcp.ai/<your-tunnel-id>
 ```
 
-The server starts and connects to the managed AnkiMCP tunnel. Keep this terminal window open while you study. If you closed it, the link would break.
+Copy that full URL. You'll paste it into ChatGPT next.
 
-<!-- screenshot: terminal showing the --tunnel command and the startup banner -->
+<!-- screenshot: AnkiMCP Server Settings showing the connected tunnel URL -->
 
-## Step 2: Sign in when your browser opens
+## Step 4: Add the tunnel to ChatGPT
 
-The first run opens your browser to an approval page. The sign-in code is already in the link, so you only need to approve it.
+In ChatGPT, go to **Settings → Apps → Create app**. The **New App** dialog opens.
 
-After you approve, the terminal continues. Your login is saved, so you won't repeat this each time.
+1. Give it a **Name**, like `AnkiMCP`. The icon and description are optional.
+2. Under **Connection**, keep **Server URL** selected and paste your tunnel URL.
+3. Leave **Authentication** on **OAuth**. ChatGPT reads the right settings from the URL, and you sign in to AnkiMCP once to authorize ChatGPT.
+4. Tick **I understand and want to continue** to accept ChatGPT's custom-MCP risk notice.
+5. Click **Create**.
 
-You can also sign in ahead of time with `npx @ankimcp/anki-mcp-server --login`.
-
-<!-- screenshot: browser approval page for the AnkiMCP device login -->
-
-## Step 3: Copy the public tunnel URL
-
-Once connected, the terminal prints your public tunnel address. It looks like a normal `https://` web link.
-
-Copy that full URL. You'll paste it into your AI in the next step.
-
-<!-- screenshot: terminal banner highlighting the public tunnel URL -->
-
-## Step 4: Add the URL to your web AI
-
-Open your AI's settings and add a custom MCP connector. Paste the tunnel URL you copied, then save.
-
-For **Claude.ai**, go to **Settings → Connectors → Add custom connector** and paste the URL. See Anthropic's [custom connectors guide](https://support.claude.com/en/articles/11175166-getting-started-with-custom-connectors-using-remote-mcp) for the exact path.
-
-For **ChatGPT and other web AIs**, open your provider's MCP connector or custom integration settings and paste the same URL. Check your provider's documentation for the exact menu.
-
-<!-- VERIFY: confirm ChatGPT website MCP connector support + exact steps -->
-
-<!-- screenshot: a web AI's "Add custom connector" dialog with the tunnel URL pasted -->
+<img src="chatgpt-new-app.png" width="472" alt="ChatGPT's New App dialog: a Name field, a Connection set to Server URL with the tunnel URL pasted, Authentication set to OAuth, and the I understand and want to continue risk checkbox." />
 
 ## Check it worked
 
-Keep Anki open, then ask your AI: **"List my Anki decks."**
+Keep Anki open, then ask ChatGPT: **"List my Anki decks."**
 
 If it names your real decks, the tunnel works. You can now ask it to make cards, search your collection, or review with you.
 
 ## Fix common problems
 
-**My AI can't connect.**
-Make sure the terminal with `--tunnel` is still running and Anki is open. The tunnel only relays to Anki while both are running. Restart the server if the terminal was closed.
+**ChatGPT can't connect.**
+Make sure Anki is open and the tunnel shows as connected in **Tools → AnkiMCP Server Settings...**. The tunnel only relays while Anki is running. Reconnect the tunnel if needed.
 
-**The AI connects but sees no decks.**
-Anki itself may be closed, or AnkiConnect isn't installed. Open Anki and confirm AnkiConnect at [http://localhost:8765](http://localhost:8765) (you should see the word `AnkiConnect`).
+**ChatGPT connects but sees no decks.**
+Anki itself may be closed. Open Anki and confirm the tunnel is connected in **Tools → AnkiMCP Server Settings...**.
 
 **Sign-in didn't open my browser.**
-The terminal prints a backup link and code. Open the link and enter the code to approve.
+The login dialog shows a backup link and code. Open the link and enter the code to approve.
 
 **Do I have to pay?**
-The managed tunnel is a paid subscription. The local desktop path for Claude Desktop is separate. See [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/).
+The add-on is free. The tunnel has a free tier to get started and a paid tier for more, because it gives your Anki a secure web address that ChatGPT can reach.
 
 ## Next steps
 
 - New to local vs. remote? Read [Remote vs local access](/docs/concepts/remote-vs-local/) to choose the right path.
-- Use Claude Desktop instead? The [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) guide skips the tunnel entirely.
-- Prefer to run your own tunnel? The [ngrok option](https://github.com/ankimcp/anki-mcp-server#ngrok-unauthenticated-alternative) on GitHub is an unauthenticated alternative for advanced users.
+- Want better cards? Try these [AI prompts for Anki](/docs/how-to/anki-ai-prompts/).
 
 ---
 

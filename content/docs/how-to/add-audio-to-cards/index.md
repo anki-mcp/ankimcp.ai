@@ -21,7 +21,7 @@ AnkiMCP doesn't make voice audio itself. Instead, you point your AI to an audio 
 
 ## What you need
 
-- **Your AI connected to Anki.** Do the [Connect Claude to Anki](/docs/how-to/connect-claude-desktop/) guide first.
+- **Your AI connected to Anki.** Do the [Connect Claude to Anki](/docs/how-to/connect-claude/) guide first.
 - **Anki open** on the same computer.
 - **An audio file** you want on a card. This can be a file on your computer, a public URL, or a file made by a separate audio MCP server (see below).
 
