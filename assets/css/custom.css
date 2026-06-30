@@ -74,15 +74,25 @@
 }
 
 .pricing-card--local .pricing-card__header {
-  background: #475569; /* slate-600 */
+  background: #64748b; /* slate-500 — light grey, blends back */
 }
 
 .pricing-card--remote-free .pricing-card__header {
-  background: #b45309; /* amber-700 */
+  background: #334155; /* slate-700 — darker grey */
 }
 
 .pricing-card--remote-paid .pricing-card__header {
   background: var(--ankimcp-primary-600, #0a72e6); /* brand blue — draws the eye */
+}
+
+/* Color-only emphasis: tint the paid card so it reads as the highlighted
+   option. No badge, border, or scaling — just a soft blue fill. */
+.pricing-card--remote-paid {
+  background: #eff6ff; /* blue-50 */
+}
+
+.dark .pricing-card--remote-paid {
+  background: #152136; /* dark blue tint, distinct from the gray-800 cards */
 }
 
 .pricing-card__name {
@@ -214,11 +224,11 @@
 }
 
 .pricing-card__cta--local {
-  background: #475569; /* slate-600 */
+  background: #64748b; /* slate-500 — light grey, blends back */
 }
 
 .pricing-card__cta--remote-free {
-  background: #b45309; /* amber-700 */
+  background: #334155; /* slate-700 — darker grey */
 }
 
 .pricing-card__cta--remote-paid {
@@ -233,11 +243,11 @@
 }
 
 .pricing-card__cta--local:focus-visible {
-  box-shadow: 0 0 0 4px #475569;
+  box-shadow: 0 0 0 4px #64748b;
 }
 
 .pricing-card__cta--remote-free:focus-visible {
-  box-shadow: 0 0 0 4px #b45309;
+  box-shadow: 0 0 0 4px #334155;
 }
 
 .pricing-card__cta--remote-paid:focus-visible {
