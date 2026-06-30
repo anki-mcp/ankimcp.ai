@@ -7,9 +7,11 @@ sitemap_priority: 0.7
 
 ## About Anki MCP
 
-Anki MCP Desktop is an independent, community-driven project that bridges the gap between AI assistants and Anki flashcard management.
+Anki MCP is an independent project that connects AI assistants like **Claude** and **ChatGPT** to your Anki flashcards. Ask the AI to build cards from what you're reading, search your collection, or review with you in plain language — instead of formatting cards by hand.
 
-It comes in two parts: an **add-on** that runs inside Anki, and a **CLI** that runs as a separate program. Most people use the add-on; the CLI is there for tools that need STDIO. For the differences and which to pick, see [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
+It comes in two parts: an **[add-on](https://ankiweb.net/shared/info/124672614)** that runs inside Anki, and a **[CLI](https://github.com/ankimcp/anki-mcp-server)** that runs as a separate program. Most people use the add-on; the CLI is there for tools that need STDIO. For the differences and which to pick, see [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
+
+You can use it **locally**, with an AI app on the same computer as Anki, or **remotely**, letting a web or mobile AI reach your Anki through a secure tunnel. See [Remote vs local access](/docs/concepts/remote-vs-local/) to choose the right setup. New here? The [Get started](/docs/get-started/) guide walks you through your first connection.
 
 ### Current Status
 
