@@ -242,3 +242,53 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Navbar emphasis
+   ----------------------------------------------------------------------------
+   Hextra renders inactive top-nav links in a muted gray-600 (text-gray-400 in
+   dark). Darken them and add medium weight so the menu reads stronger. Scoped
+   to the nav container and matched by the muted class so the site title and
+   other elements are untouched. */
+.hextra-nav-container a[class*="hx:text-gray-600"],
+.hextra-nav-container button[class*="hx:text-gray-600"] {
+  color: #1f2937 !important; /* gray-800 */
+  font-weight: 500 !important;
+}
+
+.hextra-nav-container a[class*="hx:text-gray-600"]:hover,
+.hextra-nav-container button[class*="hx:text-gray-600"]:hover {
+  color: #000000 !important;
+}
+
+.dark .hextra-nav-container a[class*="hx:text-gray-600"],
+.dark .hextra-nav-container button[class*="hx:text-gray-600"] {
+  color: #e5e7eb !important; /* gray-200 */
+}
+
+.dark .hextra-nav-container a[class*="hx:text-gray-600"]:hover,
+.dark .hextra-nav-container button[class*="hx:text-gray-600"]:hover {
+  color: #ffffff !important;
+}
+
+/* Active/current nav link: brand color + bold so it clearly stands out from
+   the other (dark gray) links. Hextra gives the current item `hx:font-medium`
+   and no gray class, so it's matched by font-medium (scoped to the navbar).
+   Primary color recomputed from the theme's HSL inputs (see pricing block). */
+.hextra-nav-container a[class*="hx:text-sm"][class*="hx:font-medium"],
+.hextra-nav-container button[class*="hx:text-sm"][class*="hx:font-medium"] {
+  color: hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 45)
+  ) !important;
+  font-weight: 700 !important;
+}
+
+.dark .hextra-nav-container a[class*="hx:text-sm"][class*="hx:font-medium"],
+.dark .hextra-nav-container button[class*="hx:text-sm"][class*="hx:font-medium"] {
+  color: hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 62)
+  ) !important;
+}
