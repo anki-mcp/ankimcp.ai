@@ -20,11 +20,10 @@ You only reach the paid side when you want **remote access**: letting a web AI l
 ## What's free and what's paid
 
 <div class="pricing-cards">
-<div class="pricing-card pricing-card--free pricing-card--featured">
-<div class="pricing-card__badge">Recommended</div>
+<div class="pricing-card pricing-card--local">
 <div class="pricing-card__header">
-<span class="pricing-card__name">Free</span>
-<span class="pricing-card__sub">Local use</span>
+<span class="pricing-card__name">Local</span>
+<span class="pricing-card__sub">On your computer</span>
 </div>
 <div class="pricing-card__body">
 <div class="pricing-card__price">
@@ -38,27 +37,46 @@ You only reach the paid side when you want **remote access**: letting a web AI l
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No account, no limits</li>
 <li class="is-no"><span class="pricing-card__icon" aria-hidden="true">✗</span><span class="pricing-card__sr">Not included: </span>Remote access (web or mobile AI)</li>
 </ul>
-<a class="pricing-card__cta" href="/docs/get-started/">Get started</a>
+<a class="pricing-card__cta pricing-card__cta--local" href="/docs/get-started/">Get started</a>
 </div>
 </div>
-<div class="pricing-card pricing-card--tunnel">
+<div class="pricing-card pricing-card--remote-free">
 <div class="pricing-card__header">
-<span class="pricing-card__name">Tunnel</span>
-<span class="pricing-card__sub">Remote access</span>
+<span class="pricing-card__name">Remote</span>
+<span class="pricing-card__sub">Free tier</span>
+</div>
+<div class="pricing-card__body">
+<div class="pricing-card__price">
+<span class="pricing-card__amount">Free</span>
+<span class="pricing-card__period">tunnel free tier</span>
+</div>
+<ul class="pricing-card__features">
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in Local</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Remote access: ChatGPT, claude.ai, your phone, any device</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Secure managed tunnel, sign in once</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 authenticated requests / month</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless requests / month</li>
+</ul>
+<a class="pricing-card__cta" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
+</div>
+</div>
+<div class="pricing-card pricing-card--remote-paid">
+<div class="pricing-card__header">
+<span class="pricing-card__name">Remote</span>
+<span class="pricing-card__sub">Paid</span>
 </div>
 <div class="pricing-card__body">
 <div class="pricing-card__price">
 <span class="pricing-card__amount">$5</span>
-<span class="pricing-card__period">per month · free tier available</span>
+<span class="pricing-card__period">per month</span>
 </div>
 <ul class="pricing-card__features">
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in Free</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Remote access: ChatGPT, claude.ai, your phone, any device</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Secure managed tunnel, sign in once</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Free tier: 100 authenticated + 1,000 authless requests / month</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Paid ($5/mo): unlimited requests, both kinds</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in the free tier</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited authenticated requests</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited authless requests</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Supports active development &amp; new features</li>
 </ul>
-<a class="pricing-card__cta pricing-card__cta--tunnel" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
+<a class="pricing-card__cta pricing-card__cta--remote-paid" href="/docs/how-to/connect-chatgpt-to-anki/">Go unlimited</a>
 </div>
 </div>
 </div>
