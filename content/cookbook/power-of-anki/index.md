@@ -13,6 +13,8 @@ keywords:
   - long-term memory
 weight: 1
 sitemap_priority: 0.8
+aliases:
+  - /docs/concepts/power-of-anki/
 ---
 
 **Anki works because it fights how your brain forgets.** It shows you each fact right before you'd lose it. You confirm you still know it, and the next review moves further out. So you remember more while studying less.

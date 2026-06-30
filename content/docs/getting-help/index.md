@@ -17,9 +17,6 @@ Most setup problems have a quick fix. If that doesn't solve it, the community an
 ## Where to get help
 
 - **[Troubleshooting guide](/docs/how-to/troubleshooting/)** — Start here. Common setup and connection problems with step-by-step fixes.
-  <!-- VERIFY: /docs/how-to/troubleshooting/ does not exist in this branch yet; confirm the page is created before publishing, or update this link. -->
-
-- **[Report a bug on GitHub](https://github.com/ankimcp/anki-mcp-server/issues)** — Found something broken? Open an issue so we can track and fix it.
 
 - **[Ask on the community forum](https://forum.ankimcp.ai/)** — Questions, ideas, and feature requests. Good for "how do I...?" and longer conversations.
 

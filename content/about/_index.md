@@ -9,13 +9,11 @@ sitemap_priority: 0.7
 
 Anki MCP Desktop is an independent, community-driven project that bridges the gap between AI assistants and Anki flashcard management.
 
+It comes in two parts: an **add-on** that runs inside Anki, and a **CLI** that runs as a separate program. Most people use the add-on; the CLI is there for tools that need STDIO. For the differences and which to pick, see [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
+
 ### Current Status
 
-- **Version**: 0.8.0
-- **Status**: Active development with weekly releases
-- **Downloads**: 100-150 weekly downloads
-- **Open Source**: 27+ GitHub stars and growing
-- **API Stability**: Approaching 1.0 with stable core features
+AnkiMCP is **open source** and **actively developed**, with new releases shipping regularly. The core features are stable and used in daily study, and the project keeps growing through community feedback and contributions.
 
 ### Created By
 
