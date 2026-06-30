@@ -78,11 +78,11 @@
 }
 
 .pricing-card--remote-free .pricing-card__header {
-  background: var(--ankimcp-primary-600, #0a72e6);
+  background: #b45309; /* amber-700 */
 }
 
 .pricing-card--remote-paid .pricing-card__header {
-  background: #b45309; /* amber-700 */
+  background: var(--ankimcp-primary-600, #0a72e6); /* brand blue — draws the eye */
 }
 
 .pricing-card__name {
@@ -217,8 +217,12 @@
   background: #475569; /* slate-600 */
 }
 
-.pricing-card__cta--remote-paid {
+.pricing-card__cta--remote-free {
   background: #b45309; /* amber-700 */
+}
+
+.pricing-card__cta--remote-paid {
+  background: var(--ankimcp-primary-600, #0a72e6); /* brand blue */
 }
 
 /* Visible keyboard focus state */
@@ -232,8 +236,12 @@
   box-shadow: 0 0 0 4px #475569;
 }
 
-.pricing-card__cta--remote-paid:focus-visible {
+.pricing-card__cta--remote-free:focus-visible {
   box-shadow: 0 0 0 4px #b45309;
+}
+
+.pricing-card__cta--remote-paid:focus-visible {
+  box-shadow: 0 0 0 4px var(--ankimcp-primary-600, #0a72e6);
 }
 
 /* Stack to a single column on small screens */

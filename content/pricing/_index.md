@@ -57,7 +57,7 @@ You only reach the paid side when you want **remote access**: letting a web AI l
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 authenticated requests / month</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless requests / month</li>
 </ul>
-<a class="pricing-card__cta" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
+<a class="pricing-card__cta pricing-card__cta--remote-free" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
 </div>
 </div>
 <div class="pricing-card pricing-card--remote-paid">
