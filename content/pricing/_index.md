@@ -11,7 +11,7 @@ keywords:
 sitemap_priority: 0.8
 ---
 
-**AnkiMCP is free to use on your own computer — and always will be. The only paid part is the optional managed tunnel, which lets a web or mobile AI reach your Anki from anywhere and covers the servers that make that work.**
+**AnkiMCP is free to use on your own computer — and always will be. The only paid part is the optional managed tunnel, which lets a web or mobile AI reach your Anki from anywhere and funds the servers and the project's ongoing development.**
 
 If you connect an AI that runs on the **same computer** as Anki — Claude Desktop, Claude Code, Cursor, Cline, Zed — you pay nothing, ever. No account, no limits, no catch.
 
@@ -19,18 +19,49 @@ You only reach the paid side when you want **remote access**: letting a web AI l
 
 ## What's free and what's paid
 
-| Feature | Free, forever | Paid (managed tunnel) |
-|---|:---:|:---:|
-| The **add-on** (runs inside Anki) | ✓ | ✓ |
-| The **CLI** | ✓ | ✓ |
-| Create, edit & review cards, FSRS, media | ✓ | ✓ |
-| Connect local AI apps (Claude Desktop, Claude Code, Cursor, Cline, Zed) | ✓ | ✓ |
-| No account required | ✓ | — |
-| Remote access (ChatGPT, claude.ai, your phone, any device) | Free tier to start | ✓ |
-| Higher limits for daily, heavy remote use | — | ✓ |
-| Helps fund the servers and upkeep | — | ✓ |
-
-<!-- TODO: fill in the exact free-tier vs paid-tier tunnel limits and price once finalized -->
+<div class="pricing-cards">
+<div class="pricing-card pricing-card--free pricing-card--featured">
+<div class="pricing-card__badge">Recommended</div>
+<div class="pricing-card__header">
+<span class="pricing-card__name">Free</span>
+<span class="pricing-card__sub">Local use</span>
+</div>
+<div class="pricing-card__body">
+<div class="pricing-card__price">
+<span class="pricing-card__amount">Free</span>
+<span class="pricing-card__period">forever</span>
+</div>
+<ul class="pricing-card__features">
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>The add-on and the CLI</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Create, edit &amp; review cards, FSRS, media</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Local AI apps: Claude Desktop, Claude Code, Cursor, Cline, Zed</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No account, no limits</li>
+<li class="is-no"><span class="pricing-card__icon" aria-hidden="true">✗</span><span class="pricing-card__sr">Not included: </span>Remote access (web or mobile AI)</li>
+</ul>
+<a class="pricing-card__cta" href="/docs/get-started/">Get started</a>
+</div>
+</div>
+<div class="pricing-card pricing-card--tunnel">
+<div class="pricing-card__header">
+<span class="pricing-card__name">Tunnel</span>
+<span class="pricing-card__sub">Remote access</span>
+</div>
+<div class="pricing-card__body">
+<div class="pricing-card__price">
+<span class="pricing-card__amount">$5</span>
+<span class="pricing-card__period">per month · free tier available</span>
+</div>
+<ul class="pricing-card__features">
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in Free</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Remote access: ChatGPT, claude.ai, your phone, any device</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Secure managed tunnel, sign in once</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Free tier: 100 authenticated + 1,000 authless requests / month</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Paid ($5/mo): unlimited requests, both kinds</li>
+</ul>
+<a class="pricing-card__cta pricing-card__cta--tunnel" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
+</div>
+</div>
+</div>
 
 ## Why the local part is free — and stays free
 
@@ -40,7 +71,9 @@ Everything that runs on your own computer is free because it costs us nothing to
 
 The **managed tunnel** is different. It runs real servers that relay messages between a remote AI and your local Anki, around the clock and securely. That means hosting, bandwidth, and ongoing maintenance.
 
-The paid tier covers those costs so the tunnel stays fast, reliable, and private. We keep a **free tier** so anyone can try remote access before paying. Want the full picture of local vs remote? See [Remote vs local access](/docs/concepts/remote-vs-local/).
+But a subscription covers more than servers. It funds the **ongoing development** of AnkiMCP. The project is actively built and improved, with more features on the way — your support keeps both the infrastructure running and the roadmap moving.
+
+We keep a **free tier** so anyone can try remote access before paying. Want the full picture of local vs remote? See [Remote vs local access](/docs/concepts/remote-vs-local/).
 
 ## Common questions
 
@@ -48,7 +81,7 @@ The paid tier covers those costs so the tunnel stays fast, reliable, and private
 Yes. Using AnkiMCP on your own computer — the add-on and the CLI, with any local AI app — is free and always will be. You pay only if you choose the managed tunnel's paid tier for remote access.
 
 **What exactly do I pay for?**
-Only the managed tunnel, and only its paid tier. The tunnel lets a web or mobile AI reach your local Anki from anywhere. The fee covers the servers that relay that connection.
+Only the managed tunnel, and only its paid tier. The tunnel lets a web or mobile AI reach your local Anki from anywhere. Your payment funds the servers that relay that connection, plus the project's ongoing maintenance and development.
 
 **Can I use AnkiMCP without ever paying?**
 Yes. If your AI runs on the same computer as Anki, you never need an account or a payment. That covers Claude Desktop, Claude Code, and coding tools like Cursor, Cline, and Zed.
@@ -57,7 +90,10 @@ Yes. If your AI runs on the same computer as Anki, you never need an account or 
 Not for local use. You sign in only when you connect the tunnel, so remote access routes securely to your collection.
 
 **How much does the paid tier cost?**
-We're still finalizing the tunnel's tiers and pricing. Whatever they land on, everything that runs on your own computer stays free.
+The tunnel's paid tier is **$5 per month**. There's also a free tier to get started, and everything that runs on your own computer stays free.
+
+**What are the tunnel's limits?**
+The free tier covers **100 authenticated** and **1,000 authless** requests per month. The paid tier ($5/month) makes both unlimited.
 
 ---
 
