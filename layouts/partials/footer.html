@@ -34,6 +34,11 @@
                 <a href="https://forum.ankimcp.ai/" target="_blank" rel="noopener noreferrer" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Community Forum</a>
             </div>
             {{- end -}}
+            <div class="hx:mt-4 hx:font-semibold hx:flex hx:gap-4 hx:text-sm">
+                <a href="/privacy/" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Privacy</a>
+                <span>·</span>
+                <a href="/terms/" class="hover:hx:text-gray-900 hx:dark:hover:text-gray-100">Terms</a>
+            </div>
             {{- if .Site.Params.footer.displayCopyright }}<div class="hx:mt-6 hx:text-xs">{{ $copyright | markdownify }}</div>{{- end -}}
         </div>
     </div>

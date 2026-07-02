@@ -1,5 +1,44 @@
 /* Custom styles for Anki MCP site */
 
+/* Sticky footer
+   ----------------------------------------------------------------------------
+   Hextra forces the content element (<article> on most layouts, <main> on
+   wide/home) to be ~full viewport tall via
+   `hx:min-h-[calc(100vh-var(--navbar-height))]`. On short pages this pushes the
+   footer entirely below the fold, so the user must scroll a full screen of
+   empty space before reaching it.
+
+   Fix: turn the body into a min-height:100vh flex column and pin the footer to
+   the bottom with `margin-top:auto`. The min-height on the content element is
+   neutralized so it no longer reserves a full viewport on short pages; on long
+   pages content grows past 100vh and the footer follows normally.
+
+   Notes:
+   - The neutralized element is matched by the literal class substring (brackets
+     and parens inside the attribute value are literal, no escaping needed). The
+     search box uses `hx:min-h-[100px]`, which does NOT match this string.
+   - Docs pages keep their own full-height layout: the left sidebar's
+     `h-[calc(100vh-var(--navbar-height)-var(--menu-height))]` makes the docs row
+     ~viewport-tall in normal flow, so the docs footer still sits after that row
+     (by design — we must not touch the sidebar calc). The neutralized <article>
+     is a nested flex child that simply stretches to the sidebar-driven height.
+   - The gap between short content and the pinned footer shows the body/content
+     background (white / dark), so it reads seamlessly; the footer's gray-100
+     band only begins at the pin. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+[class*="hx:min-h-[calc(100vh-var(--navbar-height))]"] {
+  min-height: 0 !important;
+}
+
+.hextra-footer {
+  margin-top: auto;
+}
+
 /* Hero buttons spacing and centering */
 .hero-buttons {
   display: flex !important;

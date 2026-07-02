@@ -6,7 +6,7 @@ sitemap_priority: 0.3
 
 ## Terms of Service
 
-**Effective Date:** April 1, 2026
+**Effective Date:** June 30, 2026
 
 These Terms of Service ("Terms") govern your use of the ankimcp.ai website, the Anki MCP software, and the Anki MCP SaaS cloud service (collectively, the "Service"). By accessing or using the Service, you agree to these Terms.
 
@@ -25,7 +25,7 @@ Anki MCP is a free, open-source Model Context Protocol (MCP) server that connect
 
 ### 3. Open-Source License
 
-The Anki MCP software is distributed under its open-source license as specified in the [GitHub repository](https://github.com/ankimcp/anki-mcp-server). Your use of the software is governed by that license.
+The Anki MCP software is distributed under its open-source license as specified in its GitHub repositories — the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon). Your use of the software is governed by that license.
 
 ### 4. Use at Your Own Risk
 
@@ -111,10 +111,10 @@ The Anki MCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastr
 
 The SaaS Service currently offers two subscription tiers:
 
-- **Free tier:** limited connection time and features. No payment required. Available to all registered users.
-- **Paid tier:** extended connection time and additional features. Payment terms will be published when payment processing is implemented.
+- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated and 1,000 authless requests per month). No payment required. Available to all registered users.
+- **Paid tier:** removes those limits (unlimited requests) for a recurring fee (currently $5 per month). Full payment terms will be published when payment processing is implemented.
 
-We reserve the right to modify tier features, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
+We reserve the right to modify tier features, request allowances, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
 
 #### Tunnel Usage and Fair Use
 
@@ -164,7 +164,7 @@ This section clarifies how your Anki flashcard data is handled when using the Sa
 
 #### Security
 
-- Connections between your CLI and our tunnel server use TLS encryption.
+- Connections between your Anki MCP client (the add-on or the CLI) and our tunnel server use TLS encryption.
 - Connections between LLM clients and our tunnel server use TLS encryption.
 - Despite these measures, no system is perfectly secure. You acknowledge that transmitting data over the internet involves inherent risks.
 
