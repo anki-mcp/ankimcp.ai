@@ -1,7 +1,7 @@
 ---
-title: "Anki's LaTeX Setting: Now in Preferences → Review"
+title: "How to Enable LaTeX in Anki (Generate LaTeX Images Setting)"
 linkTitle: "Enable LaTeX images"
-description: "Anki 25.09.2 moved the 'Generate LaTeX images' setting to Preferences → Review. Find it, enable it safely, and know when to use MathJax instead."
+description: "Enable LaTeX in Anki: check 'Generate LaTeX images' in Preferences → Review. Setup steps, when to use MathJax instead, and fixes for common errors."
 keywords:
   - anki latex
   - generate latex images
@@ -13,89 +13,77 @@ weight: 2
 sitemap_priority: 0.7
 ---
 
-**The "Generate LaTeX images" setting in Anki 25.09.2 is located in Preferences → Review tab.** This security checkbox, disabled by default since version 24.06, requires explicit user action before Anki will generate LaTeX images—a fundamental shift from older versions where LaTeX generation happened automatically.
+**To enable LaTeX in Anki, open Preferences, click the Review tab, and check the "Generate LaTeX images" box.** The box is off by default. Anki turned it off in version 24.06 for security reasons, and it stays off in Anki 25.09.2.
 
-## Exact location and access path
+{{< callout type="info" >}}
+**Most users do not need this setting.** For math on your cards, use MathJax instead: write `\(...\)` for inline math or `\[...\]` for display math. MathJax is built into Anki (since version 2.1), works on all platforms including mobile, needs no setup, and has no security risk. Enable LaTeX images only when you need full LaTeX packages, such as `chemfig` for chemistry or `tikz` for diagrams.
+{{< /callout >}}
 
-To find the setting in Anki 25.09.2:
+## What you need
 
-**Windows/Linux:** Tools menu → Preferences → Review tab → "Generate LaTeX images" checkbox
+- **Anki 24.06 or newer.** This guide uses Anki 25.09.2. Older versions do not have the checkbox — they always generated LaTeX images.
+- **A LaTeX distribution:** [MiKTeX](https://miktex.org/) for Windows, [MacTeX or BasicTeX](https://tug.org/mactex/) for macOS, or [TeX Live](https://tug.org/texlive/) for Linux.
+- **dvipng** — it converts the rendered math into the image Anki shows on the card.
+- **Optional: dvisvgm** — lets Anki create scalable SVG images instead of PNG.
 
-**macOS:** Anki menu → Preferences → Review tab → "Generate LaTeX images" checkbox
+## Turn on the setting
 
-The Preferences screen in version 25.09.2 organizes settings into five main tabs (Appearance, Review, Editing, Syncing, Backups). The LaTeX setting sits within the **Review tab** alongside scheduler options like "Next day starts at" and review behavior settings like "Show remaining card count."
+1. Open Anki.
+2. Open Preferences. Windows/Linux: **Tools → Preferences**. macOS: **Anki → Preferences**.
+3. Click the **Review** tab. The checkbox sits near review settings like "Next day starts at" and "Show remaining card count."
+4. Check **Generate LaTeX images**.
+5. Click **OK**.
+6. If the setting doesn't seem to apply, restart Anki.
 
-<!-- screenshot: Anki Preferences → Review tab with the "Generate LaTeX images" checkbox highlighted -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki Preferences → Review tab with the "Generate LaTeX images" checkbox highlighted</div>
 
-According to the GitHub commit notes (PR #3218, commit 06f7aa393), the setting was specifically "shifted to review settings" when implemented. This placement decision reflects that LaTeX generation primarily affects the review experience rather than the editing process, even though users typically encounter the need for it when creating cards.
+**Security note:** Anki's manual recommends leaving this off if you use shared decks or plan to import them. LaTeX code can read or write files anywhere on your computer, so a malicious deck author could reach your data. Enable the setting only if you write all your own LaTeX content or fully trust your deck sources.
 
-## What changed in recent versions and why
+## Check it worked
 
-Anki introduced this setting in **version 24.06 (June 2024)** as a critical security measure. Before this update, LaTeX image generation happened automatically with attempted command restrictions. The development team discovered these restrictions weren't comprehensive enough to prevent malicious code execution.
+1. Create a card with this in a field: `[latex]\sum_{k=1}^{\infty}\frac{1}{k}[/latex]`
+2. Preview the card. You should see the formula as a rendered image.
 
-LaTeX code can contain commands that read or write files anywhere on your computer. A malicious shared deck author could theoretically include LaTeX code that accesses sensitive data. Rather than maintaining an incomplete blocklist of dangerous commands, Anki's developers implemented an opt-in model: **the setting is unchecked (disabled) by default**, and users must consciously enable it after understanding the risks.
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: an Anki card preview showing the sum formula rendered as an image</div>
 
-This change affects only the traditional `[latex][/latex]` tags and their shortcuts `[$]...[/$]` and `[$$]...[/$$]`. MathJax rendering (using `\(` and `\)` delimiters) works without any settings changes since MathJax processes math in the browser without executing system commands.
+## Why the setting is off by default
 
-## Step-by-step instructions for enabling LaTeX in Anki 25.09.2
+Anki added this checkbox in version 24.06 (June 2024). Before that, Anki generated LaTeX images automatically and tried to block dangerous commands. The block list could not catch everything, so the developers switched to an opt-in model: the box stays unchecked until you turn it on yourself.
 
-**Prerequisites:** Before enabling the setting, ensure you have the required software installed:
-- LaTeX distribution (MiKTeX for Windows, MacTeX/BasicTeX for macOS, texlive for Linux)
-- dvipng package (handles PNG generation)
-- Optional: dvisvgm package (enables scalable SVG images)
+The setting only affects the `[latex]...[/latex]` tags and their shortcuts `[$]...[/$]` and `[$$]...[/$$]`. MathJax (`\(...\)`) keeps working either way, because it renders math in the browser and never runs system commands.
 
-**Configuration process:**
+## Can't find the setting?
 
-1. Open Anki 25.09.2
-2. Navigate to Preferences:
-   - Windows/Linux: Click Tools → Preferences
-   - macOS: Click Anki → Preferences
-3. Click the **Review** tab (second tab from left)
-4. Locate the "Generate LaTeX images" checkbox in the review section
-5. Check the box to enable LaTeX generation
-6. Click OK to save
-7. Restart Anki to ensure the setting takes effect
-8. Test with a simple expression: Create a card with `[latex]\sum_{k=1}^{\infty}\frac{1}{k}[/latex]`
-9. Preview the card—if configured correctly, you'll see a rendered mathematical image
+**Your Anki is older than 24.06.** Those versions have no checkbox because LaTeX generation was always on. Update to Anki 25.09.2 or later.
 
-**Security consideration:** Anki's official manual strongly recommends **not enabling this option if you use shared decks** or plan to import them in the future, as you're potentially giving shared deck authors access to your computer. Enable it only if you exclusively create your own LaTeX content or completely trust your deck sources.
+**An add-on changed the Preferences screen.** Hold **Shift** while starting Anki to disable add-ons for that session, then check Preferences again.
 
-## Alternative approaches if the preference isn't visible
+**You only need standard math.** Skip the setting and use MathJax: `\(...\)` for inline math, `\[...\]` for display math. No install, no configuration.
 
-If you cannot find the "Generate LaTeX images" setting in your Preferences → Review tab, several scenarios might explain this:
+**LaTeX is installed in a non-standard place.** The "Edit LaTeX build process" add-on (ID: `937148547`) lets you set custom paths to your LaTeX executables and change the build commands. It also supports other TeX engines like XeTeX or LuaTeX.
 
-**Running an older version:** Versions before 24.06 don't have this setting because LaTeX generation was always enabled. Update to Anki 25.09.2 or later to access modern security controls.
+**You already have the images.** If another Anki install generated the LaTeX images before, copy them into your collection.media folder. They must keep Anki's naming pattern: `latex-[hash].png` or `latex-[hash].svg`. Anki shows them even with the setting off — this is how shared decks work: the author generates all images before sharing.
 
-**Add-on conflicts:** Some add-ons modify the preferences interface. Try starting Anki while holding Shift (disables add-ons temporarily) to see if the setting appears.
+## Customize LaTeX for your note type
 
-**Use MathJax instead:** For most mathematical typesetting needs, MathJax provides an excellent alternative that requires no settings changes, works on all platforms including mobile, and has no security risks. Simply use `\(...\)` for inline math or `\[...\]` for display math instead of the `[latex]` tags. MathJax has been built into Anki since version 2.1 and handles standard mathematical notation comprehensively.
+1. Go to **Tools → Manage Note Types**.
+2. Select your note type and click **Options**.
+3. Edit the **Header** and **Footer** fields. The Header holds the LaTeX preamble. The default loads `amsmath` and `amssymb` for math symbols. Add packages here — for example `chemfig` for chemistry, `tikz` for diagrams, or `musicography` for musical notation.
+4. Optional: check **Create scalable images with dvisvgm** to get SVG images instead of PNG. SVGs stay sharp at any size and are usually smaller files. Note: AnkiDroid versions before 2.9 cannot show SVG.
 
-**Edit LaTeX build process add-on:** For advanced users needing custom LaTeX compilation pipelines, the "Edit LaTeX build process" add-on (ID: 937148547) allows specification of custom paths to LaTeX executables and modification of compilation parameters. This proves useful when LaTeX is installed in non-standard locations or when using alternative TeX engines like XeTeX or LuaTeX.
+## Fix common problems
 
-**Direct media folder approach:** If you have pre-generated LaTeX images (perhaps from an older Anki installation or shared deck), you can place them directly in your collection.media folder. Images must follow Anki's naming convention: `latex-[hash].png` or `latex-[hash].svg`. Anki will display these images even with LaTeX generation disabled, which is precisely how shared decks work—authors generate all images before sharing.
+**"Error executing latex. Have you installed latex and dvipng?"**
+Anki cannot find your LaTeX install. Open a terminal and run `latex --version` and `dvipng --version` — both should print a version number. On Windows, run Anki as Administrator once so MiKTeX can fetch missing packages. On macOS, make sure `/Library/TeX/texbin` is in your PATH.
 
-## Configuring note types for optimal LaTeX rendering
+**Your code works in a TeX editor but fails in Anki.**
+Check where the `[latex]` tags are. They must be inside the field content, not in the card template. `[latex]{{Front}}[/latex]` in a template does not work — put the tags in the field itself.
 
-Beyond enabling the preference, you can customize LaTeX behavior through note type options:
+**Images don't update after you change the code.**
+Delete the old images from your collection.media folder (they are named `latex-*.png` or `latex-*.svg`), then run **Tools → Check Media**. Anki regenerates all LaTeX images.
 
-1. Go to Tools → Manage Note Types
-2. Select your note type
-3. Click Options
-4. You'll see configurable Header and Footer fields containing the LaTeX document preamble and closing
-
-The **Header** defines packages and document setup. The default includes `amsmath` and `amssymb` for mathematical symbols, but you can add packages like `chemfig` for chemistry, `tikz` for diagrams, or `musicography` for musical notation.
-
-The **"Create scalable images with dvisvgm"** checkbox, when enabled, generates SVG images instead of PNG. SVGs scale perfectly across different screen sizes and typically produce smaller file sizes. However, older mobile clients (AnkiDroid versions before 2.9) don't support SVG, so check your mobile app version before enabling this option.
-
-## Troubleshooting common LaTeX generation issues
-
-**"Error executing latex. Have you installed latex and dvipng?"** indicates missing or incorrectly configured LaTeX installation. Verify installation by opening a terminal/command prompt and running `latex --version` and `dvipng --version`. Both should return version information. On Windows, you may need to run Anki as Administrator once to allow MiKTeX to fetch packages automatically. On macOS, ensure `/Library/TeX/texbin` is in your PATH.
-
-**LaTeX code works in TeX editors but fails in Anki** typically results from delimiter placement errors. LaTeX tags must appear **inside field content**, not in card templates. Using `[latex]{{Front}}[/latex]` in your template won't work; instead, the field content itself must contain `[latex]...[/latex]`.
-
-**Images not updating after code changes** requires running Tools → Check Media. This forces Anki to regenerate all LaTeX images. Delete any problematic images from your collection.media folder (they follow the pattern `latex-*.png` or `latex-*.svg`) before running Check Media to ensure complete regeneration.
-
-**Cloze deletion conflicts** occur when closing braces touch. Add a space before the closing bracket so `[/$]` and `}}` don't collide.
+**Cloze deletions break your LaTeX.**
+This happens when closing braces touch. Add a space before the closing bracket so `[/$]` and `}}` don't collide.
 
 Avoid:
 
@@ -109,9 +97,11 @@ Use instead (note the space before the closing bracket):
 {{c1::[$]\frac{1}{2} [/$]}}
 ```
 
-## Conclusion
+## Next steps
 
-Anki 25.09.2 places the LaTeX image generation control squarely in user hands through the Preferences → Review → "Generate LaTeX images" checkbox. This security-first approach, introduced in mid-2024, protects users from potentially malicious code while maintaining full LaTeX functionality for those who need it. The setting's disabled-by-default status represents a philosophical shift: LaTeX generation is now an explicit choice rather than an automatic feature, reflecting modern software's emphasis on user security and informed consent. For most users, MathJax provides sufficient mathematical typesetting without requiring any configuration, while the LaTeX option remains available for specialized needs like chemical formulas, complex diagrams, or scenarios where pre-rendered images offer performance advantages.
+- Browse more recipes in the [Cookbook](/docs/cookbook/).
+- Put pictures on your cards: [How to Add Images to Anki Cards](/docs/how-to/add-images-to-cards/).
+- AnkiMCP acting up? See [Troubleshooting](/docs/how-to/troubleshooting/).
 
 ---
 

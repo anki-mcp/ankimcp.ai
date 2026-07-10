@@ -1,6 +1,6 @@
 ---
-title: "Anki MCP - Connect Claude & ChatGPT to Your Anki Flashcards"
-description: "Transform Anki into an AI-powered study system. Create flashcards instantly, review with natural language, and generate audio cards with Claude, ChatGPT, and other AI assistants."
+title: "AnkiMCP — Connect Claude & ChatGPT to Your Anki Flashcards"
+description: "AnkiMCP connects Claude, ChatGPT, and other AI assistants to Anki. Create flashcards instantly, review cards in natural conversation, and study smarter."
 keywords: ["anki mcp", "claude anki", "chatgpt anki", "ai flashcards", "anki integration", "model context protocol"]
 layout: hextra-home
 sitemap_priority: 1.0
@@ -12,10 +12,14 @@ sitemap_priority: 1.0
 {{< /hextra/hero-headline >}}
 </div>
 
-<div class="hx:mb-12">
+<div class="hx:mb-6">
 {{< hextra/hero-subtitle >}}
-  Create cards instantly, review with natural language,&nbsp;<br class="hx:sm:block hx:hidden" />and study smarter with AI-powered Anki integration
+  Create cards instantly, review by talking with your AI,&nbsp;<br class="hx:sm:block hx:hidden" />and study smarter — free and open source
 {{< /hextra/hero-subtitle >}}
+</div>
+
+<div class="hx:mb-6 hx:text-center hx:text-sm hx:text-gray-500 hx:dark:text-gray-400">
+  MCP (Model Context Protocol) is the open standard that lets AI assistants work with other apps — here, your Anki. <a href="/docs/concepts/what-is-mcp/" class="hx:underline">Learn how it works</a>.
 </div>
 
 <div class="hx:mb-6 hero-buttons">
@@ -25,34 +29,41 @@ sitemap_priority: 1.0
 
 <div class="hx:mt-6"></div>
 
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE (optional, my suggestion): a short demo GIF or screenshot under the hero — e.g. a chat asking Claude to create cards and the cards appearing in Anki. Homepage currently has no product visual at all. Delete this box if you disagree.</div>
+
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
-    title="Engaged Natural Language Learning"
-    subtitle="Review cards through natural conversation - AI evaluates your answers, provides guidance, and helps you understand mistakes like a real tutor"
+    title="Review Cards by Talking to AI"
+    subtitle="Review your cards in a conversation — the AI checks your answers, gives hints, and explains your mistakes like a personal tutor"
+    link="/docs/concepts/how-anki-mcp-works/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="Instant Card Creation"
-    subtitle="Skip manual HTML formatting - AI creates flashcards instantly while you read books, watch lectures, or do homework"
+    subtitle="No more typing and formatting cards by hand — the AI creates them for you while you read, watch lectures, or do homework"
+    link="/docs/get-started/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-lg:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(142,53,74,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Audio Flashcard Creation"
-    subtitle="Generate native pronunciation audio with AI voice services and embed directly into your Anki cards"
+    title="Audio Flashcards"
+    subtitle="Add natural-sounding pronunciation audio to your language cards with AI voices"
+    link="/docs/how-to/add-audio-to-cards/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(221,210,59,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
-    title="Pre-built Prompts"
-    subtitle="Start immediately with ready-to-use prompts for common Anki workflows and learning scenarios"
+    title="Ready-Made Prompts"
+    subtitle="Start right away with built-in instructions for creating cards and guided review — just paste and go"
+    link="/docs/how-to/anki-ai-prompts/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(76,175,80,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="More Coming Soon"
-    subtitle="Free, open source, and actively developed - more engaging features on the horizon"
+    subtitle="Free, open source, and actively developed — more features coming soon"
+    link="/about/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(194,97,254,0.15),hsla(0,0%,100%,0));"
   >}}

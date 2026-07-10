@@ -10,7 +10,7 @@ weight: 9
 sitemap_priority: 0.5
 ---
 
-**Stuck with AnkiMCP? Start with troubleshooting, then reach out through the channel that fits your problem.**
+**Stuck with AnkiMCP? Start with troubleshooting, then contact us in the way that fits your problem.**
 
 Most setup problems have a quick fix. If that doesn't solve it, the community and the maintainers are here to help.
 
@@ -18,9 +18,9 @@ Most setup problems have a quick fix. If that doesn't solve it, the community an
 
 - **[Troubleshooting guide](/docs/how-to/troubleshooting/)** — Start here. Common setup and connection problems with step-by-step fixes.
 
-- **[Ask on the community forum](https://forum.ankimcp.ai/)** — Questions, ideas, and feature requests. Good for "how do I...?" and longer conversations.
+- **[Ask on the community forum](https://forum.ankimcp.ai/)** — Questions, ideas, and feature requests. Good for questions and longer discussions.
 
-- **[Email support@ankimcp.ai](mailto:support@ankimcp.ai)** — Reach the maintainers directly when your question is private or doesn't fit the channels above.
+- **[Email support@ankimcp.ai](mailto:support@ankimcp.ai)** — Reach the maintainers directly when your question is private or doesn't fit the options above.
 
 If you're not sure where to go, the community forum is the friendliest starting point.
 

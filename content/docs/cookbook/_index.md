@@ -1,8 +1,8 @@
 ---
 title: "Anki Cookbook"
 linkTitle: "Cookbook"
-description: "Practical Anki recipes and tips for getting more out of Anki day to day. Independent of any add-on."
-weight: 5
+description: "Practical Anki recipes and tips for using Anki more effectively day to day — useful whatever AI or add-ons you use."
+weight: 6
 ---
 
-Practical recipes for getting more out of **Anki** itself, whatever AI or add-ons you use. More recipes on the way.
+Practical recipes for using **Anki** itself more effectively, whatever AI or add-ons you use. More recipes are coming soon.

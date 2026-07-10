@@ -19,7 +19,7 @@ This page explains both ways to connect, so you can pick the right one. You need
 
 ## The short version
 
-**Local** means your AI and Anki sit on the same machine and talk over a private internal address. It's free and nothing leaves your computer.
+**Local** means your AI and Anki sit on the same machine and talk over a private internal address. It's free and private.
 
 **Remote** is a managed tunnel that gives your local Anki a secure web address. Use it when the AI lives on another device or website. Either way, Anki must be open.
 
@@ -27,19 +27,21 @@ This page explains both ways to connect, so you can pick the right one. You need
 
 **Local** means your AI assistant and Anki run on the **same computer**. They talk to each other over **localhost**, your machine's private internal address that never reaches the internet.
 
-Local access is **free**. You need **no account and no login**. Nothing leaves your computer, because the connection stays bound to your machine.
+Local access is **free**. You need **no account and no login**. And it's private, because the connection never leaves your machine.
 
 This works with desktop AI apps like **Claude Desktop** and coding tools like **Cursor** or **Cline**, as long as they run on that same computer.
 
 ## What "remote" means
 
-**Remote** uses a **managed tunnel**: a secure web address that points to your local Anki. It lets an AI on another device reach your cards.
+**Remote** uses a **managed tunnel**: a secure web address that points to your local Anki. Think of it as a private pipe from the internet to the Anki on your computer — traffic goes through it, and nothing else can get in. It lets an AI on another device reach your cards.
 
 It also reaches **web-based assistants** like the **ChatGPT website** or **claude.ai**. These run in your browser, not on your computer, so they can't see localhost on their own.
 
-To connect the tunnel, you **sign in** once. You choose which AI clients to authorize, and you're responsible for anyone you share the tunnel address with. The tunnel has **free and paid tiers**. Both the add-on and the CLI support it.
+To connect the tunnel, you **sign in** once. You choose which AI clients to authorize — each one must sign in with your account before it can reach your Anki. There is also an optional **no-sign-in address** (off by default): anyone who has that address can reach your Anki, so only turn it on if you need it, and share it carefully. The tunnel has [**free and paid tiers**](/pricing/). Both the add-on and the CLI support it.
 
 ## How local and remote compare
+
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: simple two-panel diagram — Local: AI app and Anki on one computer talking over localhost; Remote: web/mobile AI reaching Anki through the managed tunnel</div>
 
 Here's a side-by-side look at the main differences.
 
@@ -49,9 +51,7 @@ Here's a side-by-side look at the main differences.
 | **Cost** | Free | Free & paid tiers |
 | **Login needed** | None | One-time sign-in |
 | **Who can reach it** | Only your machine | Clients you authorize |
-| **Your data** | Never leaves your computer | Relayed through the tunnel, encrypted |
-
-Remote adds reach, with free and paid tiers, and relays your data through the service.
+| **Your data** | Never leaves your computer | Passes through the tunnel, encrypted |
 
 ## Is your data private?
 
@@ -72,7 +72,7 @@ No. Your collection stays on your computer. The tunnel relays to your local Anki
 No. Web-based assistants run in your browser, not on your computer, so they can't see localhost. Use the remote tunnel for those.
 
 **Is local access really free?**
-Yes. Local needs no account and no login, and nothing leaves your machine. The remote tunnel adds free and paid tiers.
+Yes. Local needs no account and no login, and nothing leaves your machine. The remote tunnel adds [free and paid tiers](/pricing/).
 
 **Does remote work if Anki is closed?**
 No. The tunnel relays to your local Anki, so Anki must be open on your computer for either local or remote to work.

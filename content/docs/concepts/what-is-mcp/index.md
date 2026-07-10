@@ -33,7 +33,7 @@ MCP, short for **Model Context Protocol**, is a shared standard that solves this
 
 The official project calls MCP "like a USB-C port for AI applications."[\[1\]](#ref-1) Before USB-C, every device had its own cable. USB-C replaced that messy drawer of cables with one socket that fits everything. MCP does the same for AI. One standard plug, not a different connection for every app.
 
-A standard doesn't care what sits on the other end. Once something speaks MCP, an assistant can use it. That could be your files, a calendar, a database, a flashcard app, or even a washing machine. If the thing can describe what it does in MCP's shared language, the assistant can work with it.
+A standard doesn't care what sits on the other end. Once something speaks MCP, an assistant can use it. That could be your files, a calendar, a database, a flashcard app, or even a washing machine. If an app can describe what it does in MCP's shared language, the assistant can work with it.
 
 ## What is an MCP server?
 
@@ -43,29 +43,31 @@ Picture an interpreter standing between two people who don't share a language. T
 
 Here's the whole idea in one line: **AI assistant ⟷ MCP server ⟷ the app.**
 
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: simple diagram — AI assistant on the left, MCP server (interpreter) in the middle, Anki on the right, with arrows both ways</div>
+
 So the flow works like this:
 
 1. You ask your AI assistant to do something, in plain English.
 2. The assistant sends that request, in MCP's shared language, to the right MCP server.
 3. The server translates the request for the app, gets the result, and passes it back.
 
-You don't see any of this. From your chair, it just feels like the assistant can suddenly do new things. There's an MCP server for files, one for calendars, and one for many other apps. Each one teaches the assistant how to use that single tool.
+You don't see any of this. From your side, it just feels like the assistant can suddenly do new things. There's an MCP server for files, one for calendars, and one for many other apps. Each one teaches the assistant how to use that single tool.
 
 ## Why is MCP a big deal?
 
 The payoff is simple: build a connection once, and it works everywhere. Every MCP server and every MCP-aware assistant speaks the same language. So the old web of one-off connections goes away.
 
-Any app that adds MCP support becomes usable by every assistant that speaks MCP, not just one. And any assistant that speaks MCP can use the whole growing library of MCP servers. One effort pays off on both sides.
+Any app that adds MCP support becomes usable by every assistant that speaks MCP, not just one. And any assistant that speaks MCP can use the whole growing library of MCP servers. One piece of work helps both sides.
 
-MCP is an **open standard**. Anyone can build with it freely, and it isn't locked to one company's product. **Anthropic**, the company behind the Claude assistant, introduced MCP in **November 2024**.[\[3\]](#ref-3) Since then, many companies have adopted it across their assistants and developer tools.[\[1\]](#ref-1)[\[4\]](#ref-4)
+MCP is an **open standard**. Anyone can build with it freely, and it isn't controlled by one company. **Anthropic**, the company behind the Claude assistant, introduced MCP in **November 2024**.[\[3\]](#ref-3) Since then, many companies have adopted it across their assistants and developer tools.[\[1\]](#ref-1)[\[4\]](#ref-4)
 
 ## What happens when the app is Anki?
 
 Everything above is general. MCP lets an AI assistant work with files, calendars, databases, and almost anything that speaks the protocol.
 
-But this is a guide about flashcards. So picture pointing all of this at **Anki**. An MCP server sits between your AI assistant and your decks, and it knows how to talk to your Anki collection. Now the assistant isn't just describing good study habits. It can create cards, organize decks, and quiz you. How that works, and what it unlocks for your study, is exactly where this guide goes next.
+But this is a guide about flashcards. So picture pointing all of this at **Anki**. An MCP server sits between your AI assistant and your decks, and it knows how to talk to your Anki collection. Now the assistant isn't just describing good study habits. It can create cards, organize decks, and quiz you. How that works, and what it unlocks for your study, is exactly where this guide goes next: [How Anki and AI work together](/docs/concepts/how-anki-mcp-works/).
 
-That bridge is what **AnkiMCP** is built on: an MCP server that connects AI assistants to Anki.[\[5\]](#ref-5)
+That connecting piece is exactly what **AnkiMCP** is: an MCP server that links AI assistants to Anki.[\[5\]](#ref-5)
 
 ## Common questions
 

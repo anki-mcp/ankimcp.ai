@@ -1,7 +1,7 @@
 ---
 title: "How to Use AI Prompts to Generate Anki Flashcards"
 linkTitle: "AI prompts for flashcards"
-description: "Use AnkiMCP's built-in AI prompts to turn your notes into well-formed Anki flashcards and run guided spaced-repetition review sessions with Claude."
+description: "Proven AI prompts that turn notes into well-formed Anki flashcards — plus AnkiMCP's built-in prompts for one-click card creation and guided review."
 keywords:
   - anki ai prompt
   - prompt for anki flashcards
@@ -17,7 +17,7 @@ aliases:
 
 **Attach a built-in AnkiMCP prompt in Claude, then ask it to make cards — and Claude builds well-formed flashcards using proven rules.**
 
-AnkiMCP ships with ready-made prompts that coach the AI on how to write good cards and run reviews. You attach one, say what you want, and Claude does the rest. This guide shows you the two built-in prompts, how to attach them, and one prompt you can copy.
+AnkiMCP ships with ready-made prompts that coach the AI on how to write good cards and run reviews. You attach one, say what you want, and Claude does the rest. This guide shows you the two built-in prompts, how to attach them, and [copy-paste prompts that work in any AI](#copy-paste-prompts-that-work-in-any-ai).
 
 ## What you need
 
@@ -32,7 +32,7 @@ A prompt is a set of expert instructions you hand to the AI. It tells Claude *ho
 
 ## The built-in prompts
 
-These ship inside the AnkiMCP server. Both are grounded in the project repo.
+Both come built into AnkiMCP.
 
 | Prompt | What it does |
 |---|---|
@@ -43,15 +43,19 @@ Prompts can change between releases. For the latest list, see the [AnkiMCP repo]
 
 ## Step 1: Attach a prompt
 
-In Claude Desktop, prompts attach the same way as files.
+In Claude, prompts attach the same way as files.
 
 1. Click the **attachment button (+)** in the message box.
-2. Choose **Add from Anki MCP Server**.
-3. Pick **Twenty rules** or **Anki review** from the list.
+2. Open **Connectors**, then choose **Add from [your connector's name]** — the menu item shows whatever name you gave your AnkiMCP connector.
+3. Pick a prompt from the list. In the menu, they appear with friendlier names: `twenty_rules` shows as **Twenty rules**, and `anki_review` shows as **Review session**.
 
 The prompt's instructions attach to your chat. Claude now knows the rules to follow.
 
-<!-- screenshot: Claude Desktop attachment menu showing "Twenty rules" and "Anki review" prompts -->
+{{< callout type="info" >}}
+**Using a client without an attachment menu?** Copy the prompt text into the chat instead — the [copy-paste prompts below](#copy-paste-prompts-that-work-in-any-ai) work anywhere.
+{{< /callout >}}
+
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Claude attachment menu showing "Twenty rules" and "Review session" prompts</div>
 
 ## Step 2: Ask for what you want
 
@@ -72,11 +76,52 @@ Let's review my Spanish deck.
 
 Claude shows one card, waits for your answer, reveals it, and asks you to rate it.
 
-<!-- screenshot: Claude creating flashcards in a deck after the twenty_rules prompt is attached -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Claude creating flashcards in a deck after the twenty_rules prompt is attached</div>
 
 ## Check it worked
 
 Open Anki and look at your deck. With `twenty_rules`, you should see new, short, single-idea cards instead of long paragraphs. With `anki_review`, Claude should present cards one at a time and ask you to rate each one — not dump all the answers at once.
+
+## Copy-paste prompts that work in any AI
+
+You don't need the built-in prompts to get good cards. The prompts below work in any chatbot — Claude, ChatGPT, Gemini, or another. With AnkiMCP connected, the AI can add the cards to Anki for you. Without it, ask the AI to write the cards as text, then paste them into Anki yourself.
+
+**Create flashcards from your notes:**
+
+```text
+Turn the notes below into flashcards for Anki. One idea per card.
+Keep each question short and specific, and each answer to a single
+fact. Add the cards to my "[deck name]" deck.
+
+[paste your notes]
+```
+
+**Make cloze (fill-in-the-blank) cards:**
+
+```text
+Turn the text below into Anki cloze cards. Blank out only one key
+term per card, and keep the surrounding sentence short. Add them
+to my "[deck name]" deck.
+
+[paste your text]
+```
+
+**Review me like a tutor:**
+
+```text
+Quiz me on [topic] like a friendly tutor. Ask one question at a
+time and wait for my answer. Tell me if I'm right, and explain
+briefly if I'm wrong. Start easy and get harder.
+```
+
+**Language learning — translate and make a card:**
+
+```text
+I'm learning [language]. For the word or phrase "[word]", give me
+the translation, one short example sentence, and a note on
+pronunciation. Then make an Anki card with [language] on the front
+and the rest on the back, in my "[deck name]" deck.
+```
 
 ## Fix common problems
 
@@ -85,6 +130,8 @@ The AnkiMCP server isn't connected. Open Claude Desktop, confirm the AnkiMCP ext
 
 **Claude made cards but ignored the rules.**
 Re-attach the `twenty_rules` prompt and ask again. The prompt only guides chats where it's attached, so start a fresh request with it on.
+
+## Common questions
 
 **Can I write my own prompt instead?**
 Yes. You can type any instruction in the chat. The built-in prompts just save you from writing the rules yourself.

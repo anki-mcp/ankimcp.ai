@@ -1,6 +1,6 @@
 ---
 title: "Privacy Policy"
-description: "Privacy Policy for ankimcp.ai, the Anki MCP open-source project, and the Anki MCP SaaS cloud service."
+description: "Privacy Policy for ankimcp.ai, the AnkiMCP open-source project, and the AnkiMCP SaaS cloud service."
 sitemap_priority: 0.3
 ---
 
@@ -8,7 +8,18 @@ sitemap_priority: 0.3
 
 **Effective Date:** June 30, 2026
 
-This Privacy Policy describes how ankimcp.ai ("Website"), the Anki MCP software ("Software"), and the Anki MCP SaaS cloud service ("SaaS Service") handle your information.
+{{< callout type="info" >}}
+**The short version.** This summary is for convenience only — the full policy below is what applies.
+
+- The main website sets **no cookies** and uses anonymous analytics. No account is needed.
+- Your flashcards **only pass through** our tunnel servers — they are never stored, logged, or read.
+- The community forum and the cloud service each need their own account; the forum and the SaaS dashboard use cookies to keep you signed in.
+- Tunnel connection logs (times and IP addresses) are kept for up to **90 days**; service-monitoring data for up to **30 days**.
+- The newsletter stores only your email address; you can unsubscribe at any time.
+- Email [support@ankimcp.ai](mailto:support@ankimcp.ai) to see or delete the data we hold about you.
+{{< /callout >}}
+
+This Privacy Policy describes how ankimcp.ai ("Website"), the AnkiMCP software ("Software"), and the AnkiMCP SaaS cloud service ("SaaS Service") handle your information.
 
 ### 1. Information We Collect
 
@@ -39,9 +50,9 @@ We operate a self-hosted [Discourse](https://www.discourse.org) community forum.
 
 All forum data is stored in a self-hosted PostgreSQL database on AnkiMCP infrastructure — no third-party SaaS is involved in data storage. Email notifications from the forum are delivered via [SMTP2GO](https://www.smtp2go.com), a third-party email delivery service.
 
-#### SaaS Cloud Service (Anki MCP SaaS)
+#### SaaS Cloud Service (AnkiMCP SaaS)
 
-The Anki MCP SaaS cloud service lets LLM clients (such as ChatGPT and Claude.ai) interact with your local Anki installation via secure tunnels. When you use the SaaS Service, we collect and process the following information.
+The AnkiMCP SaaS cloud service lets LLM clients (such as ChatGPT and Claude.ai) interact with your local Anki installation via secure tunnels. When you use the SaaS Service, we collect and process the following information.
 
 ##### SaaS Account Information
 
@@ -50,12 +61,13 @@ When you create a SaaS account, we collect:
 - **Authentication data:** your email address, display name, and Keycloak user ID. If you sign in via Google or GitHub, we also receive your avatar image URL from the social login provider.
 - **Account identifiers:** a unique user ID and tunnel UUID assigned to your account.
 - **Authentication method:** which social login provider you used, or that you registered with email/password.
+- **Cookies:** when you sign in to the SaaS dashboard (web.ankimcp.ai), it sets httpOnly authentication and session cookies. These are required for sign-in and are not used for tracking.
 
 SaaS accounts are managed through our self-hosted [Keycloak](https://www.keycloak.org) identity provider (in the `ankimcp` realm), separate from forum authentication.
 
 ##### Tunnel Connection Data
 
-When you connect your local Anki MCP client (the add-on or the CLI) to the SaaS tunnel server, we collect:
+When you connect your local AnkiMCP client (the add-on or the CLI) to the SaaS tunnel server, we collect:
 
 - **Connection metadata:** tunnel UUID, connection timestamps (connect/disconnect), and your IP address.
 - **Connection state:** whether your client is currently connected, for display on your dashboard and to route LLM requests.
@@ -69,7 +81,7 @@ When an LLM client connects to your tunnel, we process:
 - **OAuth client registrations:** LLM clients register via Dynamic Client Registration in a separate Keycloak realm (`tunnels`). We store the client ID and associated metadata. We do **not** store OAuth access tokens or refresh tokens — those are managed by Keycloak and issued directly to the LLM client.
 - **Client-to-user mappings:** we maintain a mapping between registered OAuth clients and your tunnel UUID so that LLM requests can be routed to your client.
 
-The `tunnels` Keycloak realm is **isolated** from your SaaS account realm. LLM providers cannot access your SaaS account information, and changing your tunnel slug automatically revokes all existing LLM OAuth tokens.
+The `tunnels` Keycloak realm is **isolated** from your SaaS account realm. LLM providers cannot access your SaaS account information.
 
 ##### Subscription Data
 
@@ -97,15 +109,15 @@ This is important to understand: when you use the SaaS tunnel, your Anki flashca
 
 - **No persistent storage:** Anki data is relayed in real-time over WebSocket connections. It is temporarily present in server memory during transit but is **never written to disk, logged, or stored in any database**.
 - **No inspection or analysis:** we do not read, index, analyze, or use the content of your flashcards or LLM requests/responses.
-- **Encryption in transit:** connections between your Anki MCP client (the add-on or the CLI) and our tunnel server, and between LLM clients and our tunnel server, use TLS encryption.
+- **Encryption in transit:** connections between your AnkiMCP client (the add-on or the CLI) and our tunnel server, and between LLM clients and our tunnel server, use TLS encryption.
 - **Your data stays yours:** all Anki data remains on your local machine. The tunnel is a pass-through — we are a conduit, not a data controller, with respect to your flashcard content.
 
 ### 2. Information We Do Not Collect
 
-- **No cookies** are set by the main website (ankimcp.ai). The community forum (forum.ankimcp.ai) does use cookies for authentication — see the [Community Forum](#community-forum-forumankimcpai) section above.
+- **No cookies** are set by the main website (ankimcp.ai). The community forum (forum.ankimcp.ai) and the SaaS dashboard (web.ankimcp.ai) use cookies for authentication — see the respective sections above.
 - **No user accounts** are required on the main website (ankimcp.ai). The community forum and the SaaS cloud service each require separate accounts — see the respective sections above.
 - **No personal data** is collected through website analytics.
-- **The Anki MCP software**, when used in local-only mode (without the SaaS tunnel), runs entirely on your machine and **does not send any data** to our servers or any third party. When used with the SaaS tunnel service, flashcard data passes through our servers in transit but is not stored — see [Data Transit](#data-transit-anki-flashcard-data) above.
+- **The AnkiMCP software**, when used in local-only mode (without the SaaS tunnel), runs entirely on your machine and **does not send any data** to our servers or any third party. When used with the SaaS tunnel service, flashcard data passes through our servers in transit but is not stored — see [Data Transit](#data-transit-anki-flashcard-data) above.
 - **No flashcard content** is stored, logged, or analyzed by the SaaS Service. We do not have access to the contents of your Anki decks.
 
 ### 3. Third-Party Services
@@ -149,8 +161,7 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 - **Access your data** — view your account information, connection history, and subscription status through the SaaS dashboard.
 - **Delete your account** — request complete deletion of your SaaS account and all associated data by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai). Account deletion removes your user record, tunnel UUID, OAuth client mappings, and subscription history. This action is irreversible.
 - **Cancel your subscription** — downgrade from a paid tier to the free tier at any time through the dashboard.
-- **Revoke LLM access** — change your tunnel slug at any time, which automatically revokes all existing LLM OAuth tokens and disconnects all LLM clients.
-- **Disconnect your client** — disconnect your local Anki MCP add-on or CLI from the tunnel at any time, immediately stopping all data transit through our servers.
+- **Disconnect your client** — disconnect your local AnkiMCP add-on or CLI from the tunnel at any time, immediately stopping all data transit through our servers.
 - **Request data export** — request a copy of all personal data we hold about your SaaS account by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai).
 
 ### 5. Data Retention
@@ -162,7 +173,7 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 - **Forum account deletion** anonymizes your posts (author replaced with a generic label) but does not remove the post content, as other users may have relied on or replied to it
 - **SaaS account data** (email, name, avatar, Keycloak ID) is retained for the lifetime of your account and deleted upon account deletion
 - **Tunnel connection logs** (timestamps, IP addresses) are retained in server logs for up to **90 days** and then automatically purged
-- **OAuth client registrations** are retained while your account is active. They are deleted when you delete your account or when you change your tunnel slug (which triggers automatic revocation)
+- **OAuth client registrations** are retained while your account is active. They are deleted when you delete your account
 - **Subscription history** (tier changes, timestamps) is retained for the lifetime of your account for audit purposes and deleted upon account deletion
 - **OpenTelemetry data** (metrics and traces) is retained for up to **30 days** and then automatically purged. This data is used only for service debugging and does not contain flashcard content
 - **In-memory tunnel state** (active connection data) exists only while your client is connected and is lost when the connection ends or the server restarts

@@ -1,6 +1,6 @@
 ---
 title: "Terms of Service"
-description: "Terms of Service for ankimcp.ai, the Anki MCP open-source project, and the Anki MCP SaaS cloud service."
+description: "Terms of Service for ankimcp.ai, the AnkiMCP open-source project, and the AnkiMCP SaaS cloud service."
 sitemap_priority: 0.3
 ---
 
@@ -8,24 +8,35 @@ sitemap_priority: 0.3
 
 **Effective Date:** June 30, 2026
 
-These Terms of Service ("Terms") govern your use of the ankimcp.ai website, the Anki MCP software, and the Anki MCP SaaS cloud service (collectively, the "Service"). By accessing or using the Service, you agree to these Terms.
+{{< callout type="info" >}}
+**The short version.** This summary is for convenience only — the full Terms below are what applies.
+
+- The software is free, open source, and provided **"as is"** — no warranty.
+- **Back up your Anki decks.** The AI can change or delete cards, and you are responsible for your own data.
+- Be respectful on the forum. You own your posts; we may moderate content that breaks the rules.
+- The tunnel has a **free tier** with monthly limits and a **paid tier** ($5/month). Limits and pricing can change with notice.
+- Your tunnel is for you only — don't share it, and you choose which AI apps may access your Anki.
+- Our liability is limited: at most, what you paid us in the last 12 months.
+{{< /callout >}}
+
+These Terms of Service ("Terms") govern your use of the ankimcp.ai website, the AnkiMCP software, and the AnkiMCP SaaS cloud service (collectively, the "Service"). By accessing or using the Service, you agree to these Terms.
 
 ### 1. Acceptance of Terms
 
-By using ankimcp.ai, the Anki MCP software, or the SaaS cloud service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
+By using ankimcp.ai, the AnkiMCP software, or the SaaS cloud service, you agree to be bound by these Terms. If you do not agree, do not use the Service.
 
 ### 2. Description of Service
 
-Anki MCP is a free, open-source Model Context Protocol (MCP) server that connects AI assistants to Anki flashcard software. The Service includes:
+AnkiMCP is a free, open-source Model Context Protocol (MCP) server that connects AI assistants to Anki flashcard software. The Service includes:
 
 - The ankimcp.ai website (documentation, blog, and resources)
 - The community forum at forum.ankimcp.ai
-- The Anki MCP software distributed via GitHub
-- The Anki MCP SaaS cloud service — a hosted tunnel service that enables LLM clients (such as ChatGPT and Claude.ai) to connect to your local Anki installation over the internet via secure WebSocket tunnels
+- The AnkiMCP software distributed via GitHub
+- The AnkiMCP SaaS cloud service — a hosted tunnel service that enables LLM clients (such as ChatGPT and Claude.ai) to connect to your local Anki installation over the internet via secure WebSocket tunnels
 
 ### 3. Open-Source License
 
-The Anki MCP software is distributed under its open-source license as specified in its GitHub repositories — the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon). Your use of the software is governed by that license.
+The AnkiMCP software is distributed under its open-source license as specified in its GitHub repositories — the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon). Your use of the software is governed by that license.
 
 ### 4. Use at Your Own Risk
 
@@ -97,7 +108,7 @@ When using the forum, you agree **not** to:
 
 ### 7. SaaS Cloud Service
 
-The Anki MCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastructure that enables LLM clients to connect to your local Anki installation. The following additional terms apply when you use the SaaS Service.
+The AnkiMCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastructure that enables LLM clients to connect to your local Anki installation. The following additional terms apply when you use the SaaS Service.
 
 #### Account Registration and Eligibility
 
@@ -111,14 +122,14 @@ The Anki MCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastr
 
 The SaaS Service currently offers two subscription tiers:
 
-- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated and 1,000 authless requests per month). No payment required. Available to all registered users.
+- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated ("signed-in") and 1,000 unauthenticated ("no-sign-in") requests per month). No payment required. Available to all registered users.
 - **Paid tier:** removes those limits (unlimited requests) for a recurring fee (currently $5 per month). Full payment terms will be published when payment processing is implemented.
 
 We reserve the right to modify tier features, request allowances, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
 
 #### Tunnel Usage and Fair Use
 
-- Each account receives a unique tunnel UUID and optional custom slug for LLM client connections.
+- Each account receives a unique tunnel UUID for LLM client connections.
 - You may not share your tunnel credentials with others or allow others to use your tunnel.
 - You may not use the tunnel service for purposes unrelated to Anki flashcard management via MCP.
 - You may not use the tunnel to transmit illegal, harmful, or infringing content.
@@ -130,7 +141,6 @@ We reserve the right to modify tier features, request allowances, introduce new 
 - LLM clients connect to your tunnel via OAuth 2.0 (Dynamic Client Registration) through a separate, isolated Keycloak realm (`tunnels`).
 - You are responsible for deciding which LLM clients to authorize to access your Anki data.
 - We do not control, endorse, or take responsibility for the behavior of third-party LLM clients that connect to your tunnel.
-- You may revoke all LLM client access at any time by changing your tunnel slug, which invalidates all existing OAuth tokens.
 
 #### Service Availability
 
@@ -164,13 +174,13 @@ This section clarifies how your Anki flashcard data is handled when using the Sa
 
 #### Security
 
-- Connections between your Anki MCP client (the add-on or the CLI) and our tunnel server use TLS encryption.
+- Connections between your AnkiMCP client (the add-on or the CLI) and our tunnel server use TLS encryption.
 - Connections between LLM clients and our tunnel server use TLS encryption.
 - Despite these measures, no system is perfectly secure. You acknowledge that transmitting data over the internet involves inherent risks.
 
 ### 9. Intellectual Property
 
-- **Anki MCP** project content, documentation, and branding are owned by the project maintainers
+- **AnkiMCP** project content, documentation, and branding are owned by the project maintainers
 - **Anki** is a registered trademark of Ankitects Pty Ltd. This project is NOT affiliated with Ankitects
 - User-created flashcard content remains the property of the respective users
 
@@ -192,7 +202,7 @@ We are not responsible for the availability, terms, or policies of these third-p
 
 ### 11. Limitation of Liability
 
-To the fullest extent permitted by law, the Anki MCP project and its maintainers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service.
+To the fullest extent permitted by law, the AnkiMCP project and its maintainers shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service.
 
 Without limiting the above, we are specifically not liable for:
 

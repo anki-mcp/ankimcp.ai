@@ -14,13 +14,13 @@ weight: 6
 sitemap_priority: 0.8
 ---
 
-**AnkiMCP is secure by default — protection is always on, and you never switch it on yourself. If you use the built-in tunnel or connect locally, you're already protected and there's nothing to do. The server answers only your own computer, so a random website can't reach your cards. You only need this page if you expose AnkiMCP your own way — ngrok, a reverse proxy, or a custom tunnel — and a request gets blocked, so you have to allow a name through. The attack all of this guards against is called DNS rebinding.**
+**AnkiMCP is secure by default. If you connect locally or use the managed tunnel, there is nothing to do here. This page is only for people who expose AnkiMCP their own way — for example with ngrok (a tool that gives a program on your computer a public web address) — and hit a blocked request.**
 
 {{< callout type="info" >}}
-**Most people can stop here.** Local use and the **built-in tunnel** are protected automatically — nothing to configure. Read on only if you put AnkiMCP behind your **own** tunnel, ngrok, or a proxy and need to get past a blocked request (a `421 Invalid Host header`).
+**Most people can stop here.** Read on only if you put AnkiMCP behind your **own** tunnel, ngrok, or a reverse proxy (a server that forwards web traffic to another program) and a request gets blocked with a `421 Invalid Host header` error.
 {{< /callout >}}
 
-You need no security background to read this. The rest of the page explains the attack, then shows exactly what to change when you must allow an outside name through.
+You need no security background to read this. The rest of the page explains the attack this protection guards against — called **DNS rebinding** — then shows exactly what to change when you must allow an outside name through.
 
 ## The short version
 
@@ -51,7 +51,15 @@ The good news: the defense is simple. The server checks the name each request cl
 Protection is **on by default**. You only need to act if you reach the server from *beyond* your own computer — through a tunnel, a reverse proxy, or another device on your network.
 {{< /callout >}}
 
-The details differ a little between the two versions:
+Here's what that looks like in the add-on:
+
+<!-- TODO(cli-agent): Add a CLI tab here, mirroring the add-on tab.
+     Cover: how the CLI's HTTP transport validates Host/Origin, the absent-Origin /
+     Host-guard decision (Option 1 — lenient absent-Origin, Host is the real gate),
+     any config flags/equivalents, backward-compatibility for non-loopback/tunnel use,
+     STDIO note (no network surface, so not exposed to this attack at all),
+     and the same "prefer the managed tunnel for remote access" steer.
+     Keep the same plain-English voice and length as the add-on tab. -->
 
 {{< tabs >}}
 
@@ -65,7 +73,7 @@ Since **v0.21.0**, the add-on checks the `Host` and `Origin` of every HTTP reque
 {{< callout type="warning" >}}
 **Backward-compatibility note.** Did you reach the add-on's HTTP server under a *non-local* name before? Those requests now fail with `421 Invalid Host header` until you allow that name. This happens if you:
 
-- bind the server to `0.0.0.0` to reach it from another device on your network, or
+- bind the server to `0.0.0.0` (make it reachable from other devices on your network), or
 - put it behind a tunnel or reverse proxy (ngrok, Cloudflare, Nginx).
 {{< /callout >}}
 
@@ -78,8 +86,8 @@ To allow an outside name, add it to your add-on config and restart Anki:
 }
 ```
 
-- `http_allowed_hosts` — the `Host` value, with no scheme (e.g. `myapp.ngrok-free.app`). You need this for every outside name.
-- `http_allowed_origins` — the full origin, with scheme (e.g. `https://myapp.example`). You need this only for browser-based clients.
+- `http_allowed_hosts` — just the name, without `https://` (e.g. `myapp.ngrok-free.app`). You need this for every outside name.
+- `http_allowed_origins` — the full origin, including the `https://` part (e.g. `https://myapp.example`). You need this only for browser-based clients.
 
 For ngrok, you can skip the config. Let ngrok send a local `Host` instead:
 
@@ -89,21 +97,7 @@ ngrok http --host-header=rewrite 3141
 
 **An optional second lock.** You can also require a shared secret on every request. Set `http_api_key`, and clients then send `Authorization: Bearer <key>`. It is empty (off) by default. It is an extra layer on top of the Host check, not a replacement.
 
-**For remote access, prefer the built-in tunnel.** It connects *outward* over an encrypted, signed-in link. So there is no open local port for a website to attack, and no allow-list to maintain. See [Remote vs local access](/docs/concepts/remote-vs-local/). Allow-listing an outside host is the advanced, do-it-yourself path. After that, securing the endpoint is on you.
-{{< /tab >}}
-
-{{< tab name="CLI" >}}
-**CLI**
-
-<!-- TODO(cli-agent): Write the CLI implications here, mirroring the add-on tab.
-     Cover: how the CLI's HTTP transport validates Host/Origin, the absent-Origin /
-     Host-guard decision (Option 1 — lenient absent-Origin, Host is the real gate),
-     any config flags/equivalents, backward-compatibility for non-loopback/tunnel use,
-     STDIO note (no network surface, so not exposed to this attack at all),
-     and the same "prefer the built-in tunnel for remote access" steer.
-     Keep the same plain-English voice and length as the add-on tab. -->
-
-_Coming soon._
+**For remote access, prefer the managed tunnel.** It connects *outward* over an encrypted, signed-in link. So there is no open local port for a website to attack, and no allow-list to maintain. See [Remote vs local access](/docs/concepts/remote-vs-local/). Allow-listing an outside host is the advanced, do-it-yourself path. After that, securing the endpoint is on you.
 {{< /tab >}}
 
 {{< /tabs >}}
@@ -114,9 +108,9 @@ _Coming soon._
 Only if you reach the server under a non-local name — a tunnel, a reverse proxy, or `0.0.0.0` for another device. Plain local use needs no change.
 
 **What does a `421 Invalid Host header` error mean?**
-The server rejected the name your request arrived under, because it is not on the allow-list. Add that name to `http_allowed_hosts` (see the Add-on tab), or use the built-in tunnel.
+The server rejected the name your request arrived under, because it is not on the allow-list. Add that name to `http_allowed_hosts` (see the Add-on tab), or use the managed tunnel.
 
-**Is the built-in tunnel affected?**
+**Is the managed tunnel affected?**
 No. The tunnel connects *outward* and signs in with your account. It never opens a local port for a website to reach. So DNS rebinding does not apply to it.
 
 **Does binding to `localhost` alone keep me safe?**

@@ -16,7 +16,7 @@ aliases:
   - /docs/known-issues/viewing-notes-blocks-updates/
 ---
 
-**Most AnkiMCP problems have one of three causes: Anki is closed, the connection or plugin isn't running, or your AI client needs a restart.**
+**Most AnkiMCP problems have one of three causes: Anki is closed, the connection or add-on isn't running, or your AI client needs a restart.**
 
 Find your symptom below, apply the fix, then try your AI assistant again. Most fixes take a minute or two. Some steps differ by how you connect, so each section tells you which path it applies to.
 
@@ -25,7 +25,7 @@ Find your symptom below, apply the fix, then try your AI assistant again. Most f
 These two checks fix most problems, no matter how you connect.
 
 1. **Make sure Anki is open.** AnkiMCP only reaches your cards while the Anki app is running. Open Anki, then ask your AI again.
-2. **Restart your AI client.** Close and reopen it so it reconnects to AnkiMCP. Clients link up at startup.
+2. **Restart your AI client.** Close and reopen it so it reconnects to AnkiMCP. Clients connect to AnkiMCP only when they start.
 
 If your AI still can't reach your cards, keep reading.
 
@@ -45,29 +45,29 @@ The add-on runs a server inside Anki. No AnkiConnect is involved on this path.
 
 ### If you use the CLI or the Claude Desktop bundle
 
-These paths reach Anki through the **AnkiConnect** plugin.
+These paths reach Anki through the **AnkiConnect** add-on.
 
 1. Open [http://localhost:8765](http://localhost:8765) in your browser. You should see the plain text `AnkiConnect`.
-2. If you don't, install or repair AnkiConnect. In Anki, go to **Tools → Add-ons → Get Add-ons...**, enter the code `2055492159`, click **OK**, then restart Anki.
+2. If you don't, install or reinstall AnkiConnect. In Anki, go to **Tools → Add-ons → Get Add-ons...**, enter the code `2055492159`, click **OK**, then restart Anki.
 3. For the CLI, also confirm Node.js 22.12.0 or newer is installed.
 4. For the CLI, check your config JSON for typos: no trailing commas, no mismatched braces.
 5. Restart your AI client so it reconnects.
 
 For setup help, see [Connect Claude](/docs/how-to/connect-claude/) or [Connect other MCP clients](/docs/how-to/connect-mcp-clients/).
 
-## Using ChatGPT or another web AI (remote tunnel)
+## Using Claude on the web, ChatGPT, or another remote AI (tunnel)
 
 **Symptom:** A remote AI like ChatGPT can't reach your cards, or the connection drops.
 
 A remote AI reaches your computer through a **tunnel**. The tunnel only relays requests to Anki on your own machine, so a few things must stay true.
 
-1. **Check the tunnel is connected.** Add-on: open **Tools → AnkiMCP Server Settings...** and confirm the tunnel shows connected. CLI: make sure the `--tunnel` terminal is still running.
+1. **Check the tunnel is connected.** Add-on: open **Tools → AnkiMCP Server Settings...** and confirm the tunnel shows connected. CLI: make sure the `--tunnel` terminal is still running (see the [CLI tunnel docs](https://github.com/ankimcp/anki-mcp-server#tunnel--recommended)).
 2. **Keep your computer awake and Anki open.** If your computer sleeps or Anki closes, the tunnel has nothing to relay.
 3. **Sign in again if the session expired.** Reconnect the tunnel to refresh it.
 
 For full setup, see [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/).
 
-**Advanced:** Did you expose the add-on's HTTP server under a custom name and get a `421 Invalid Host header`? See [Remote Access Security](/docs/concepts/local-server-security/) to allow that name.
+**Advanced:** If you see `421 Invalid Host header` after setting a custom hostname for the add-on's HTTP server, see [Remote Access Security](/docs/concepts/remote-access-security/) to allow that name.
 
 ## Note edits succeed but the note doesn't change
 

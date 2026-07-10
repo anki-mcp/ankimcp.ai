@@ -11,11 +11,11 @@ keywords:
 sitemap_priority: 0.8
 ---
 
-**AnkiMCP is free to use on your own computer — and always will be. The only paid part is the optional managed tunnel, which lets a web or mobile AI reach your Anki from anywhere and funds the servers and the project's ongoing development.**
+**AnkiMCP is free to use on your own computer — and always will be. The only paid part is the optional managed tunnel — a secure connection service we run — which lets a web or mobile AI reach your Anki from anywhere and funds the servers and the project's ongoing development.**
 
-If you connect an AI that runs on the **same computer** as Anki — Claude Desktop, Claude Code, Cursor, Cline, Zed — you pay nothing, ever. No account, no limits, no catch.
+If you connect an AI that runs on the **same computer** as Anki — Claude Desktop, Claude Code, Cursor, Cline, Zed — you pay nothing, ever. No account, no limits, nothing hidden.
 
-You only reach the paid side when you want **remote access**: letting a web AI like ChatGPT or claude.ai, or your phone, reach your Anki from another device. That travels through the managed tunnel, which has a **free tier** to get started and a **paid tier** for heavier use.
+You only pay when you want **remote access**: letting a web AI like ChatGPT or claude.ai, or your phone, reach your Anki from another device. That travels through the managed tunnel, which has a **free tier** to get started and a **paid tier** for heavier use.
 
 ## What's free and what's paid
 
@@ -48,14 +48,14 @@ You only reach the paid side when you want **remote access**: letting a web AI l
 <div class="pricing-card__body">
 <div class="pricing-card__price">
 <span class="pricing-card__amount">Free</span>
-<span class="pricing-card__period">tunnel free tier</span>
+<span class="pricing-card__period">to get started</span>
 </div>
 <ul class="pricing-card__features">
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in Local</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Remote access: ChatGPT, claude.ai, your phone, any device</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Secure managed tunnel, sign in once</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 authenticated requests / month</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless requests / month</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 signed-in requests / month</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 no-sign-in requests / month</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--remote-free" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
 </div>
@@ -72,8 +72,8 @@ You only reach the paid side when you want **remote access**: letting a web AI l
 </div>
 <ul class="pricing-card__features">
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in the free tier</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited authenticated requests</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited authless requests</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited requests, signed-in or not</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No monthly caps to think about</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Supports active development &amp; new features</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--remote-paid" href="/docs/how-to/connect-chatgpt-to-anki/">Go unlimited</a>
@@ -89,7 +89,7 @@ Everything that runs on your own computer is free because it costs us nothing to
 
 The **managed tunnel** is different. It runs real servers that relay messages between a remote AI and your local Anki, around the clock and securely. That means hosting, bandwidth, and ongoing maintenance.
 
-But a subscription covers more than servers. It funds the **ongoing development** of AnkiMCP. The project is actively built and improved, with more features on the way — your support keeps both the infrastructure running and the roadmap moving.
+But a subscription covers more than servers. It funds the **ongoing development** of AnkiMCP. The project is actively built and improved — your support keeps the servers running and new features coming.
 
 We keep a **free tier** so anyone can try remote access before paying. Want the full picture of local vs remote? See [Remote vs local access](/docs/concepts/remote-vs-local/).
 
@@ -105,13 +105,13 @@ Only the managed tunnel, and only its paid tier. The tunnel lets a web or mobile
 Yes. If your AI runs on the same computer as Anki, you never need an account or a payment. That covers Claude Desktop, Claude Code, and coding tools like Cursor, Cline, and Zed.
 
 **Do I need an account?**
-Not for local use. You sign in only when you connect the tunnel, so remote access routes securely to your collection.
+Not for local use. You sign in only when you connect the tunnel, so only you can reach your own flashcards.
 
 **How much does the paid tier cost?**
 The tunnel's paid tier is **$5 per month**. There's also a free tier to get started, and everything that runs on your own computer stays free.
 
-**What are the tunnel's limits?**
-The free tier covers **100 authenticated** and **1,000 authless** requests per month. The paid tier ($5/month) makes both unlimited.
+**What counts as a request, and what do the limits mean?**
+One request is one call your AI makes to Anki through the tunnel. A single instruction from you can use several requests — for example, "create 10 cards" may count as 10 requests if the AI adds them one by one, or fewer if it adds them in a batch. The free tier covers **100 signed-in** requests (from an AI app signed in with your account) and **1,000 no-sign-in** requests (through your separate no-sign-in address, which is off by default) per month. The paid tier ($5/month) removes both limits.
 
 ---
 

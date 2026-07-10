@@ -17,7 +17,7 @@ sitemap_priority: 0.8
 
 **Anki works because it fights how your brain forgets.** It shows you each fact right before you'd lose it. You confirm you still know it, and the next review moves further out. So you remember more while studying less.
 
-You've felt the problem if you ever crammed for a test, passed, then forgot it all a week later. This page explains the science in plain words, so you know why the method works.
+You've felt the problem if you ever crammed for a test — studied everything in one long session — passed, then forgot it all a week later. This page explains the science in plain words, so you know why the method works.
 
 ## Why do we forget what we learn?
 
@@ -87,8 +87,8 @@ Anyone who needs to remember a lot of facts reliably and for a long time. Spaced
 
 - **Language learners** — thousands of small facts that need to stick for years.
 - **Medical and nursing students** — huge volumes of terms and mechanisms.
-- **Exam preppers** — the MCAT, bar exams, and certifications test broad recall months later.
-- **Professionals** — keeping legal codes, medical guidelines, or syntax fresh after study ends.
+- **People preparing for big exams** — the MCAT, bar exams, and certifications test broad recall months later.
+- **Professionals** — keeping legal codes, medical guidelines, or programming syntax fresh after study ends.
 - **Lifelong learners** — geography, history, or anything you want to keep, not relearn.
 
 If forgetting is your enemy, Anki is built to help.
@@ -99,17 +99,20 @@ The catch is that Anki only works if *you* do two things: make good cards and sh
 
 First, the payoff. You get durable memory for a small, steady amount of daily study. By reviewing only what you're about to forget, you remember far more than cramming, in less total time.
 
-But writing clear, well-formed cards is real work. And the daily review habit takes discipline. For many people, that friction is exactly where good intentions stall.
+But writing clear, well-formed cards is real work. And the daily review habit takes discipline. For many people, this extra work is where the habit breaks down.
 
-That's the gap worth closing. What if an AI assistant could turn what you're studying into well-formed cards, and quiz you through reviews like a patient tutor? That's the problem **AnkiMCP** was built to solve, and it's where the rest of this guide goes next.
+That's the gap worth closing. What if an AI assistant could turn what you're studying into well-formed cards, and quiz you through reviews like a patient tutor? That's the problem **AnkiMCP** was built to solve, and it's where the rest of this guide goes next: [What is MCP?](/docs/concepts/what-is-mcp/)
 
 ## Common questions
 
-**Is Anki hard to learn?** The basics are quick: you make cards, then review them daily and rate how each one went. Anki has many advanced options, but you can ignore them and still get the full benefit.
+**Is Anki hard to learn?**
+The basics are quick: you make cards, then review them daily and rate how each one went. Anki has many advanced options, but you can ignore them and still get the full benefit.
 
-**How is this different from normal flashcards?** Paper flashcards show every card at the same rate. Anki schedules each card on its own, so you see hard cards often and easy cards rarely. That saves time and targets what you're about to forget.
+**How is this different from normal flashcards?**
+Paper flashcards show every card at the same rate. Anki schedules each card on its own, so you see hard cards often and easy cards rarely. That saves time and targets what you're about to forget.
 
-**Do I have to review every day?** Daily review works best, because it matches the spacing effect and keeps your workload small. You can skip days, but cards pile up and a backlog forms.
+**Do I have to review every day?**
+Daily review works best, because it matches the spacing effect and keeps your workload small. You can skip days, but cards build up and you fall behind.
 
 ---
 

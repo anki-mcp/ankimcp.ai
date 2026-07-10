@@ -1,7 +1,7 @@
 ---
-title: "How to Connect Anki to Claude"
+title: "How to Connect Claude to Anki (Web, Desktop & Claude Code)"
 linkTitle: "Connect Claude to Anki"
-description: "Connect Anki to Claude on the web, desktop, mobile, and in Claude Code. Pick your path: the AnkiMCP add-on tunnel, a drag-in bundle, or the npx CLI."
+description: "Connect Claude to Anki on the web, desktop, mobile, and in Claude Code. Pick your path: the managed tunnel, the desktop extension, or the CLI."
 keywords:
   - claude anki
   - connect anki to claude
@@ -25,7 +25,7 @@ aliases:
 **Connect Anki to Claude in about 5 minutes, so Claude can read your decks and build cards for you. Pick the path that matches where you use Claude: the web, the desktop app, or Claude Code in your terminal.**
 
 {{< callout type="info" >}}
-**Set up the Web path once and you get Claude everywhere.** The AnkiMCP add-on's built-in tunnel ties the connector to your Claude account, not to one app. So that single setup also reaches **Claude on your phone** and **Claude Code** — anywhere you sign in to Claude. In short: **web ⇒ mobile and code**. If you want Anki in Claude on more than one device, start with the **Claude Web** tab below.
+**Set up the Web path once and you get Claude everywhere.** The AnkiMCP add-on's built-in tunnel ties the connector to your Claude account, not to one app. So that single setup also reaches **Claude on your phone** and **Claude Code** — anywhere you sign in to Claude. In short: set up the Web path once, and it also works on mobile and in Claude Code. If you want Anki in Claude on more than one device, start with the **Claude Web** tab below.
 {{< /callout >}}
 
 {{< tabs >}}
@@ -40,7 +40,7 @@ The AnkiMCP add-on runs inside Anki and gives your collection a secure web addre
 
 - **Anki 25.07 or later**, open on your computer. Get it from [apps.ankiweb.net](https://apps.ankiweb.net/).
 - The **AnkiMCP add-on** for Anki, code `124672614`. You'll install it below.
-- An **AnkiMCP account**. The tunnel has a free tier and a paid tier. You sign in the first time you connect it.
+- An **AnkiMCP account**. The tunnel has a [free tier and a paid tier](/pricing/). You sign in the first time you connect it.
 - A **Claude account** at [claude.ai](https://claude.ai).
 
 **Time:** about 5 minutes.
@@ -58,7 +58,7 @@ The add-on starts a small server inside Anki. It launches on its own every time 
 3. Enter this code: `124672614`
 4. Click **OK**, then restart Anki.
 
-<!-- screenshot: Anki "Install Add-on" dialog with the code 124672614 entered -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 124672614 entered</div>
 
 ### Step 2: Connect the tunnel and sign in
 
@@ -69,19 +69,19 @@ Now turn on the tunnel so your Anki gets a public web address.
 3. A login dialog shows a one-time code. Click **Open Browser** and enter that code on the page that opens.
 4. Approve the sign-in. The add-on saves your login, so you won't repeat this each time.
 
-<!-- screenshot: AnkiMCP Server Settings dialog with the "Connect Tunnel" button and one-time code -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: AnkiMCP Server Settings dialog with the "Connect Tunnel" button and one-time code</div>
 
-### Step 3: Copy your public tunnel URL
+### Step 3: Copy the tunnel URL
 
-Once connected, the settings dialog shows your public tunnel address. It looks like a normal web link:
+The tunnel address is the same for everyone:
 
 ```text
-https://tunnel.ankimcp.ai/<your-tunnel-id>
+https://tunnel.ankimcp.ai/mcp
 ```
 
-Copy that full URL. You'll paste it into claude.ai next.
+It's safe to share, because it only works after you sign in — requests reach your Anki only when the AI app is signed in with **your** account. Copy that URL. You'll paste it into claude.ai next.
 
-<!-- screenshot: AnkiMCP Server Settings showing the connected tunnel URL -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: AnkiMCP Server Settings showing the tunnel connected — the https://tunnel.ankimcp.ai/mcp address and the no-sign-in URL toggle (off)</div>
 
 ### Step 4: Add the connector in claude.ai
 
@@ -90,10 +90,11 @@ Open [claude.ai](https://claude.ai) in your browser and add the tunnel as a cust
 1. Go to **Settings → Connectors**.
 2. Click **Add custom connector**.
 3. Paste your tunnel URL, then save.
+4. Claude asks you to sign in to AnkiMCP — sign in and approve access.
 
 For the exact menu path, see Anthropic's [custom connectors guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
 
-<!-- screenshot: claude.ai "Add custom connector" dialog with the tunnel URL pasted -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: claude.ai "Add custom connector" dialog with the tunnel URL pasted</div>
 
 ### It works everywhere
 
@@ -123,7 +124,7 @@ This is the free, local way to use Claude with your cards. You drop the AnkiMCP 
 ### What you need
 
 - **Claude Desktop**, installed from [claude.ai/download](https://claude.ai/download).
-- **Anki** on the same computer, open, with the **AnkiConnect plugin** (code `2055492159`). You'll add it in Step 1.
+- **Anki** on the same computer, open, with the **AnkiConnect add-on** (code `2055492159`). You'll add it in Step 1.
 - The **AnkiMCP bundle**, a `.mcpb` file. You'll download it in Step 2.
 
 **Time:** about 5 minutes.
@@ -132,7 +133,11 @@ The **`.mcpb` bundle** is a single file that holds the whole AnkiMCP server. Cla
 
 ### Step 1: Install AnkiConnect in Anki
 
-AnkiConnect is the plugin that lets the bundle reach your collection.
+AnkiConnect is the add-on that lets the bundle reach your collection.
+
+{{< callout type="warning" >}}
+**AnkiConnect (code `2055492159`) and the AnkiMCP add-on (code `124672614`) are two different add-ons.** For this Desktop path, install **AnkiConnect**.
+{{< /callout >}}
 
 1. Open Anki.
 2. Go to **Tools → Add-ons → Get Add-ons...**
@@ -141,7 +146,7 @@ AnkiConnect is the plugin that lets the bundle reach your collection.
 
 To confirm it works, open [http://localhost:8765](http://localhost:8765) in your browser. You should see the plain text `AnkiConnect`.
 
-<!-- screenshot: Anki "Install Add-on" dialog with the code 2055492159 entered -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 2055492159 entered</div>
 
 ### Step 2: Download the AnkiMCP bundle
 
@@ -153,7 +158,7 @@ In Claude Desktop, go to **Settings → Extensions**. Drag and drop the `.mcpb` 
 
 The bundle self-configures the AnkiConnect address to `http://localhost:8765`. You don't need to change it.
 
-<!-- screenshot: Claude Desktop Settings → Extensions showing the AnkiMCP extension installed -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Claude Desktop Settings → Extensions showing the AnkiMCP extension installed</div>
 
 ### Step 4: Restart Claude Desktop
 
@@ -188,15 +193,15 @@ The fastest way is the **AnkiMCP add-on**. It runs a local server inside Anki, a
 - **Claude Code** installed and working in your terminal.
 - **Anki** open on the same computer. Claude Code reaches your cards only while Anki runs.
 - For the add-on: **Anki 25.07 or newer**. Check in **Anki → About**.
-- For the CLI: **Node.js 22.12.0 or newer** from [nodejs.org](https://nodejs.org/), plus the **AnkiConnect** plugin.
+- For the CLI: **Node.js 22.12.0 or newer** from [nodejs.org](https://nodejs.org/), plus the **AnkiConnect** add-on.
 
 **Time:** about 5 minutes.
 
-**MCP** (Model Context Protocol) is the open standard that lets AI tools like Claude Code talk to Anki. **STDIO** is a local transport where Claude Code runs the server as a subprocess.
+**MCP** (Model Context Protocol) is the open standard that lets AI tools like Claude Code talk to Anki. **STDIO** means Claude Code starts and runs the server itself, on your computer.
 
 ### Connect with the add-on (recommended)
 
-The AnkiMCP add-on runs a local HTTP server inside Anki. It talks to Anki directly, so you don't need Node.js or the AnkiConnect plugin.
+The AnkiMCP add-on runs a local HTTP server inside Anki. It talks to Anki directly, so you don't need Node.js or the AnkiConnect add-on.
 
 1. Open Anki and go to **Tools → Add-ons → Get Add-ons...**
 2. Enter this code: `124672614`
@@ -220,7 +225,7 @@ That's it. Keep Anki open so Claude Code can reach your cards.
 
 ### Or use the CLI
 
-No add-on, or you prefer the command line? The CLI runs the AnkiMCP server over STDIO. It needs Node.js and the AnkiConnect plugin.
+No add-on, or you prefer the command line? The CLI runs the AnkiMCP server over STDIO. It needs Node.js and the AnkiConnect add-on.
 
 1. In Anki, go to **Tools → Add-ons → Get Add-ons...**, enter code `2055492159`, click **OK**, and restart Anki. To confirm it works, open [http://localhost:8765](http://localhost:8765) in your browser. You should see the text `AnkiConnect`.
 2. In your terminal, add the server to Claude Code:
@@ -248,7 +253,7 @@ You should see `anki` with a connected status. With Anki open, ask Claude Code: 
 ## Common questions
 
 **Does this work on my phone?**
-Yes, through the Web path. Once the connector is on your Claude account, it appears in the Claude mobile app after you sign in. Mobile connector support is in beta, so expect a few rough edges. The Desktop bundle and Claude Code setups stay on one computer and do not reach your phone.
+Yes, through the Web path. Once the connector is on your Claude account, it appears in the Claude mobile app after you sign in. Mobile connector support is in beta, so some features may not work perfectly yet. The Desktop bundle and Claude Code setups stay on one computer and do not reach your phone.
 
 **Which path should I pick?**
 Want Anki in Claude on the web, your phone, and across devices? Use the **Claude Web** path (the add-on tunnel). Want a free, local-only setup in the Claude Desktop app? Use **Claude Desktop**. Working in the terminal? Use **Claude Code**.
@@ -266,7 +271,7 @@ The add-on and the Desktop bundle are free. The Web tunnel has a free tier to ge
 Yes. Every path relays to the Anki app on your machine. Keep your computer on and Anki open while you study. If Anki is closed, Claude sees no cards.
 
 **Claude can't reach Anki. What's wrong?**
-For the Desktop bundle or the CLI, make sure Anki is open and AnkiConnect is installed. Open [http://localhost:8765](http://localhost:8765) in your browser. You should see `AnkiConnect`. If not, reinstall the plugin with code `2055492159` and restart Anki. For the add-on, check **Tools → AnkiMCP Server Settings...** in Anki.
+For the Desktop bundle or the CLI, make sure Anki is open and AnkiConnect is installed. Open [http://localhost:8765](http://localhost:8765) in your browser. You should see `AnkiConnect`. If not, reinstall the AnkiConnect add-on with code `2055492159` and restart Anki. For the add-on, check **Tools → AnkiMCP Server Settings...** in Anki.
 
 **Do I need Node.js?**
 Only for the Claude Code CLI path. The Desktop bundle and the add-on include everything they need.

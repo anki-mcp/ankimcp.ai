@@ -30,9 +30,9 @@ Two ways to connect: the **add-on** (HTTP, recommended) or the **CLI** (STDIO). 
 
 {{< tab name="Add-on (HTTP)" selected=true >}}
 
-**Install the AnkiMCP add-on, then point your client at its local web address. The add-on runs a server inside Anki, so you skip Node.js and any extra plugin.**
+**Install the AnkiMCP add-on, then point your client at its local web address. The add-on runs a server inside Anki, so you skip Node.js and any extra add-on.**
 
-The add-on runs a local **HTTP** server at `http://127.0.0.1:3141/`. Your client connects to that address. This is the simplest path and reaches the most of Anki.
+The add-on runs a local **HTTP** server at `http://127.0.0.1:3141/`. Your client connects to that address. This is the simplest path and gives access to the most Anki features.
 
 ### What you need
 
@@ -53,13 +53,13 @@ The add-on starts a small server inside Anki. It launches on its own every time 
 
 The server starts at `http://127.0.0.1:3141/`. You can check its status under **Tools → AnkiMCP Server Settings...**
 
-<!-- screenshot: Anki "Install Add-on" dialog with the code 124672614 entered -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 124672614 entered</div>
 
 ### Step 2: Add the server to your client
 
 Each client points at the same address: `http://127.0.0.1:3141/`. Pick your client below.
 
-**Cursor.** Edit `~/.cursor/mcp.json` (macOS/Linux) or `%USERPROFILE%\.cursor\mcp.json` (Windows). Add the server with its `url`:
+**Cursor.** Create or edit `~/.cursor/mcp.json` (macOS/Linux) or `%USERPROFILE%\.cursor\mcp.json` (Windows). Add the server with its `url`:
 
 ```json
 {
@@ -70,6 +70,8 @@ Each client points at the same address: `http://127.0.0.1:3141/`. Pick your clie
   }
 }
 ```
+
+If the file already exists, add only the `anki-mcp` entry inside the existing `mcpServers` block.
 
 **Cline.** In VS Code, open Cline, go to the **MCP Servers** panel, and use the **Remote Servers** tab. Enter a name and the URL `http://127.0.0.1:3141/`, then pick **Streamable HTTP**. To edit the file directly, set `type` to `streamableHttp`:
 
@@ -96,7 +98,9 @@ Each client points at the same address: `http://127.0.0.1:3141/`. Pick your clie
 }
 ```
 
-<!-- screenshot: Cursor mcp.json open in the editor with the AnkiMCP HTTP server snippet pasted -->
+If your settings already have a `context_servers` block, add only the `anki-mcp` entry inside it.
+
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Cursor mcp.json open in the editor with the AnkiMCP HTTP server snippet pasted</div>
 
 ### Step 3: Restart your client and verify
 
@@ -119,14 +123,14 @@ Open [http://127.0.0.1:3141/](http://127.0.0.1:3141/) in your browser to confirm
 
 {{< tab name="CLI (STDIO)" >}}
 
-**Install the AnkiMCP CLI with npm, add the AnkiConnect plugin to Anki, then paste one config snippet into your client. The client launches the server over STDIO and talks to Anki on your machine.**
+**Install the AnkiMCP CLI with npm, add the AnkiConnect add-on to Anki, then paste one config snippet into your client. The client launches the server over STDIO and talks to Anki on your machine.**
 
 Use this path only if your client needs **STDIO**, the local transport where your client runs the server as a subprocess and talks to it over standard input and output.
 
 ### What you need
 
 - **Node.js 22.12.0 or newer**. Get it from [nodejs.org](https://nodejs.org/). Check your version with `node --version`.
-- The **AnkiConnect plugin** for Anki, code `2055492159`. You'll add it below. It lets the server reach your cards.
+- The **AnkiConnect add-on** for Anki, code `2055492159`. You'll add it below. It lets the server reach your cards.
 - **Anki open** on the same computer. The server only reaches your cards while Anki is running.
 - A **client that supports STDIO**: [Cursor](https://www.cursor.com/), [Cline](https://github.com/cline/cline), [Zed](https://zed.dev/), or another.
 
@@ -134,7 +138,7 @@ Use this path only if your client needs **STDIO**, the local transport where you
 
 ### Step 1: Install AnkiConnect in Anki
 
-AnkiConnect is the plugin that lets the server talk to your collection.
+AnkiConnect is the add-on that lets the server talk to your collection.
 
 1. Open Anki.
 2. Go to **Tools → Add-ons → Get Add-ons...**
@@ -143,7 +147,7 @@ AnkiConnect is the plugin that lets the server talk to your collection.
 
 To confirm it works, open [http://localhost:8765](http://localhost:8765) in your browser. You should see the plain text `AnkiConnect`.
 
-<!-- screenshot: Anki "Install Add-on" dialog with the code 2055492159 entered -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 2055492159 entered</div>
 
 ### Step 2: Install the AnkiMCP CLI
 
@@ -193,11 +197,11 @@ If you installed the server globally (Option B), use the `ankimcp` command inste
 
 Where the config file lives depends on your client:
 
-- **Cursor**: `~/.cursor/mcp.json` (macOS/Linux) or `%USERPROFILE%\.cursor\mcp.json` (Windows). Create or edit the file, paste the snippet, and save.
-- **Cline**: open the Cline extension in VS Code and use its settings UI to add the MCP server. You can also edit `cline_mcp_settings.json` directly.
-- **Zed**: open Zed's `settings.json` and add the server under `context_servers`, using `command` and `args` instead of `mcpServers`.
+- **Cursor**: `~/.cursor/mcp.json` (macOS/Linux) or `%USERPROFILE%\.cursor\mcp.json` (Windows). Create or edit the file, paste the snippet, and save. If the file already exists, add only the `anki-mcp` entry inside the existing `mcpServers` block.
+- **Cline**: open the Cline extension in VS Code and use its settings UI to add the MCP server. You can also create or edit `cline_mcp_settings.json` directly.
+- **Zed**: open Zed's `settings.json`. Zed uses the key `context_servers` (not `mcpServers`). Inside it, keep the same `command` and `args` fields.
 
-<!-- screenshot: Cursor mcp.json open in the editor with the AnkiMCP STDIO server snippet pasted -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Cursor mcp.json open in the editor with the AnkiMCP STDIO server snippet pasted</div>
 
 ### Step 4: Restart your client
 
@@ -218,7 +222,7 @@ Install Node.js 22.12.0 or newer from [nodejs.org](https://nodejs.org/). npx shi
 Your Node.js is too old. The server needs version 22.12.0 or newer. Run `node --version` to check, then update Node.js.
 
 **The assistant can't reach Anki.**
-Make sure Anki is open and AnkiConnect is installed. Open [http://localhost:8765](http://localhost:8765) in your browser. You should see `AnkiConnect`. If not, reinstall the plugin with code `2055492159` and restart Anki.
+Make sure Anki is open and AnkiConnect is installed. Open [http://localhost:8765](http://localhost:8765) in your browser. You should see `AnkiConnect`. If not, reinstall the AnkiConnect add-on with code `2055492159` and restart Anki.
 
 **The server doesn't appear in my client.**
 Check that your config JSON is valid: no trailing commas, matching quotes and braces. Then restart your client after any change.
@@ -232,10 +236,10 @@ Check that your config JSON is valid: no trailing commas, matching quotes and br
 ## Common questions
 
 **Which should I use, the add-on or the CLI?**
-Use the **add-on** (HTTP). It's the simplest to install and the most capable, and it needs no Node.js or AnkiConnect. Reach for the **CLI** (STDIO) only if your client needs STDIO.
+Use the **add-on** (HTTP). It's the simplest to install and the most capable, and it needs no Node.js or AnkiConnect. Choose the **CLI** (STDIO) only if your client needs STDIO.
 
 **Do I need both?**
-No. Pick one. The add-on talks to Anki directly; the CLI talks through the AnkiConnect plugin.
+No. Pick one. The add-on talks to Anki directly; the CLI talks through the AnkiConnect add-on.
 
 **Does either one work without Anki open?**
 No. Both need the Anki desktop app open and running. They act on your real collection, so Anki has to be there.
@@ -247,7 +251,7 @@ Cursor, Cline, and Zed all do. If your client supports only STDIO, use the CLI t
 
 - New to the difference between the two paths? See [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
 - Use Claude too? See [Connect Claude to Anki](/docs/how-to/connect-claude/#claude-desktop) for web, desktop, and Claude Code.
-- Want your assistant to reach Anki from another device? That uses the managed [remote tunnel](https://github.com/ankimcp/anki-mcp-server#tunnel--recommended), which has free and paid tiers.
+- Want your assistant to reach Anki from another device? That uses the managed [tunnel](/docs/concepts/remote-vs-local/), which has [free and paid tiers](/pricing/).
 
 ---
 

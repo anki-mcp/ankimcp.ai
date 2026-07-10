@@ -17,11 +17,11 @@ sitemap_priority: 0.8
 
 **AnkiMCP connects your AI assistant to Anki. Once they're linked, the assistant can build and manage your cards for you, and it can quiz you like a tutor: it asks, you answer, and it corrects and explains.** Two old chores become one smooth loop.
 
-This page explains how Anki and AI fit together through AnkiMCP. You need no technical background. We'll keep it conceptual; a later section walks through a full study session step by step.
+This page explains how Anki and AI fit together through AnkiMCP. You need no technical background. We'll keep it conceptual here and focus on the ideas.
 
 ## What's the problem with making cards by hand?
 
-Making good Anki cards is slow, and many people find it the worst part. The reviewing is fast; the writing is the grind.
+Making good Anki cards is slow, and many people find it the worst part. Reviewing cards is fast; writing them is the slow, tiring part.
 
 Andy Matuschak, who has written widely on spaced repetition, puts it plainly: "Writing good spaced repetition memory prompts is hard," and "it's quite time-consuming and cognitively taxing to do it."[\[1\]](#ref-1) One Hacker News reader said the same: "Reviewing them is quick, but it takes a lot of effort to craft good ones from a text."[\[2\]](#ref-2)
 
@@ -29,11 +29,11 @@ Medical students feel this hardest. In one forum thread, a student wrote that ma
 
 ## So should an AI just make all your cards?
 
-Not so fast. Many Anki users believe that making cards is part of the learning, not a waste of time. They have a point, and it's worth respecting.
+Not necessarily — and many Anki users would say no. They believe that making cards is part of the learning, not a waste of time. They have a point, and it's worth respecting.
 
 When you turn a textbook page into a card, you decide what matters and how to phrase it. That thinking helps you learn. So AnkiMCP isn't here to do your thinking for you.
 
-Instead, it removes the **mechanical drudgery**: the typing, the formatting, the deck sorting, the copy-and-paste. You still steer what goes on a card and why. The effort moves toward understanding, not toward fiddling with fields. That's the honest goal.
+Instead, it removes the **repetitive manual work**: the typing, the formatting, the deck sorting, the copy-and-paste. You still steer what goes on a card and why. The effort moves toward understanding, not toward formatting cards. That's the honest goal.
 
 ## What changes when the AI can reach Anki?
 
@@ -71,7 +71,7 @@ A large 2017 meta-analysis found that practice testing helped learning more than
 
 A tutor reacts to *your* answer, so the help fits what you got wrong. Learning with a tutor tends to beat studying alone.
 
-VanLehn's 2011 review put the effect of human tutoring at about d ≈ 0.79, a large gain.[\[8\]](#ref-8) A broad 2020 meta-analysis of school tutoring programs found a smaller but solid average of about 0.37 standard deviations.[\[9\]](#ref-9) Real effects vary, but the direction is steady: a responsive partner helps.
+VanLehn's 2011 review put the effect of human tutoring at about d ≈ 0.79, a large gain.[\[8\]](#ref-8) A broad 2020 meta-analysis of school tutoring programs found an average of about 0.37 standard deviations — a smaller but still solid gain.[\[9\]](#ref-9) Real effects vary, but the direction is steady: a responsive partner helps.
 
 Feedback is part of why. A 2008 study found that adding feedback after a multiple-choice test raised correct answers and cut down wrong ones that students had picked.[\[10\]](#ref-10) Flipping a card already shows you the right answer. The tutor loop adds something extra: it reacts to *your* wording and explains *why*.
 
@@ -83,9 +83,9 @@ That's promising, but it's a single study, in one course, with about 180 student
 
 ## What this does and doesn't promise
 
-Be clear-eyed about the limits. The AI removes the busywork of building cards; it doesn't remove the thinking that makes cards stick.
+Be realistic about the limits. The AI removes the busywork of building cards; it doesn't remove the thinking that makes cards stick.
 
-It also doesn't shrink your daily **review** load. That's a different problem, set by Anki's schedule and your own deck. And the AI-tutor research is new and narrow, so the tutor loop is a sensible bet, not a guarantee. You still sit down and review.
+It also doesn't shrink your daily **review** load. That's a different problem, set by Anki's schedule and your own deck. And the AI-tutor research is new and narrow, so the tutor loop is a reasonable choice, not a guarantee. You still sit down and review.
 
 ## Common questions
 
@@ -101,7 +101,7 @@ Partly. Retrieval practice and tutoring both have strong research behind them.[\
 **Do I still need to open Anki?**
 Your cards live in your real Anki collection the whole time. The AI works with that collection, so your decks, history, and schedule stay intact.
 
-So what does this actually feel like in a real study session? Next, we walk through one end to end: from a blank topic to a deck you can review, and a tutor loop in action.
+Want to see it for yourself? The practical next step is to connect your AI assistant to Anki — the guide at [Connect Claude to Anki](/docs/how-to/connect-claude/) walks you through it.
 
 ---
 

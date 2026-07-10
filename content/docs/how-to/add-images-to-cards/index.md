@@ -1,7 +1,7 @@
 ---
-title: "How to Add Images to Anki Cards with AI"
+title: "How to Add Images to Anki Cards (Manually or with AI)"
 linkTitle: "Add images to cards"
-description: "Add images to your Anki cards with AI. Give Claude a web link or a file on your computer, and it builds the picture flashcard for you."
+description: "Two ways to add images to Anki cards: paste them into Anki's editor, or let AI build the picture flashcards for you from a link or a file."
 keywords:
   - how to add image to anki card
   - add images to anki cards
@@ -14,9 +14,26 @@ aliases:
   - /docs/image-flashcards/
 ---
 
-**Ask the AI to add an image to your Anki card, and it does the work for you. Give it a web link or point it at a file on your computer.**
+**To add an image to an Anki card, paste it into a field in Anki's editor, or use the editor's attach button. With AI connected, you can skip that: tell the AI where the image is, and it builds the card for you.**
 
-You don't paste pictures or edit HTML by hand. You tell the AI where the image is, in plain words. It downloads the image, adds it to Anki, and puts it on the card. This makes picture flashcards fast to build.
+This guide shows both: the standard Anki way for one or two cards, and the AI way when you want picture flashcards built for you.
+
+## The standard Anki way (no add-on needed)
+
+For a single card, plain Anki already does this well:
+
+1. In Anki, click **Add** (or open a card in **Browse**).
+2. Click into the field where the image should go.
+3. Paste the image (**Ctrl+V** / **Cmd+V**), or click the **paperclip icon** in the editor toolbar and pick the image file.
+4. Save the card. Anki copies the image into your collection automatically, so it syncs to your other devices.
+
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki's note editor with an image pasted into a field and the paperclip icon highlighted in the toolbar</div>
+
+That's it. The AI way below is worth it when you make cards while reading or need images on many cards at once.
+
+## Adding images with AI
+
+With the AI way, you don't paste pictures or edit HTML by hand. You tell the AI where the image is, in plain words. It downloads the image, adds it to Anki, and puts it on the card. The rest of this guide shows how.
 
 ## What you need
 
@@ -46,9 +63,15 @@ Example request:
 
 > Add the image at /Users/me/Desktop/cell-diagram.png to the front of my Biology card about cell parts.
 
+On Windows, the path looks like `C:\Users\me\Desktop\cell-diagram.png` instead.
+
+{{< callout type="info" >}}
+**How to copy a file's full path.** On **macOS**: right-click the file, hold the **Option** key, and choose **Copy ... as Pathname**. On **Windows**: right-click the file and choose **Copy as path** (on Windows 10, hold **Shift** while right-clicking). Then paste it into your message.
+{{< /callout >}}
+
 The AI reads the file, adds it to Anki, and puts it on the card.
 
-<!-- screenshot: a chat message asking the AI to add a local image to a card, with the AI confirming -->
+<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: a chat message asking the AI to add a local image to a card, with the AI confirming</div>
 
 ### One slow way to avoid
 
@@ -62,9 +85,11 @@ Example request:
 
 > Find my card about mitochondria and add this diagram to the front: /Users/me/Downloads/mito.png
 
+(On Windows: `C:\Users\me\Downloads\mito.png`.)
+
 The AI finds the card and updates it with the image.
 
-One thing to know: **close Anki's Browse window first.** If a card is open in Browse while the AI updates it, the change can silently fail. Switch to a different note or close Browse, then ask again.
+One thing to know: **close Anki's Browse window first.** If a card is open in Browse while the AI updates it, the change may not be saved, and you won't see an error. Switch to a different note or close Browse, then ask again.
 
 ## Check it worked
 
@@ -78,7 +103,7 @@ If you sync to AnkiWeb, sync now so the picture reaches your other devices.
 The card was likely open in Anki's Browse window during the update. Close Browse or switch to another note, then ask the AI to try again.
 
 **The AI says it can't read my file.**
-Give the full path, not just the file name. On a Mac it looks like `/Users/you/Desktop/image.png`. Only image, audio, and video files are allowed — other file types are blocked for safety.
+Give the full path, not just the file name. On a Mac it looks like `/Users/you/Desktop/image.png`; on Windows, `C:\Users\you\Desktop\image.png`. Only image, audio, and video files are allowed — other file types are blocked for safety.
 
 **The web link didn't work.**
 Make sure the link points straight to the image file (it usually ends in `.jpg` or `.png`), not to a web page that shows the image. Right-click the image and copy the image address.

@@ -1,7 +1,10 @@
 ---
 title: "Reference"
-description: "Where to look up AnkiMCP tools, settings, and facts. The full, authoritative reference lives in the open-source repo."
-weight: 4
+description: "Where to look up AnkiMCP tools, settings, and facts. The complete, official reference is in the open-source repositories."
+weight: 5
 ---
 
-Need to look up a tool, setting, or exact fact? The full, authoritative reference lives in the open-source code. See the [CLI and server reference](https://github.com/ankimcp/anki-mcp-server) on GitHub. The Anki add-on has its own companion repo for its own details.
+Need to look up a tool, a setting, or an exact fact? The complete, official reference is kept next to the code, on GitHub:
+
+- **[CLI server](https://github.com/ankimcp/anki-mcp-server)** — tools, settings, and setup details for the command-line server
+- **[Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon)** — everything specific to the add-on that runs inside Anki
