@@ -78,9 +78,9 @@ params:
     - /images/og-image.png
 
   banner:
-    key: 'naming-update-2025'
+    key: 'maintenance-2026-07-26'
     message: |
-      📢 **Important Update:** We've moved to a new organization and package name! [Read about the changes →](/blog/organization-and-naming-update)
+      🚧 **Maintenance in progress** — tunnel connections are unavailable for the next few hours. Desktop setups are unaffected.
 
   analytics:
     umami:

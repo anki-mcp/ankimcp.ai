@@ -6,6 +6,12 @@ layout: hextra-home
 sitemap_priority: 1.0
 ---
 
+<div class="hx:mt-6">
+{{< callout type="warning" emoji="🚧" >}}
+**Maintenance in progress.** Tunnel connections through ankimcp.ai are unavailable for the next few hours while we perform maintenance. [Web Mode](/docs/installation/web) setups (ChatGPT, Claude.ai, Gemini) will not connect until this is done — [Desktop Mode](/docs/installation/desktop) runs locally and is unaffected. Thanks for your patience!
+{{< /callout >}}
+</div>
+
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
   AnkiMCP — Connect Claude & ChatGPT&nbsp;<br class="hx:sm:block hx:hidden" />to Your Anki Flashcards
