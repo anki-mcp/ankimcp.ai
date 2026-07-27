@@ -78,9 +78,9 @@ params:
     - /images/og-image.png
 
   banner:
-    key: 'maintenance-2026-07-26'
+    key: 'migration-complete-2026-07-27'
     message: |
-      🚧 **Maintenance in progress** — tunnel connections are unavailable for the next few hours. Desktop setups are unaffected.
+      ✅ **Migration complete** — lots of new functionality is live. We're still monitoring, so expect occasional instability. Updated docs land in the next few days.
 
   analytics:
     umami:
