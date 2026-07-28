@@ -14,7 +14,8 @@ sitemap_priority: 0.3
 - The software is free, open source, and provided **"as is"** — no warranty.
 - **Back up your Anki decks.** The AI can change or delete cards, and you are responsible for your own data.
 - Be respectful on the forum. You own your posts; we may moderate content that breaks the rules.
-- The tunnel has a **free tier** with monthly limits and a **paid tier** ($5/month). Limits and pricing can change with notice.
+- The tunnel has a **free tier** with monthly limits and a **Plus tier** ($5/month). There's also a **Pro tier** ($15/month) that adds **Hosted Anki**. Limits and pricing can change with notice.
+- **Hosted Anki is experimental** — it runs a copy of your Anki on our servers, may change or go away, and deleting an instance is permanent. Keep your own backups.
 - Your tunnel is for you only — don't share it, and you choose which AI apps may access your Anki.
 - Our liability is limited: at most, what you paid us in the last 12 months.
 {{< /callout >}}
@@ -33,6 +34,7 @@ AnkiMCP is a free, open-source Model Context Protocol (MCP) server that connects
 - The community forum at forum.ankimcp.ai
 - The AnkiMCP software distributed via GitHub
 - The AnkiMCP SaaS cloud service — a hosted tunnel service that enables LLM clients (such as ChatGPT and Claude.ai) to connect to your local Anki installation over the internet via secure WebSocket tunnels
+- **Hosted Anki** — an experimental part of the SaaS Service that runs a copy of the Anki desktop application on AnkiMCP's cloud servers, reachable both by LLM clients over MCP and by you through an in-browser remote desktop
 
 ### 3. Open-Source License
 
@@ -47,6 +49,7 @@ The Service is provided **"as is"** and **"as available"** without warranties of
 - AI-generated flashcard content will be accurate or complete
 - The SaaS tunnel service will be available at all times or at any specific uptime level
 - LLM clients will always be able to connect to your tunnel
+- The Hosted Anki feature — which is **experimental** — will remain available, or that a hosted instance will be reachable without delay (hosted instances sleep when idle and take time to wake)
 
 You are solely responsible for your use of the software and any flashcard content created through it.
 
@@ -120,10 +123,11 @@ The AnkiMCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastru
 
 #### Subscription Tiers
 
-The SaaS Service currently offers two subscription tiers:
+The SaaS Service currently offers three subscription tiers:
 
-- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated ("signed-in") and 1,000 unauthenticated ("no-sign-in") requests per month). No payment required. Available to all registered users.
-- **Paid tier:** removes those limits (unlimited requests) for a recurring fee (currently $5 per month). Full payment terms will be published when payment processing is implemented.
+- **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated ("signed-in") and 1,000 unauthenticated ("authless") requests per month). No payment required. Available to all registered users.
+- **Plus tier:** removes those limits (unlimited requests) for a recurring fee (currently $5 per month). Full payment terms will be published when payment processing is implemented.
+- **Pro tier:** includes everything in the Plus tier and adds the **Hosted Anki** feature (see below) for a recurring fee (currently $15 per month). Hosted Anki is experimental; the Pro tier's features, availability, and pricing may change while the feature matures.
 
 We reserve the right to modify tier features, request allowances, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
 
@@ -142,6 +146,18 @@ We reserve the right to modify tier features, request allowances, introduce new 
 - You are responsible for deciding which LLM clients to authorize to access your Anki data.
 - We do not control, endorse, or take responsibility for the behavior of third-party LLM clients that connect to your tunnel.
 
+#### Hosted Anki (Experimental)
+
+Hosted Anki is an **experimental** feature available on the Pro tier. It runs a copy of the Anki desktop application on our cloud servers, which you can reach both through LLM clients over MCP and through an in-browser remote desktop. The following additional terms apply when you use Hosted Anki.
+
+- **Experimental status.** Hosted Anki is offered on an experimental, best-effort basis. We may change, limit, or discontinue it at any time, with or without notice. Availability, performance, and features are not guaranteed.
+- **Cloud hosting of your collection.** When you use Hosted Anki, your Anki collection and media files are stored on persistent storage on AnkiMCP's servers so that your hosted instance can run and be reached by your AI. You retain ownership of this content; we store it solely to operate the feature for you.
+- **Sleep and wake.** To conserve resources, a hosted instance is stopped ("sleeps") after a period of inactivity and is started again automatically on your next request. Waking a sleeping instance takes time (typically tens of seconds), during which requests may be delayed or fail.
+- **Precedence over local Anki.** While you have a running hosted instance, it takes precedence over any locally connected Anki installation for the purposes of routing your AI's requests.
+- **AnkiWeb sync.** Hosted Anki supports syncing with AnkiWeb, but you sign in to AnkiWeb yourself from within the remote desktop session. We do **not** store, request, or have access to your AnkiWeb password.
+- **Deletion is permanent; keep your own backups.** If you delete a hosted instance — or if it is removed following account termination — the collection and media stored for that instance are **permanently deleted and cannot be recovered**. You are solely responsible for maintaining your own backups (for example, via AnkiWeb sync or by exporting your collection). We are not liable for any loss of data stored in a hosted instance.
+- **Acceptable use of the remote desktop.** The acceptable-use expectations that apply to the tunnel service also apply to the in-browser remote desktop. You may not use the remote desktop for anything other than managing your own Anki collection, and you may not use it to store, transmit, or process illegal, harmful, or infringing content, to run unrelated software or workloads, or to probe, overload, or exploit our infrastructure.
+
 #### Service Availability
 
 - The SaaS Service is provided on a **best-effort basis**. We do not offer any service level agreement (SLA) or uptime guarantee at this time.
@@ -153,17 +169,24 @@ We reserve the right to modify tier features, request allowances, introduce new 
 - We may suspend or terminate your SaaS account if you violate these Terms, abuse the service, or engage in activity that threatens the security or availability of the service for other users.
 - We will make reasonable efforts to notify you before or at the time of suspension, except where immediate action is necessary for security reasons.
 - You may delete your SaaS account at any time by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai). Account deletion removes your user data, tunnel configuration, OAuth client mappings, and subscription history.
-- Upon termination (whether by you or by us), your tunnel immediately stops functioning and all LLM client access is revoked.
+- Upon termination (whether by you or by us), your tunnel immediately stops functioning and all LLM client access is revoked. Any Hosted Anki instance associated with your account is stopped and removed, and the collection and media stored for it are permanently deleted.
 
 ### 8. Data Processing and Your Anki Data
 
-This section clarifies how your Anki flashcard data is handled when using the SaaS tunnel service.
+This section clarifies how your Anki flashcard data is handled when using the SaaS Service. How your data is handled depends on which feature you use: the **tunnel** relays your data without storing it, while **Hosted Anki** stores your collection on our servers so it can run there.
 
-#### Data Transit, Not Data Storage
+#### Data Transit, Not Data Storage (Tunnel)
 
 - When you use the SaaS tunnel, your Anki flashcard data passes through our servers in real-time as it is relayed between the LLM client and your local Anki installation.
 - Your flashcard data is **temporarily present in server memory** during transit but is **never written to disk, logged, stored in a database, or otherwise persisted** by our service.
 - We do **not** read, inspect, analyze, index, or use the content of your flashcards or LLM conversations for any purpose.
+
+#### Data Storage (Hosted Anki)
+
+- Hosted Anki is different from the tunnel: to run a copy of Anki on our servers, your **Anki collection and media files are stored on persistent storage** on AnkiMCP infrastructure for as long as your hosted instance exists.
+- We store this content solely to operate the feature for you. We do **not** read, inspect, analyze, index, or use the content of your collection for any purpose other than running your hosted instance and serving your own requests.
+- Your **AnkiWeb password is never stored, transmitted to, or accessible by AnkiMCP.** If you sync with AnkiWeb, you enter your AnkiWeb credentials yourself inside your remote desktop session, directly with AnkiWeb.
+- When you delete a hosted instance, the stored collection and media for that instance are **permanently removed** and cannot be recovered. See "Hosted Anki (Experimental)" above regarding backups.
 
 #### Your Responsibility
 
@@ -206,7 +229,7 @@ To the fullest extent permitted by law, the AnkiMCP project and its maintainers 
 
 Without limiting the above, we are specifically not liable for:
 
-- **Data loss or corruption** in your Anki installation resulting from LLM interactions, tunnel usage, or any other cause
+- **Data loss or corruption** in your Anki installation, or in any Hosted Anki instance (including data permanently lost when an instance sleeps, stops, is deleted, or is removed), resulting from LLM interactions, tunnel usage, Hosted Anki usage, or any other cause
 - **Service interruptions** including tunnel downtime, failed connections, or unavailability of the SaaS Service
 - **LLM behavior** including incorrect, harmful, or inappropriate content generated by third-party LLM clients connected to your tunnel
 - **Unauthorized access** resulting from compromised account credentials, OAuth tokens, or tunnel URLs that you have shared or failed to secure

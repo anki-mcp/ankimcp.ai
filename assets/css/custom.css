@@ -121,16 +121,20 @@ body {
 }
 
 .pricing-card--remote-paid .pricing-card__header {
+  background: #1e293b; /* slate-800 — darkest grey, below the Pro highlight */
+}
+
+.pricing-card--pro .pricing-card__header {
   background: var(--ankimcp-primary-600, #0a72e6); /* brand blue — draws the eye */
 }
 
-/* Color-only emphasis: tint the paid card so it reads as the highlighted
+/* Color-only emphasis: tint the Pro card so it reads as the highlighted
    option. No badge, border, or scaling — just a soft blue fill. */
-.pricing-card--remote-paid {
+.pricing-card--pro {
   background: #eff6ff; /* blue-50 */
 }
 
-.dark .pricing-card--remote-paid {
+.dark .pricing-card--pro {
   background: #152136; /* dark blue tint, distinct from the gray-800 cards */
 }
 
@@ -271,6 +275,10 @@ body {
 }
 
 .pricing-card__cta--remote-paid {
+  background: #1e293b; /* slate-800 */
+}
+
+.pricing-card__cta--pro {
   background: var(--ankimcp-primary-600, #0a72e6); /* brand blue */
 }
 
@@ -290,6 +298,10 @@ body {
 }
 
 .pricing-card__cta--remote-paid:focus-visible {
+  box-shadow: 0 0 0 4px #1e293b;
+}
+
+.pricing-card__cta--pro:focus-visible {
   box-shadow: 0 0 0 4px var(--ankimcp-primary-600, #0a72e6);
 }
 
