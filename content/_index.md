@@ -29,7 +29,13 @@ sitemap_priority: 1.0
 
 <div class="hx:mt-6"></div>
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE (optional, my suggestion): a short demo GIF or screenshot under the hero — e.g. a chat asking Claude to create cards and the cards appearing in Anki. Homepage currently has no product visual at all. Delete this box if you disagree.</div>
+<div style="display:flex;justify-content:center;width:100%;margin:0 0 3rem 0;">
+<video autoplay muted loop playsinline poster="/hero/hero-poster.jpg" width="1600" height="856" style="width:100%;max-width:960px;height:auto;margin:0 auto;border-radius:0.75rem;box-shadow:0 10px 40px rgba(0,0,0,0.15);" aria-label="Demo: a user asks Claude to create 5 Spanish flashcards, Claude adds them to the Anki deck through AnkiMCP, and the cards are then reviewed in Anki.">
+<source src="/hero/hero.webm" type="video/webm" />
+<source src="/hero/hero.mp4" type="video/mp4" />
+<img src="/hero/hero-poster.jpg" alt="Claude and Anki side by side: Claude creates five Spanish greeting flashcards and they appear in the Anki deck." />
+</video>
+</div>
 
 {{< hextra/feature-grid >}}
   {{< hextra/feature-card
@@ -59,6 +65,13 @@ sitemap_priority: 1.0
     link="/docs/how-to/anki-ai-prompts/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(76,175,80,0.15),hsla(0,0%,100%,0));"
+  >}}
+  {{< hextra/feature-card
+    title="Hosted Anki in the Cloud"
+    subtitle="Run a real Anki in the cloud on the Pro plan — your AI can reach your cards any time, even when your laptop is off"
+    link="/docs/hosted-anki/"
+    class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
+    style="background: radial-gradient(ellipse at 50% 80%,rgba(59,130,246,0.15),hsla(0,0%,100%,0));"
   >}}
   {{< hextra/feature-card
     title="More Coming Soon"
