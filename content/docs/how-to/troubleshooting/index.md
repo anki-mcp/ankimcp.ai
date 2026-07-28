@@ -9,7 +9,7 @@ keywords:
   - anki mcp add-on not running
   - anki mcp tunnel not connecting
   - fix anki mcp
-weight: 9
+weight: 7
 sitemap_priority: 0.7
 aliases:
   - /docs/known-issues/

@@ -37,11 +37,11 @@ This works with desktop AI apps like **Claude Desktop** and coding tools like **
 
 It also reaches **web-based assistants** like the **ChatGPT website** or **claude.ai**. These run in your browser, not on your computer, so they can't see localhost on their own.
 
-To connect the tunnel, you **sign in** once. You choose which AI clients to authorize — each one must sign in with your account before it can reach your Anki. There is also an optional **no-sign-in address** (off by default): anyone who has that address can reach your Anki, so only turn it on if you need it, and share it carefully. The tunnel has [**free and paid tiers**](/pricing/). Both the add-on and the CLI support it.
+To connect the tunnel, you **sign in** once. You choose which AI clients to authorize — each one must sign in with your account before it can reach your Anki. There is also an optional **Authless access** setting — a private no-sign-in address you can switch on in your [Tunnel Dashboard](https://web.ankimcp.ai) (off by default): anyone who has that address can reach your Anki, so only turn it on if you need it, and share it carefully. The tunnel has [**free and paid tiers**](/pricing/). Both the add-on and the CLI support it.
 
 ## How local and remote compare
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: simple two-panel diagram — Local: AI app and Anki on one computer talking over localhost; Remote: web/mobile AI reaching Anki through the managed tunnel</div>
+![A two-panel diagram titled "Two ways your AI reaches Anki". Local: an AI app like Claude Desktop and Anki with the AnkiMCP add-on run on the same computer and talk over localhost — free, nothing leaves the machine. Remote: web and mobile AI like ChatGPT or claude.ai reach Anki on your computer through the secure AnkiMCP tunnel, which requires sign-in — works from any device.](local-vs-remote.svg)
 
 Here's a side-by-side look at the main differences.
 
@@ -62,6 +62,8 @@ With the **tunnel**, your data passes through ankimcp.ai's server in real time. 
 ## Either way, Anki must stay open
 
 The tunnel only relays to the Anki on your computer. It is not a cloud copy of your collection. So with both local and remote, **Anki must be open and running** on your machine.
+
+There is now a third option that lifts this requirement: [**Hosted Anki**](/docs/hosted-anki/), where your Anki runs in the cloud on our servers. Because it lives online rather than on your machine, no laptop needs to stay on for your AI to reach it.
 
 ## Common questions
 

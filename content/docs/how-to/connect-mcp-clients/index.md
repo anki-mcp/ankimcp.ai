@@ -11,7 +11,7 @@ keywords:
   - zed mcp anki
   - anki mcp http
   - anki cli stdio
-weight: 5
+weight: 3
 sitemap_priority: 0.8
 # Tabs repeat headings (What you need, Check it worked, Fix common problems)
 # across both panels, so the right-sidebar ToC would list them twice. Hide it.
@@ -53,7 +53,7 @@ The add-on starts a small server inside Anki. It launches on its own every time 
 
 The server starts at `http://127.0.0.1:3141/`. You can check its status under **Tools → AnkiMCP Server Settings...**
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 124672614 entered</div>
+<img src="install-ankimcp-addon.png" width="582" alt="Anki's Install Add-on dialog with the AnkiMCP add-on code 124672614 entered in the Code field." />
 
 ### Step 2: Add the server to your client
 
@@ -100,7 +100,7 @@ If the file already exists, add only the `anki-mcp` entry inside the existing `m
 
 If your settings already have a `context_servers` block, add only the `anki-mcp` entry inside it.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Cursor mcp.json open in the editor with the AnkiMCP HTTP server snippet pasted</div>
+<img src="cursor-mcp-json-http.png" width="416" alt="Cursor's mcp.json open in the editor with an AnkiMCP HTTP server entry pointing at localhost port 3141." />
 
 ### Step 3: Restart your client and verify
 
@@ -147,7 +147,7 @@ AnkiConnect is the add-on that lets the server talk to your collection.
 
 To confirm it works, open [http://localhost:8765](http://localhost:8765) in your browser. You should see the plain text `AnkiConnect`.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 2055492159 entered</div>
+<img src="install-ankiconnect-addon.png" width="585" alt="Anki's Install Add-on dialog with the AnkiConnect add-on code 2055492159 entered in the Code field." />
 
 ### Step 2: Install the AnkiMCP CLI
 
@@ -201,7 +201,7 @@ Where the config file lives depends on your client:
 - **Cline**: open the Cline extension in VS Code and use its settings UI to add the MCP server. You can also create or edit `cline_mcp_settings.json` directly.
 - **Zed**: open Zed's `settings.json`. Zed uses the key `context_servers` (not `mcpServers`). Inside it, keep the same `command` and `args` fields.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Cursor mcp.json open in the editor with the AnkiMCP STDIO server snippet pasted</div>
+<img src="cursor-mcp-json-stdio.png" width="410" alt="Cursor's mcp.json open in the editor with an AnkiMCP STDIO server entry running the npx @ankimcp/anki-mcp-server command." />
 
 ### Step 4: Restart your client
 

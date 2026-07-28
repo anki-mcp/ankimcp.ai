@@ -8,7 +8,7 @@ keywords:
   - anki image flashcards
   - anki picture flashcards
   - anki flashcards with images
-weight: 7
+weight: 5
 sitemap_priority: 0.8
 aliases:
   - /docs/image-flashcards/
@@ -27,7 +27,7 @@ For a single card, plain Anki already does this well:
 3. Paste the image (**Ctrl+V** / **Cmd+V**), or click the **paperclip icon** in the editor toolbar and pick the image file.
 4. Save the card. Anki copies the image into your collection automatically, so it syncs to your other devices.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki's note editor with an image pasted into a field and the paperclip icon highlighted in the toolbar</div>
+<img src="anki-editor-image-card.png" width="740" alt="Anki's Add note window: the Front field asks What is this tree with a photo of a baobab pasted below the question, the Back field says Baobab, and the toolbar shows the paperclip attach icon." />
 
 That's it. The AI way below is worth it when you make cards while reading or need images on many cards at once.
 
@@ -71,7 +71,7 @@ On Windows, the path looks like `C:\Users\me\Desktop\cell-diagram.png` instead.
 
 The AI reads the file, adds it to Anki, and puts it on the card.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: a chat message asking the AI to add a local image to a card, with the AI confirming</div>
+<img src="chat-add-local-image.png" width="740" alt="A chat where the user gives Claude a local file path to a baobab photo and asks for a card in the Trees deck; Claude confirms it stored the image in collection.media and created the card with front and back." />
 
 ### One slow way to avoid
 

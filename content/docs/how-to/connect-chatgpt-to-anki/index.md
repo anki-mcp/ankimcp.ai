@@ -9,7 +9,7 @@ keywords:
   - chatgpt anki flashcards
   - anki ai remote access
   - anki mcp tunnel
-weight: 4
+weight: 2
 sitemap_priority: 0.8
 aliases:
   - /docs/installation/web/
@@ -41,7 +41,7 @@ The add-on starts a small server inside Anki. It launches on its own every time 
 3. Enter this code: `124672614`
 4. Click **OK**, then restart Anki.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 124672614 entered</div>
+<img src="install-ankimcp-addon.png" width="582" alt="Anki's Install Add-on dialog with the AnkiMCP add-on code 124672614 entered in the Code field." />
 
 ## Step 2: Connect the tunnel and sign in
 
@@ -52,7 +52,7 @@ Now turn on the tunnel so your Anki gets a public web address.
 3. A login dialog shows a one-time code. Click **Open Browser** and enter that code on the page that opens.
 4. Approve the sign-in. The add-on saves your login, so you won't repeat this each time.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: AnkiMCP Server Settings dialog with the "Connect Tunnel" button and one-time code</div>
+<img src="ankimcp-login-code.png" width="427" alt="Login to AnkiMCP dialog showing a one-time code, an Open Browser button, and a waiting-for-authorization status." />
 
 ## Step 3: Copy the tunnel URL
 
@@ -64,22 +64,22 @@ https://tunnel.ankimcp.ai/mcp
 
 It's safe to share, because it only works after you sign in — requests reach your Anki only when the AI app is signed in with **your** account. Copy that URL. You'll paste it into ChatGPT next.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: AnkiMCP Server Settings showing the tunnel connected — the https://tunnel.ankimcp.ai/mcp address and the no-sign-in URL toggle (off)</div>
+<img src="tunnel-connected.png" width="449" alt="AnkiMCP Server Settings with the Cloud Tunnel connected, showing the signed-in account and the permanent tunnel URL https://tunnel.ankimcp.ai/mcp with a Copy button." />
 
 ## Step 4: Add the tunnel to ChatGPT
 
-In ChatGPT, go to **Settings → Apps** and click **Create app** (next to **Advanced settings**). The **New App** dialog opens.
+In ChatGPT, go to **Settings → Plugins → Browse plugins**, then click the **+** button in the top-right corner. The **New Plugin** dialog opens.
 
 1. Give it a **Name**, like `AnkiMCP`. The icon and description are optional.
 2. Under **Connection**, keep **Server URL** selected and paste your tunnel URL.
 3. Leave **Authentication** on **OAuth**. ChatGPT reads the right settings from the URL.
 4. Check the box **I understand and want to continue** to accept ChatGPT's custom-MCP risk notice.
 5. Click **Create**.
-6. ChatGPT asks you to sign in to AnkiMCP — sign in and approve. AnkiMCP then appears under **Enabled apps** in **Settings → Apps** (custom apps carry a small `DEV` badge).
+6. ChatGPT asks you to sign in to AnkiMCP — sign in and approve. AnkiMCP then appears in **Settings → Plugins**.
 
-<img src="chatgpt-new-app.png" width="472" alt="ChatGPT's New App dialog: a Name field, a Connection set to Server URL with the tunnel URL pasted, Authentication set to OAuth, and the I understand and want to continue risk checkbox." />
+<img src="chatgpt-new-plugin.png" width="500" alt="ChatGPT's New Plugin dialog: a Name field with AnkiMCP, Connection set to Server URL with the tunnel URL pasted, Authentication set to OAuth, and the I understand and want to continue risk checkbox checked." />
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: ChatGPT Settings → Apps showing AnkiMCP under Enabled apps with the DEV badge (screenshot already taken — see chat)</div>
+<img src="chatgpt-plugins-ankimcp.png" width="600" alt="ChatGPT Settings → Plugins showing AnkiMCP in the installed plugins list." />
 
 ## Check it worked
 

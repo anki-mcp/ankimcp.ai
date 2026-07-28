@@ -1,7 +1,7 @@
 ---
 title: "Anki Studio"
 description: "AnkiMCP Studio: cloud features your AI reaches through one MCP endpoint — build knowledge roadmaps and manage a media library, separate from the tunnel to your local Anki."
-weight: 4
+weight: 3
 draft: true
 ---
 

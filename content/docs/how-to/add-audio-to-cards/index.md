@@ -9,7 +9,7 @@ keywords:
   - anki text to speech
   - anki voice
   - does anki support audio flashcards
-weight: 8
+weight: 6
 sitemap_priority: 0.8
 aliases:
   - /docs/audio-flashcards/
@@ -28,7 +28,7 @@ For a single card, plain Anki already does this well:
 3. Click the **paperclip icon** in the editor toolbar and pick your audio file — or click the **microphone icon** to record yourself directly.
 4. Save the card. Anki copies the audio into your collection and shows a play button on the card.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki's note editor with the paperclip and microphone icons highlighted in the toolbar</div>
+<img src="anki-editor-toolbar.png" width="740" alt="Anki's Add note window with the editor toolbar along the top; the paperclip icon attaches audio files and the microphone icon records audio directly." />
 
 That's the whole manual flow. The AI way below helps when you make many audio cards, or want the audio fetched from a link.
 
@@ -64,7 +64,7 @@ Prepare the audio file first, in one of three ways:
 - **Find a public link** to a pronunciation clip.
 - **Use a separate audio-generating MCP server** to make the voice. One example is the [ElevenLabs MCP server](https://github.com/elevenlabs/elevenlabs-mcp). It makes the audio file; AnkiMCP then stores it.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: an audio file selected in a file browser, showing its full path</div>
+<img src="finder-hola-mp3.png" width="700" alt="Finder with hola.mp3 selected in Downloads; the path bar at the bottom shows the full path anatoly, Downloads, hola.mp3." />
 
 ## Step 2: Ask your AI to add the audio
 
@@ -84,7 +84,7 @@ One thing to know before you update an existing card: **close Anki's Browse wind
 
 The AI stores the file in Anki's media folder, then writes the `[sound:hola.mp3]` tag into the field.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: chat where the AI confirms it stored the audio file and added it to a card</div>
+<img src="chat-add-audio.png" width="740" alt="A chat where the user asks for a Spanish deck card with the audio file at /Users/anatoly/Downloads/hola.mp3 on the front and Hello on the back; Claude confirms it stored hola.mp3 and added the sound tag to the card." />
 
 ## Step 3: Open Anki and study
 

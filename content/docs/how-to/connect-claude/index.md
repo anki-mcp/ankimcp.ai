@@ -58,7 +58,7 @@ The add-on starts a small server inside Anki. It launches on its own every time 
 3. Enter this code: `124672614`
 4. Click **OK**, then restart Anki.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 124672614 entered</div>
+<img src="install-ankimcp-addon.png" width="582" alt="Anki's Install Add-on dialog with the AnkiMCP add-on code 124672614 entered in the Code field." />
 
 ### Step 2: Connect the tunnel and sign in
 
@@ -69,7 +69,7 @@ Now turn on the tunnel so your Anki gets a public web address.
 3. A login dialog shows a one-time code. Click **Open Browser** and enter that code on the page that opens.
 4. Approve the sign-in. The add-on saves your login, so you won't repeat this each time.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: AnkiMCP Server Settings dialog with the "Connect Tunnel" button and one-time code</div>
+<img src="ankimcp-login-code.png" width="427" alt="Login to AnkiMCP dialog showing a one-time code, an Open Browser button, and a waiting-for-authorization status." />
 
 ### Step 3: Copy the tunnel URL
 
@@ -81,7 +81,7 @@ https://tunnel.ankimcp.ai/mcp
 
 It's safe to share, because it only works after you sign in — requests reach your Anki only when the AI app is signed in with **your** account. Copy that URL. You'll paste it into claude.ai next.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: AnkiMCP Server Settings showing the tunnel connected — the https://tunnel.ankimcp.ai/mcp address and the no-sign-in URL toggle (off)</div>
+<img src="tunnel-connected.png" width="449" alt="AnkiMCP Server Settings with the Cloud Tunnel connected, showing the signed-in account and the permanent tunnel URL https://tunnel.ankimcp.ai/mcp with a Copy button." />
 
 ### Step 4: Add the connector in claude.ai
 
@@ -94,7 +94,7 @@ Open [claude.ai](https://claude.ai) in your browser and add the tunnel as a cust
 
 For the exact menu path, see Anthropic's [custom connectors guide](https://support.claude.com/en/articles/11175166-get-started-with-custom-connectors-using-remote-mcp).
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: claude.ai "Add custom connector" dialog with the tunnel URL pasted</div>
+<img src="claude-add-connector.png" width="740" alt="claude.ai Settings → Connectors with the Add custom connector dialog open: the name AnkiMCP and the tunnel URL https://tunnel.ankimcp.ai/mcp filled in." />
 
 ### It works everywhere
 
@@ -146,7 +146,7 @@ AnkiConnect is the add-on that lets the bundle reach your collection.
 
 To confirm it works, open [http://localhost:8765](http://localhost:8765) in your browser. You should see the plain text `AnkiConnect`.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki "Install Add-on" dialog with the code 2055492159 entered</div>
+<img src="install-ankiconnect-addon.png" width="585" alt="Anki's Install Add-on dialog with the AnkiConnect add-on code 2055492159 entered in the Code field." />
 
 ### Step 2: Download the AnkiMCP bundle
 
@@ -158,7 +158,7 @@ In Claude Desktop, go to **Settings → Extensions**. Drag and drop the `.mcpb` 
 
 The bundle self-configures the AnkiConnect address to `http://localhost:8765`. You don't need to change it.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Claude Desktop Settings → Extensions showing the AnkiMCP extension installed</div>
+<img src="claude-desktop-extensions.png" width="740" alt="Claude Desktop Settings → Extensions with the Anki MCP Server extension installed on your computer." />
 
 ### Step 4: Restart Claude Desktop
 

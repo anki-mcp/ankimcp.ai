@@ -35,7 +35,7 @@ sitemap_priority: 0.7
 5. Click **OK**.
 6. If the setting doesn't seem to apply, restart Anki.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Anki Preferences → Review tab with the "Generate LaTeX images" checkbox highlighted</div>
+<img src="anki-preferences-latex.png" width="740" alt="Anki's Preferences window on the Review tab with the Generate LaTeX images (security risk) checkbox checked at the bottom of the Review options." />
 
 **Security note:** Anki's manual recommends leaving this off if you use shared decks or plan to import them. LaTeX code can read or write files anywhere on your computer, so a malicious deck author could reach your data. Enable the setting only if you write all your own LaTeX content or fully trust your deck sources.
 
@@ -44,7 +44,9 @@ sitemap_priority: 0.7
 1. Create a card with this in a field: `[latex]\sum_{k=1}^{\infty}\frac{1}{k}[/latex]`
 2. Preview the card. You should see the formula as a rendered image.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: an Anki card preview showing the sum formula rendered as an image</div>
+And LaTeX isn't limited to formulas — with the right packages it renders full diagrams. This card draws vector arrows with TikZ and plots a parabola, all generated as images by the same setting:
+
+<img src="latex-rendered-card.png" width="600" alt="An Anki card preview with LaTeX-rendered content: a TikZ diagram of vector arrows with magnitude and direction, and a plotted blue parabola labeled y equals x squared." />
 
 ## Why the setting is off by default
 

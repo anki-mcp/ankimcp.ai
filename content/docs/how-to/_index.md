@@ -1,5 +1,6 @@
 ---
-title: "How-to guides"
+title: "Connect AI to Anki"
+linkTitle: "Connect AI to Anki"
 description: "Task recipes for connecting and using AnkiMCP: link an AI app, turn notes into cards, and set up remote access."
 weight: 2
 aliases:

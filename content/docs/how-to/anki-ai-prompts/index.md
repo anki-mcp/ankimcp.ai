@@ -9,7 +9,7 @@ keywords:
   - ai prompt for anki cards
   - ai flashcard prompt
   - anki ai assistant
-weight: 6
+weight: 4
 sitemap_priority: 0.8
 aliases:
   - /docs/prompts/
@@ -55,7 +55,7 @@ The prompt's instructions attach to your chat. Claude now knows the rules to fol
 **Using a client without an attachment menu?** Copy the prompt text into the chat instead — the [copy-paste prompts below](#copy-paste-prompts-that-work-in-any-ai) work anywhere.
 {{< /callout >}}
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Claude attachment menu showing "Twenty rules" and "Review session" prompts</div>
+<img src="claude-prompts-menu.png" width="700" alt="Claude's attachment menu with the AnkiMCP connector enabled: the Add from AnkiMCP.ai submenu lists prompts including Review session and Twenty rules." />
 
 ## Step 2: Ask for what you want
 
@@ -76,7 +76,7 @@ Let's review my Spanish deck.
 
 Claude shows one card, waits for your answer, reveals it, and asks you to rate it.
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: Claude creating flashcards in a deck after the twenty_rules prompt is attached</div>
+<img src="claude-creating-cards.png" width="740" alt="Claude with the twenty_rules prompt attached creating a Pharmacology deck: the reply confirms 9 cloze notes making 10 cards, with the first cards listed as short single-fact cloze deletions." />
 
 ## Check it worked
 

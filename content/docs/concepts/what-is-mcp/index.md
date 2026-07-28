@@ -43,7 +43,7 @@ Picture an interpreter standing between two people who don't share a language. T
 
 Here's the whole idea in one line: **AI assistant ⟷ MCP server ⟷ the app.**
 
-<div style="background:#fef08a;border:3px solid #dc2626;color:#b91c1c;font-weight:bold;padding:.75rem;margin:1rem 0;border-radius:.5rem;">🖼️ INSERT-IMAGE-HERE: simple diagram — AI assistant on the left, MCP server (interpreter) in the middle, Anki on the right, with arrows both ways</div>
+![A diagram titled "The MCP server works like an interpreter": an AI assistant box on the left speaks plain language, an MCP server box in the middle translates both ways, and an Anki box on the right performs the actions, with arrows flowing in both directions between them.](mcp-interpreter.svg)
 
 So the flow works like this:
 

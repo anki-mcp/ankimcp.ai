@@ -1,7 +1,7 @@
 ---
 title: "Reference"
 description: "Where to look up AnkiMCP tools, settings, and facts. The complete, official reference is in the open-source repositories."
-weight: 5
+weight: 6
 ---
 
 Need to look up a tool, a setting, or an exact fact? The complete, official reference is kept next to the code, on GitHub:
