@@ -8,7 +8,6 @@ keywords: ["anki studio", "hosted anki", "anki roadmap", "anki ai sandbox", "ank
 categories: ["releases"]
 tags: ["anki studio", "hosted anki", "roadmap", "sandbox", "media library", "tunnel"]
 sitemap_priority: 0.7
-draft: true
 ---
 
 AnkiMCP started as one thing: a bridge that lets an AI create and review cards in your Anki. Today it becomes a workbench. This release goes after the pain points every Anki user knows — the ones we've all just learned to live with.
@@ -19,7 +18,7 @@ AnkiMCP started as one thing: a bridge that lets an AI create and review cards i
 
 - **"Two thousand cards in, I have no idea what I actually know."** The **Knowledge Roadmap** turns your deck into a living map — what's mastered, what's decaying, what to learn next, synced from your real review history → [Knowledge Roadmap](/docs/anki-studio/knowledge-roadmap/)
 
-- **"The AI writes cards it can't see, and I see cards I didn't write."** The **Sandbox** is a shared live workbench: your AI drafts, you polish in a real Anki-accurate preview, and nothing touches your deck until you approve → [Sandbox](/docs/anki-studio/sandbox/)
+- **"Polishing a card with the AI in Anki is a dance: close the editor, let the AI edit, reopen, fix the styling in yet another window — and edits made while the editor is open just get ignored."** The **Sandbox** ends the dance: one shared live workbench where you and your AI edit the same draft at the same time — fields, HTML, CSS, JS, and an Anki-accurate preview side by side — and nothing touches your deck until you approve → [Sandbox](/docs/anki-studio/sandbox/)
 
 - **"My card images and audio are scattered everywhere."** The **Media Library** stores them once, organized and editable in the browser, where your AI can find and reuse them → [Media Library](/docs/anki-studio/media-library/)
 

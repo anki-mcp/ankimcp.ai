@@ -20,6 +20,8 @@ aliases:
 
 **Hosted Anki gives you a real Anki desktop app running in the cloud on AnkiMCP's servers — your Anki, hosted for you. Your AI assistant can reach it any time, from anywhere, without your computer being on.**
 
+{{< zoom-image src="hosted-anki-overview.png" alt="Hosted Anki open in the dashboard's Anki Instance view: the real Anki desktop app running in an in-browser remote desktop, showing the deck list with German and Python decks and the Browse window with a German vocabulary card (der Schlüssel — the key), with the instance On toggle and Back to instance controls on top." width="740" caption="The real Anki, running in the cloud, inside your browser — click to enlarge" >}}
+
 ## What it is
 
 Your hosted Anki is the same Anki you know — the full desktop app, not a copy or an emulation — running on our servers with the AnkiMCP add-ons already installed. You reach it in two ways:
