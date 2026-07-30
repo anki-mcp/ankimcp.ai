@@ -87,6 +87,10 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 </div>
 </div>
 
+## Schools and organizations
+
+Want AnkiMCP for a whole class, school, or company? The platform can be installed **on-premise** — running on your own infrastructure with a private Anki server — and customized for how you teach: classes and groups, student progress tracking, and integrations with your existing tools. Email [support@ankimcp.ai](mailto:support@ankimcp.ai) and tell us what you need.
+
 ## Why the local part is free — and stays free
 
 Everything that runs on your own computer is free because it costs us nothing to run. The add-on and the CLI are **open source** and talk to Anki directly on your machine. There's no server in the middle, so there's nothing to charge for. That won't change.

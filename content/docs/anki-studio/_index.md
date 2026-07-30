@@ -27,7 +27,7 @@ Today, Studio gives your AI three things:
 - **[Media Library](/docs/anki-studio/media-library/)** — cloud storage for the images and audio your cards use, so your AI can reach and reuse them.
 - **[Sandbox](/docs/anki-studio/sandbox/)** — a shared workbench where you and your AI draft cards together and see them render live before anything reaches your deck.
 
-You add Studio to your AI the same way you add the tunnel: copy the **Studio MCP URL** from your dashboard and paste it into Claude or ChatGPT as an additional MCP server. It's one global endpoint — the same URL for everyone — and your account decides what it can see.
+You add Studio to your AI the same way you add the tunnel: add the **Studio MCP URL** — `https://studio.ankimcp.ai/mcp` — to Claude or ChatGPT as an additional MCP server (you'll also find it in your [dashboard](https://web.ankimcp.ai)). It's one global endpoint — the same URL for everyone — and your account decides what it can see.
 
 More Studio features are on the way.
 
