@@ -244,6 +244,20 @@ body {
   opacity: 0.7;
 }
 
+/* Docs links inside feature bullets — subtle, so the CTA stays the loudest element */
+.pricing-card__features a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--ankimcp-primary-600, #0a72e6);
+  text-underline-offset: 3px;
+}
+
+.pricing-card__features a:hover {
+  color: var(--ankimcp-primary-600, #0a72e6);
+  text-decoration-style: solid;
+}
+
 /* Call-to-action button */
 .pricing-card__cta {
   display: block;

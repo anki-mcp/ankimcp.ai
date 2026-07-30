@@ -38,8 +38,8 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 </div>
 <ul class="pricing-card__features">
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in Local</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Remote access: ChatGPT, claude.ai, your phone, any device</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Secure managed tunnel, sign in once</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span><a href="/docs/how-to/connect-chatgpt-to-anki/">Remote access</a>: ChatGPT, claude.ai, your phone, any device</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>Secure <a href="/docs/concepts/remote-vs-local/">managed tunnel</a>, sign in once</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 signed-in requests / month</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless (no-sign-in) requests / month</li>
 </ul>
@@ -62,7 +62,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No monthly caps to think about</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Supports active development &amp; new features</li>
 </ul>
-<a class="pricing-card__cta pricing-card__cta--remote-paid" href="/docs/how-to/connect-chatgpt-to-anki/">Go unlimited</a>
+<a class="pricing-card__cta pricing-card__cta--remote-paid" href="https://web.ankimcp.ai/settings">Go unlimited</a>
 </div>
 </div>
 <div class="pricing-card pricing-card--pro">
@@ -77,12 +77,12 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 </div>
 <ul class="pricing-card__features">
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in Plus</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Hosted Anki: your Anki runs in our cloud, always reachable by your AI</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span><a href="/docs/hosted-anki/">Hosted Anki</a>: your Anki runs in our cloud, always reachable by your AI</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Laptop can stay off — no local Anki needed</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>In-browser remote desktop access to your Anki</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Experimental — still being built out</li>
 </ul>
-<a class="pricing-card__cta pricing-card__cta--pro" href="/docs/hosted-anki/">Explore Hosted Anki</a>
+<a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Get Hosted Anki</a>
 </div>
 </div>
 </div>

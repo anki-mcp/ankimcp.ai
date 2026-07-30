@@ -87,7 +87,7 @@ params:
   banner:
     key: 'migration-complete-2026-07-27'
     message: |
-      ✅ **Migration complete** — lots of new functionality is live. We're still monitoring, so expect occasional instability. Updated docs land in the next few days.
+      ✅ **Migration complete** — lots of new functionality is live. We're still monitoring, so expect occasional instability.
 
   analytics:
     umami:

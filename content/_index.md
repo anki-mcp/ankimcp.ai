@@ -8,7 +8,7 @@ sitemap_priority: 1.0
 
 <div class="hx:mt-6">
 {{< callout type="info" emoji="✅" >}}
-**Migration complete.** Everything is back up, and a lot of new functionality shipped along the way. We're still actively monitoring, so you may hit occasional instability over the next few days — please [report anything broken](https://github.com/ankimcp/anki-mcp-server/issues). Updated documentation covering the new features is on its way and will land within the next few days.
+**Migration complete.** Everything is back up, and a lot of new functionality shipped along the way. We're still actively monitoring, so you may hit occasional instability over the next few days — please [report anything broken](https://github.com/ankimcp/anki-mcp-server/issues).
 {{< /callout >}}
 </div>
 
