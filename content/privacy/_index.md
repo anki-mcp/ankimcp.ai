@@ -98,7 +98,7 @@ We store:
 - **Tier history:** an audit trail of tier changes (upgrades, downgrades) with timestamps.
 - **Expiration date:** when your current subscription period ends (for paid plans).
 
-Payment processing is not yet implemented. When it is added, payment is handled by a third-party payment processor — we will not store full credit card numbers. This Privacy Policy will be updated before payment processing goes live.
+Payments for paid tiers are processed by **[Paddle](https://www.paddle.com)** (Paddle.com Market Limited and its affiliates) as the **merchant of record**. Your payment details — card number, billing address, and related checkout information (which may include your IP address, collected by Paddle for tax-location and fraud-prevention purposes) — are collected and processed **by Paddle on Paddle's own checkout**, under [Paddle's Privacy Policy](https://www.paddle.com/legal/privacy). They never reach our servers, and we do not store any card numbers. From Paddle we receive the information needed to operate your subscription: your subscription status, plan, and billing events (such as renewals, cancellations, and refunds).
 
 ##### Service Monitoring (OpenTelemetry)
 
@@ -148,6 +148,7 @@ We rely on the following third-party services:
 | Cloudflare | Network edge for SaaS connections (TLS, DDoS protection) | [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/) |
 | Umami (self-hosted) | Anonymous analytics | [Umami Privacy](https://umami.is/privacy) |
 | MailerLite | Newsletter delivery | [MailerLite Privacy Policy](https://www.mailerlite.com/legal/privacy-policy) |
+| Paddle | Payment processing (merchant of record) | [Paddle Privacy Policy](https://www.paddle.com/legal/privacy) |
 | Discourse (self-hosted) | Community forum | [Discourse Privacy Policy](https://www.discourse.org/privacy) |
 | Keycloak (self-hosted) | Authentication for forum, SaaS accounts, and LLM OAuth | [Keycloak Privacy](https://www.keycloak.org/privacy) |
 | Email delivery service (third-party) | Forum email notifications | N/A |
