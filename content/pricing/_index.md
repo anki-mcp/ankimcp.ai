@@ -20,8 +20,9 @@ You only pay when you want **remote access**: letting a web AI like ChatGPT or c
 
 ## What's free and what's paid
 
-{{< callout type="info" >}}
-**Using AnkiMCP on your own computer is free and open source — forever.** The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://github.com/ankimcp/anki-mcp-server) work with local AI apps like Claude Desktop, Claude Code, Cursor, Cline, and Zed, with no account and no limits. You only ever pay for remote access — the plans below. [Get started →](/docs/get-started/)
+{{< callout emoji="🎉" >}}
+<span style="font-size:1.15em;font-weight:700;">Using AnkiMCP on your own computer is free and open source — forever.</span><br>
+The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://github.com/ankimcp/anki-mcp-server) work with local AI apps like Claude Desktop, Claude Code, Cursor, Cline, and Zed — no account, no limits, nothing to pay. You only ever pay for remote access, the plans below. [Get started →](/docs/get-started/)
 {{< /callout >}}
 
 <div class="pricing-cards">
