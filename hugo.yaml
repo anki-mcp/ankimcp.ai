@@ -1,5 +1,5 @@
 baseURL: https://ankimcp.ai/
-languageCode: en-us
+locale: en-US
 title: Anki MCP
 
 # Sitemap configuration for better SEO
@@ -25,19 +25,22 @@ menu:
     - name: Documentation
       pageRef: /docs
       weight: 1
+    - name: Pricing
+      pageRef: /pricing
+      weight: 2
     - name: Blog
       pageRef: /blog
-      weight: 2
+      weight: 3
     - name: About
       pageRef: /about
-      weight: 3
-    - name: Search
       weight: 4
+    - name: Search
+      weight: 5
       params:
         type: search
     - name: GitHub
-      weight: 5
-      url: "https://github.com/ankimcp/anki-mcp-server"
+      weight: 6
+      url: "https://github.com/ankimcp"
       params:
         icon: github
 
@@ -45,6 +48,10 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+  highlight:
+    # Emit CSS classes (not inline Monokai styles) so Hextra's own light/dark
+    # syntax-highlight themes apply — softer, theme-matched code blocks.
+    noClasses: false
 
 minify:
   disableJS: true

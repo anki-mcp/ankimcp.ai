@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-labelledby="fc-title fc-desc" font-family="system-ui, -apple-system, Segoe UI, Roboto, sans-serif">
+  <title id="fc-title">The forgetting curve</title>
+  <desc id="fc-desc">Memory retained drops steeply in the first day or two after learning, then the decline slows, approaching zero within a week.</desc>
+
+  <!-- PLACEHOLDER CHART: hand-drawn SVG, to be replaced with a designed image later -->
+  <rect x="1" y="1" width="638" height="358" rx="12" fill="#fcfcfd" stroke="#e4e7ec"/>
+
+  <text x="320" y="32" text-anchor="middle" font-size="17" font-weight="600" fill="#1d2939">How memory fades without review</text>
+
+  <!-- gridlines + y-axis labels (0,25,50,75,100) -->
+  <g stroke="#eaecf0" stroke-width="1">
+    <line x1="60" y1="30"  x2="620" y2="30"/>
+    <line x1="60" y1="100" x2="620" y2="100"/>
+    <line x1="60" y1="170" x2="620" y2="170"/>
+    <line x1="60" y1="240" x2="620" y2="240"/>
+    <line x1="60" y1="310" x2="620" y2="310"/>
+  </g>
+  <g font-size="12" fill="#667085" text-anchor="end">
+    <text x="50" y="34">100%</text>
+    <text x="50" y="104">75%</text>
+    <text x="50" y="174">50%</text>
+    <text x="50" y="244">25%</text>
+    <text x="50" y="314">0%</text>
+  </g>
+
+  <!-- axes -->
+  <line x1="60" y1="30" x2="60" y2="310" stroke="#98a2b3" stroke-width="1.5"/>
+  <line x1="60" y1="310" x2="620" y2="310" stroke="#98a2b3" stroke-width="1.5"/>
+
+  <!-- x-axis ticks (days) -->
+  <g font-size="12" fill="#667085" text-anchor="middle">
+    <text x="60"  y="330">0</text>
+    <text x="153" y="330">1</text>
+    <text x="247" y="330">2</text>
+    <text x="340" y="330">3</text>
+    <text x="433" y="330">4</text>
+    <text x="527" y="330">5</text>
+    <text x="620" y="330">6</text>
+  </g>
+  <text x="340" y="352" text-anchor="middle" font-size="13" fill="#475467">Days since learning</text>
+  <text x="18" y="170" text-anchor="middle" font-size="13" fill="#475467" transform="rotate(-90 18 170)">Memory retained</text>
+
+  <!-- the forgetting curve: R = 100 * e^(-t/2) -->
+  <polyline fill="none" stroke="#ef4444" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"
+    points="60,30 106.7,91.9 153.3,140.2 200,177.7 246.7,207 293.3,229.8 340,247.5 386.7,261.3 433.3,272.1 480,280.5 526.7,287 573.3,292.1 620,296.1"/>
+
+  <!-- annotation -->
+  <text x="250" y="78" font-size="12.5" fill="#b42318">Most of what you'll forget is gone within a day.</text>
+</svg>

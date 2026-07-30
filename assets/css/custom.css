@@ -1,5 +1,44 @@
 /* Custom styles for Anki MCP site */
 
+/* Sticky footer
+   ----------------------------------------------------------------------------
+   Hextra forces the content element (<article> on most layouts, <main> on
+   wide/home) to be ~full viewport tall via
+   `hx:min-h-[calc(100vh-var(--navbar-height))]`. On short pages this pushes the
+   footer entirely below the fold, so the user must scroll a full screen of
+   empty space before reaching it.
+
+   Fix: turn the body into a min-height:100vh flex column and pin the footer to
+   the bottom with `margin-top:auto`. The min-height on the content element is
+   neutralized so it no longer reserves a full viewport on short pages; on long
+   pages content grows past 100vh and the footer follows normally.
+
+   Notes:
+   - The neutralized element is matched by the literal class substring (brackets
+     and parens inside the attribute value are literal, no escaping needed). The
+     search box uses `hx:min-h-[100px]`, which does NOT match this string.
+   - Docs pages keep their own full-height layout: the left sidebar's
+     `h-[calc(100vh-var(--navbar-height)-var(--menu-height))]` makes the docs row
+     ~viewport-tall in normal flow, so the docs footer still sits after that row
+     (by design — we must not touch the sidebar calc). The neutralized <article>
+     is a nested flex child that simply stretches to the sidebar-driven height.
+   - The gap between short content and the pinned footer shows the body/content
+     background (white / dark), so it reads seamlessly; the footer's gray-100
+     band only begins at the pin. */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+[class*="hx:min-h-[calc(100vh-var(--navbar-height))]"] {
+  min-height: 0 !important;
+}
+
+.hextra-footer {
+  margin-top: auto;
+}
+
 /* Hero buttons spacing and centering */
 .hero-buttons {
   display: flex !important;
@@ -20,3 +59,349 @@
     align-items: center !important;
   }
 }
+
+/* Pricing cards
+   ----------------------------------------------------------------------------
+   Two-up SaaS-style pricing cards used on /pricing/.
+   Dark mode: Hextra toggles a `.dark` class on <html>. Card backgrounds, text
+   and borders use theme CSS vars where possible; anything hardcoded gets an
+   explicit `.dark` counterpart below. Layout uses CSS grid so both cards
+   stretch to equal height; it collapses to a single column at <= 720px. */
+
+.pricing-cards {
+  /* Hextra (Tailwind v4) consumes the --color-primary-* ramp at build time and
+     does NOT emit it as a runtime custom property. Only the raw HSL inputs
+     (--primary-hue / --primary-saturation / --primary-lightness) reach the
+     browser. So we recompute primary-600 here with the theme's own formula
+     (lightness = lightness / 50 * 45) and fall back to a matching blue. */
+  --ankimcp-primary-600: hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 45)
+  );
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1.5rem;
+  align-items: stretch; /* equal-height cards */
+  margin: 1.5rem 0 2rem;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 0.75rem;
+  background: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.dark .pricing-card {
+  border-color: #374151; /* gray-700 */
+  background: #1f2937; /* gray-800 */
+  box-shadow: none;
+}
+
+/* Header banner */
+.pricing-card__header {
+  position: relative;
+  padding: 1.25rem 1.5rem;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.pricing-card--remote-free .pricing-card__header {
+  background: #334155; /* slate-700 — darker grey */
+}
+
+.pricing-card--remote-paid .pricing-card__header {
+  background: #1e293b; /* slate-800 — darkest grey, below the Pro highlight */
+}
+
+.pricing-card--pro .pricing-card__header {
+  background: var(--ankimcp-primary-600, #0a72e6); /* brand blue — draws the eye */
+}
+
+/* Color-only emphasis: tint the Pro card so it reads as the highlighted
+   option. No badge, border, or scaling — just a soft blue fill. */
+.pricing-card--pro {
+  background: #eff6ff; /* blue-50 */
+}
+
+.dark .pricing-card--pro {
+  background: #152136; /* dark blue tint, distinct from the gray-800 cards */
+}
+
+.pricing-card__name {
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.pricing-card__sub {
+  font-size: 0.85rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Body */
+.pricing-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* push CTA to the bottom for equal-height alignment */
+  padding: 1.5rem;
+}
+
+.pricing-card__price {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.pricing-card__amount {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111827; /* gray-900 */
+}
+
+.pricing-card__amount--small {
+  font-size: 1.6rem;
+}
+
+.dark .pricing-card__amount {
+  color: #f9fafb; /* gray-50 */
+}
+
+.pricing-card__period {
+  font-size: 0.85rem;
+  color: #6b7280; /* gray-500 */
+  margin-top: 0.2rem;
+}
+
+.dark .pricing-card__period {
+  color: #9ca3af; /* gray-400 */
+}
+
+/* Feature list */
+.pricing-card__features {
+  list-style: none;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  flex: 1;
+}
+
+.pricing-card__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: #374151; /* gray-700 */
+}
+
+.dark .pricing-card__features li {
+  color: #d1d5db; /* gray-300 */
+}
+
+.pricing-card__features li.is-no {
+  color: #9ca3af; /* gray-400 muted */
+}
+
+.dark .pricing-card__features li.is-no {
+  color: #6b7280; /* gray-500 */
+}
+
+.pricing-card__icon {
+  flex-shrink: 0;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+/* Visually hidden text (self-contained; carries meaning for screen readers
+   on the "not included" row where the ✗ icon is aria-hidden). */
+.pricing-card__sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pricing-card__features li.is-yes .pricing-card__icon {
+  color: #16a34a; /* green-600 */
+}
+
+.pricing-card__features li.is-no .pricing-card__icon {
+  color: #dc2626; /* red-600 */
+  opacity: 0.7;
+}
+
+/* Call-to-action button */
+.pricing-card__cta {
+  display: block;
+  margin-top: auto;
+  text-align: center;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #ffffff;
+  background: var(--ankimcp-primary-600, #0a72e6);
+  transition: background-color 0.15s ease, filter 0.15s ease;
+}
+
+.pricing-card__cta:hover {
+  filter: brightness(0.92);
+}
+
+.pricing-card__cta--remote-free {
+  background: #334155; /* slate-700 — darker grey */
+}
+
+.pricing-card__cta--remote-paid {
+  background: #1e293b; /* slate-800 */
+}
+
+.pricing-card__cta--pro {
+  background: var(--ankimcp-primary-600, #0a72e6); /* brand blue */
+}
+
+/* Visible keyboard focus state */
+.pricing-card__cta:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px var(--ankimcp-primary-600, #0a72e6);
+}
+
+.pricing-card__cta--remote-free:focus-visible {
+  box-shadow: 0 0 0 4px #334155;
+}
+
+.pricing-card__cta--remote-paid:focus-visible {
+  box-shadow: 0 0 0 4px #1e293b;
+}
+
+.pricing-card__cta--pro:focus-visible {
+  box-shadow: 0 0 0 4px var(--ankimcp-primary-600, #0a72e6);
+}
+
+/* Stack to a single column on small screens */
+@media (max-width: 720px) {
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Navbar emphasis
+   ----------------------------------------------------------------------------
+   Hextra renders inactive top-nav links in a muted gray-600 (text-gray-400 in
+   dark). Darken them and add medium weight so the menu reads stronger. Scoped
+   to the nav container and matched by the muted class so the site title and
+   other elements are untouched. */
+.hextra-nav-container a[class*="hx:text-gray-600"],
+.hextra-nav-container button[class*="hx:text-gray-600"] {
+  color: #1f2937 !important; /* gray-800 */
+  font-weight: 500 !important;
+}
+
+.hextra-nav-container a[class*="hx:text-gray-600"]:hover,
+.hextra-nav-container button[class*="hx:text-gray-600"]:hover {
+  color: #000000 !important;
+}
+
+.dark .hextra-nav-container a[class*="hx:text-gray-600"],
+.dark .hextra-nav-container button[class*="hx:text-gray-600"] {
+  color: #e5e7eb !important; /* gray-200 */
+}
+
+.dark .hextra-nav-container a[class*="hx:text-gray-600"]:hover,
+.dark .hextra-nav-container button[class*="hx:text-gray-600"]:hover {
+  color: #ffffff !important;
+}
+
+/* Active/current nav link: brand color + bold so it clearly stands out from
+   the other (dark gray) links. Hextra gives the current item `hx:font-medium`
+   and no gray class, so it's matched by font-medium (scoped to the navbar).
+   Primary color recomputed from the theme's HSL inputs (see pricing block). */
+.hextra-nav-container a[class*="hx:text-sm"][class*="hx:font-medium"],
+.hextra-nav-container button[class*="hx:text-sm"][class*="hx:font-medium"] {
+  color: hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 45)
+  ) !important;
+  font-weight: 700 !important;
+}
+
+.dark .hextra-nav-container a[class*="hx:text-sm"][class*="hx:font-medium"],
+.dark .hextra-nav-container button[class*="hx:text-sm"][class*="hx:font-medium"] {
+  color: hsl(
+    var(--primary-hue, 212deg)
+    var(--primary-saturation, 100%)
+    calc(var(--primary-lightness, 50%) / 50 * 62)
+  ) !important;
+}
+
+/* Inline code: a subtle, theme-matched chip so snippets stand out in prose
+   without being garish. Excludes code blocks (code inside <pre>). */
+:not(pre) > code {
+  background: #f1f3f5 !important; /* soft light grey */
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  border-radius: 0.3rem !important;
+  padding: 0.08em 0.36em !important;
+  font-size: 0.88em !important;
+}
+
+.dark :not(pre) > code {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(255, 255, 255, 0.13) !important;
+}
+
+/* Click-to-expand images (zoom-image shortcode) */
+.zoom-image-figure { margin: 1.25rem 0; }
+.zoom-image-thumb {
+  cursor: zoom-in;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dark .zoom-image-thumb { border-color: rgba(255, 255, 255, 0.12); }
+.zoom-image-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 95vw;
+  max-height: 95vh;
+  margin: auto; /* restore UA centering killed by the theme's universal margin reset */
+  outline: none; /* showModal() focuses the dialog; hide the focus ring */
+}
+.zoom-image-dialog img {
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  border: 0;
+  outline: none;
+  cursor: zoom-out;
+  display: block;
+}
+.zoom-image-dialog::backdrop { background: rgba(0, 0, 0, 0.75); }
+.zoom-image-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #667085;
+  margin-top: 0.5rem;
+}
+.dark .zoom-image-caption { color: #98a2b3; }

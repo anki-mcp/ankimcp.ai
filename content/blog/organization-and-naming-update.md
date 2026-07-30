@@ -101,15 +101,14 @@ All project resources now use the new naming:
 
 - **GitHub Repository**: [github.com/ankimcp/anki-mcp-server](https://github.com/ankimcp/anki-mcp-server)
 - **NPM Package**: [@ankimcp/anki-mcp-server](https://www.npmjs.com/package/@ankimcp/anki-mcp-server)
-- **Discussions**: [github.com/ankimcp/anki-mcp-server/discussions](https://github.com/ankimcp/anki-mcp-server/discussions)
+- **Community Forum**: [forum.ankimcp.ai](https://forum.ankimcp.ai/)
 - **Issues**: [github.com/ankimcp/anki-mcp-server/issues](https://github.com/ankimcp/anki-mcp-server/issues)
 
 ## Questions?
 
 If you have any questions or encounter issues with the migration:
 
-- [GitHub Discussions](https://github.com/ankimcp/anki-mcp-server/discussions) - Ask questions and share tips
-- [Discord Server](https://discord.gg/JVNcxNB3e7) - Chat with the community
+- [Community Forum](https://forum.ankimcp.ai/) - Ask questions and share tips
 - [Email Support](mailto:support@ankimcp.ai) - Direct support
 
 These changes are part of the ongoing effort to maintain a well-organized project.
