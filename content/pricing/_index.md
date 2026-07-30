@@ -20,30 +20,14 @@ You only pay when you want **remote access**: letting a web AI like ChatGPT or c
 
 ## What's free and what's paid
 
+{{< callout type="info" >}}
+**Using AnkiMCP on your own computer is free and open source — forever.** The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://github.com/ankimcp/anki-mcp-server) work with local AI apps like Claude Desktop, Claude Code, Cursor, Cline, and Zed, with no account and no limits. You only ever pay for remote access — the plans below. [Get started →](/docs/get-started/)
+{{< /callout >}}
+
 <div class="pricing-cards">
-<div class="pricing-card pricing-card--local">
-<div class="pricing-card__header">
-<span class="pricing-card__name">Local</span>
-<span class="pricing-card__sub">On your computer</span>
-</div>
-<div class="pricing-card__body">
-<div class="pricing-card__price">
-<span class="pricing-card__amount">Free</span>
-<span class="pricing-card__period">forever</span>
-</div>
-<ul class="pricing-card__features">
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>The add-on and the CLI</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Create, edit &amp; review cards, FSRS, media</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Local AI apps: Claude Desktop, Claude Code, Cursor, Cline, Zed</li>
-<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No account, no limits</li>
-<li class="is-no"><span class="pricing-card__icon" aria-hidden="true">✗</span><span class="pricing-card__sr">Not included: </span>Remote access (web or mobile AI)</li>
-</ul>
-<a class="pricing-card__cta pricing-card__cta--local" href="/docs/get-started/">Get started</a>
-</div>
-</div>
 <div class="pricing-card pricing-card--remote-free">
 <div class="pricing-card__header">
-<span class="pricing-card__name">Remote</span>
+<span class="pricing-card__name">Free</span>
 <span class="pricing-card__sub">Free tier</span>
 </div>
 <div class="pricing-card__body">

@@ -112,10 +112,6 @@ body {
   gap: 0.15rem;
 }
 
-.pricing-card--local .pricing-card__header {
-  background: #64748b; /* slate-500 — light grey, blends back */
-}
-
 .pricing-card--remote-free .pricing-card__header {
   background: #334155; /* slate-700 — darker grey */
 }
@@ -266,10 +262,6 @@ body {
   filter: brightness(0.92);
 }
 
-.pricing-card__cta--local {
-  background: #64748b; /* slate-500 — light grey, blends back */
-}
-
 .pricing-card__cta--remote-free {
   background: #334155; /* slate-700 — darker grey */
 }
@@ -287,10 +279,6 @@ body {
   outline: 2px solid #ffffff;
   outline-offset: 2px;
   box-shadow: 0 0 0 4px var(--ankimcp-primary-600, #0a72e6);
-}
-
-.pricing-card__cta--local:focus-visible {
-  box-shadow: 0 0 0 4px #64748b;
 }
 
 .pricing-card__cta--remote-free:focus-visible {
