@@ -11,16 +11,17 @@ sitemap_priority: 0.3
 {{< callout type="info" >}}
 **The short version.** This summary is for convenience only — the full Terms below are what applies.
 
-- The software is free, open source, and provided **"as is"** — no warranty.
+- The client software (CLI, add-on) is free and open source; the cloud service is not. Everything is provided **"as is"** — no warranty.
 - **Back up your Anki decks.** The AI can change or delete cards, and you are responsible for your own data.
 - Be respectful on the forum. You own your posts; we may moderate content that breaks the rules.
 - The tunnel has a **free tier** with monthly limits and a **Plus tier** ($5/month). There's also a **Pro tier** ($15/month) that adds **Hosted Anki**. Limits and pricing can change with notice.
+- Paid plans renew monthly and you can **cancel anytime** — access lasts until the end of the period you've paid for, with no automatic refund for unused time. There's a **14-day money-back guarantee** on your first payment. Payments are handled by **Paddle**, and refunds are issued through Paddle. See "Payments, Refunds, and Cancellation."
 - **Hosted Anki is experimental** — it runs a copy of your Anki on our servers, may change or go away, and deleting an instance is permanent. Keep your own backups.
-- Your tunnel is for you only — don't share it, and you choose which AI apps may access your Anki.
+- Your tunnel is for you only — don't share it, and you choose which AI apps may access your Anki. If you turn on **authless access**, anyone with your private link can reach your Anki — keep it secret.
 - Our liability is limited: at most, what you paid us in the last 12 months.
 {{< /callout >}}
 
-These Terms of Service ("Terms") govern your use of the ankimcp.ai website, the AnkiMCP software, and the AnkiMCP SaaS cloud service (collectively, the "Service"). By accessing or using the Service, you agree to these Terms.
+These Terms of Service ("Terms") govern your use of the ankimcp.ai website, the AnkiMCP software, and the AnkiMCP SaaS cloud service (collectively, the "Service"). The Service is operated by **[Anatoly Tarnavsky](https://anatoly.dev)**, sole proprietor ("AnkiMCP", "we", "us"). By accessing or using the Service, you agree to these Terms.
 
 ### 1. Acceptance of Terms
 
@@ -38,7 +39,9 @@ AnkiMCP is a free, open-source Model Context Protocol (MCP) server that connects
 
 ### 3. Open-Source License
 
-The AnkiMCP software is distributed under its open-source license as specified in its GitHub repositories — the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon). Your use of the software is governed by that license.
+The **client-side components** of AnkiMCP — such as the [CLI server](https://github.com/ankimcp/anki-mcp-server) and the [Anki add-on](https://github.com/ankimcp/anki-mcp-server-addon), together with any other software we distribute via GitHub — are open source, distributed under the licenses specified in their repositories. Your use of that software is governed by those licenses.
+
+The **SaaS platform** — the tunnel infrastructure, the dashboard, and the systems that provision and manage Hosted Anki instances — is **not** open source. It is proprietary software operated by us and made available to you as a service under these Terms.
 
 ### 4. Use at Your Own Risk
 
@@ -115,7 +118,7 @@ The AnkiMCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastru
 
 #### Account Registration and Eligibility
 
-- SaaS accounts are managed through our self-hosted Keycloak identity provider (in the `ankimcp` realm, separate from the forum). You may sign in with Google, GitHub, or email/password.
+- SaaS accounts are managed through our self-hosted Keycloak identity provider. You may sign in with Google, GitHub, or email/password.
 - You must be at least **13 years old** to create a SaaS account.
 - You may create one SaaS account per person.
 - You are responsible for keeping your account credentials secure. You are responsible for all activity that occurs under your account.
@@ -126,14 +129,24 @@ The AnkiMCP SaaS cloud service ("SaaS Service") provides hosted tunnel infrastru
 The SaaS Service currently offers three subscription tiers:
 
 - **Free tier:** includes a monthly allowance of tunnel requests (currently 100 authenticated ("signed-in") and 1,000 unauthenticated ("authless") requests per month). No payment required. Available to all registered users.
-- **Plus tier:** removes those limits (unlimited requests) for a recurring fee (currently $5 per month). Full payment terms will be published when payment processing is implemented.
+- **Plus tier:** removes those limits (unlimited requests) for a recurring fee (currently $5 per month). See "Payments, Refunds, and Cancellation" below for billing terms.
 - **Pro tier:** includes everything in the Plus tier and adds the **Hosted Anki** feature (see below) for a recurring fee (currently $15 per month). Hosted Anki is experimental; the Pro tier's features, availability, and pricing may change while the feature matures.
 
 We reserve the right to modify tier features, request allowances, introduce new tiers, or adjust pricing with reasonable notice. Changes to paid tier pricing will not apply to active subscription periods.
 
+#### Payments, Refunds, and Cancellation
+
+Paid tiers (Plus and Pro) are billed as recurring subscriptions. The following terms apply to all paid subscriptions.
+
+- **Payment processor (merchant of record).** Payments for paid tiers are processed by **Paddle** (Paddle.com Market Limited and its affiliates), which acts as the **merchant of record** for your purchase. This means Paddle — not AnkiMCP — is the seller of record for the transaction, handles billing, and issues any refunds. When you buy a paid subscription, **Paddle's Buyer Terms and Refund Policy also apply** to that purchase, in addition to these Terms.
+- **Recurring billing and renewal.** Paid subscriptions renew automatically at the end of each billing period until cancelled. Each renewal is charged to your payment method on file through Paddle. To avoid being charged for the next period, **cancel before your renewal date**.
+- **Cancelling.** You may cancel a paid subscription at any time — through the subscription-management link in your Paddle receipt or billing email, or by emailing [support@ankimcp.ai](mailto:support@ankimcp.ai). When you cancel, your paid access **continues until the end of the period you have already paid for** and is not renewed after that. We do **not** provide automatic partial refunds for the unused part of a billing period.
+- **14-day money-back guarantee.** If you are not satisfied with your **first** payment for a paid subscription, you may request a full refund within **14 days** of that purchase by emailing [support@ankimcp.ai](mailto:support@ankimcp.ai). This voluntary guarantee applies to a first-time subscription purchase and does not apply to subsequent renewals.
+- **Statutory rights unaffected.** Nothing in this section limits any refund or cancellation rights you may have under applicable law. In particular, consumers in the EU, EEA, and UK generally have a **14-day right of withdrawal** on digital purchases (which may no longer apply once a digital service has been fully performed, or where you have agreed that it begins immediately). Where these statutory rights apply, they are in addition to the guarantee above.
+- **How refunds are issued.** Approved refunds are processed by Paddle to your original payment method where possible. Depending on your payment provider, a refund may take a number of days to appear.
+
 #### Tunnel Usage and Fair Use
 
-- Each account receives a unique tunnel UUID for LLM client connections.
 - You may not share your tunnel credentials with others or allow others to use your tunnel.
 - You may not use the tunnel service for purposes unrelated to Anki flashcard management via MCP.
 - You may not use the tunnel to transmit illegal, harmful, or infringing content.
@@ -142,7 +155,8 @@ We reserve the right to modify tier features, request allowances, introduce new 
 
 #### LLM Client Connections
 
-- LLM clients connect to your tunnel via OAuth 2.0 (Dynamic Client Registration) through a separate, isolated Keycloak realm (`tunnels`).
+- The tunnel supports two connection modes: **authenticated**, where LLM clients connect via OAuth 2.0 (Dynamic Client Registration), and **authless**, which is **disabled by default**.
+- If you enable **Authless access** in your Tunnel Dashboard, you receive a private URL containing a secret identifier. This URL grants access to your Anki through your tunnel **without any sign-in**: anyone who obtains it can read and modify your Anki data until you disable authless access or regenerate the URL. You are solely responsible for keeping this URL confidential — treat it like a password.
 - You are responsible for deciding which LLM clients to authorize to access your Anki data.
 - We do not control, endorse, or take responsibility for the behavior of third-party LLM clients that connect to your tunnel.
 
@@ -216,7 +230,7 @@ The Service integrates with or relies on third-party services including but not 
 - GitHub for software distribution
 - [Discourse](https://www.discourse.org) (self-hosted) for the community forum
 - [Keycloak](https://www.keycloak.org) (self-hosted) for forum authentication, SaaS authentication, and LLM OAuth
-- [SMTP2GO](https://www.smtp2go.com) for forum email notifications
+- A third-party email delivery service for forum email notifications
 - LLM client providers (e.g., OpenAI ChatGPT, Anthropic Claude) — these services connect to your tunnel via OAuth. We facilitate the OAuth authentication flow but do not control how these providers process your data once it reaches them.
 
 We are not responsible for the availability, terms, or policies of these third-party services.
@@ -246,3 +260,5 @@ For material changes that significantly affect your rights or obligations (such 
 ### 13. Contact
 
 For questions about these Terms, contact us at [support@ankimcp.ai](mailto:support@ankimcp.ai).
+
+The Service is operated by **[Anatoly Tarnavsky](https://anatoly.dev)**, sole proprietor.
