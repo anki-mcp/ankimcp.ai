@@ -376,3 +376,44 @@ body {
   background: rgba(255, 255, 255, 0.09) !important;
   border-color: rgba(255, 255, 255, 0.13) !important;
 }
+
+/* Click-to-expand images (zoom-image shortcode) */
+.zoom-image-figure { margin: 1.25rem 0; }
+.zoom-image-thumb {
+  cursor: zoom-in;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.dark .zoom-image-thumb { border-color: rgba(255, 255, 255, 0.12); }
+.zoom-image-dialog {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 95vw;
+  max-height: 95vh;
+  margin: auto; /* restore UA centering killed by the theme's universal margin reset */
+  outline: none; /* showModal() focuses the dialog; hide the focus ring */
+}
+.zoom-image-dialog img {
+  max-width: 95vw;
+  max-height: 95vh;
+  width: auto;
+  height: auto;
+  border: 0;
+  outline: none;
+  cursor: zoom-out;
+  display: block;
+}
+.zoom-image-dialog::backdrop { background: rgba(0, 0, 0, 0.75); }
+.zoom-image-caption {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #667085;
+  margin-top: 0.5rem;
+}
+.dark .zoom-image-caption { color: #98a2b3; }

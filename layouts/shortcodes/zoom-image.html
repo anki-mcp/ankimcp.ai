@@ -1,0 +1,9 @@
+{{- /* Click-to-expand image: inline at normal width, full-size in a native dialog modal.
+     Usage: zoom-image shortcode with params src, alt, width, caption (all but src optional). */ -}}
+<figure class="zoom-image-figure">
+  <img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}"{{ with .Get "width" }} width="{{ . }}"{{ end }} loading="lazy" class="zoom-image-thumb" title="Click to enlarge" onclick="this.parentElement.querySelector('dialog').showModal();document.body.style.overflow='hidden'" />
+  <dialog class="zoom-image-dialog" onclick="this.close()" onclose="document.body.style.overflow=''">
+    <img src="{{ .Get "src" }}" alt="{{ .Get "alt" }}" loading="lazy" />
+  </dialog>
+  {{- with .Get "caption" }}<figcaption class="zoom-image-caption">{{ . }}</figcaption>{{ end }}
+</figure>

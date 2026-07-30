@@ -1,6 +1,6 @@
 ---
 title: "Get started"
-description: "The three ways to use AnkiMCP: connect an AI to your local Anki for free, store your decks with Anki Studio, or run your Anki in the cloud with Hosted Anki."
+description: "The three ways to use AnkiMCP: connect an AI to your local Anki for free, build and plan your learning with Anki Studio, or run your Anki in the cloud with Hosted Anki."
 weight: 1
 ---
 
@@ -16,9 +16,15 @@ The fastest way to start:
 - [Connect ChatGPT to Anki](/docs/how-to/connect-chatgpt-to-anki/)
 - [Connect Cursor, Cline & other coding tools](/docs/how-to/connect-mcp-clients/)
 
-## 2. Anki Studio (coming soon)
+## 2. Anki Studio
 
-Anki Studio will store your decks and study materials for you and help you plan what to learn next. **It's coming soon** — watch this space.
+[**Anki Studio**](/docs/anki-studio/) is the workspace you and your AI share in your dashboard:
+
+- The [Knowledge Roadmap](/docs/anki-studio/knowledge-roadmap/) — a visual map of a subject wired to your real deck, showing what you've mastered and what's next.
+- The [Sandbox](/docs/anki-studio/sandbox/) — draft cards side by side with your AI and see them render live before anything touches your deck.
+- The [Media Library](/docs/anki-studio/media-library/) — images and audio stored once, reusable on any card your AI builds.
+
+It comes with every account, and the free plan is enough to try all three.
 
 ## 3. Hosted Anki (Pro plan)
 
