@@ -419,3 +419,19 @@ body {
   margin-top: 0.5rem;
 }
 .dark .zoom-image-caption { color: #98a2b3; }
+
+/* "Sign in" navbar button — the menu entry pointing at the dashboard.
+   The theme offers no per-item class, so target it by destination. */
+.hextra-nav-container a[href^="https://web.ankimcp.ai"] {
+  background: var(--ankimcp-primary-600, #0a72e6) !important;
+  color: #ffffff !important;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.9rem !important;
+  margin-left: 0.35rem !important;
+  transition: filter 0.15s ease;
+}
+
+.hextra-nav-container a[href^="https://web.ankimcp.ai"]:hover {
+  filter: brightness(0.92);
+}

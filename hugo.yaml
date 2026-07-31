@@ -43,6 +43,9 @@ menu:
       url: "https://github.com/ankimcp"
       params:
         icon: github
+    - name: Sign in
+      weight: 7
+      url: "https://web.ankimcp.ai"
 
 markup:
   goldmark:
