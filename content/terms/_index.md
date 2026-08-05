@@ -6,7 +6,7 @@ sitemap_priority: 0.3
 
 ## Terms of Service
 
-**Effective Date:** June 30, 2026
+**Effective Date:** August 5, 2026
 
 {{< callout type="info" >}}
 **The short version.** This summary is for convenience only — the full Terms below are what applies.
