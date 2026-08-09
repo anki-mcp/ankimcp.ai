@@ -6,12 +6,6 @@ layout: hextra-home
 sitemap_priority: 1.0
 ---
 
-<div class="hx:mt-6">
-{{< callout type="info" emoji="✅" >}}
-**Migration complete.** Everything is back up, and a lot of new functionality shipped along the way. We're still actively monitoring, so you may hit occasional instability over the next few days — please [report anything broken](https://github.com/ankimcp/anki-mcp-server/issues).
-{{< /callout >}}
-</div>
-
 <div class="hx:mt-6 hx:mb-6">
 {{< hextra/hero-headline >}}
   AnkiMCP — Connect Claude & ChatGPT&nbsp;<br class="hx:sm:block hx:hidden" />to Your Anki Flashcards
