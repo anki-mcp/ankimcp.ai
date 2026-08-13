@@ -9,6 +9,7 @@ keywords:
   - anki mcp add-on not running
   - anki mcp tunnel not connecting
   - fix anki mcp
+  - anki mcp pydantic_core download failed
 weight: 7
 sitemap_priority: 0.7
 aliases:
@@ -84,6 +85,28 @@ This happens when the note is open in Anki's **Browse** window. You can't update
 The [AnkiConnect documentation](https://git.sr.ht/~foosoft/anki-connect#codeupdatenotefieldscode) records the same rule: "You must not be viewing the note that you are updating on your Anki browser, otherwise the fields will not update." See [AnkiConnect issue #82](https://github.com/FooSoft/anki-connect/issues/82) for the original report. It applies to the add-on too, because the limit comes from Anki itself.
 
 We can't auto-fix this. There's no reliable way to detect a viewed note, deselect it for you, or return an error when the update is blocked. For now, deselecting the note yourself is the dependable solution.
+
+## The first time you start the add-on, it downloads something
+
+**Symptom:** You install the AnkiMCP add-on, restart Anki, and a small **AnkiMCP Server - Setup** window appears saying it's downloading `pydantic_core`. Or that download fails and the server doesn't start.
+
+{{< callout type="info" >}}
+**This applies to the AnkiMCP add-on** — the version that installs inside Anki. It isn't about the CLI. Not sure which you use? See [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
+{{< /callout >}}
+
+<!-- TODO(cli-agent): If the CLI has a first-run/install-time equivalent
+     (npm install, Node version mismatch, etc.), add it as a sibling entry
+     below this one rather than editing this add-on prose. -->
+
+**This is expected, and it happens once.** On first run the add-on downloads one component, `pydantic_core` (about 2 MB), from PyPI, the standard Python package index. It can't be shipped inside the add-on: `pydantic_core` is compiled separately for Windows, macOS, and Linux, and an Anki add-on is a single file that has to work on all of them. So the add-on fetches the one build that matches your computer and keeps it. Later launches download nothing and show no window.
+
+You may occasionally see a second, equally brief download named `rpds`. Anki normally supplies that one itself, so it only appears if your Anki build doesn't.
+
+**If the download fails**, the add-on shows an error and the server won't start. Fix the network path, then restart Anki — it retries automatically on every launch, so there's nothing to reinstall.
+
+1. **Check you're online**, then restart Anki.
+2. **On a work, school, or hospital network?** A proxy or firewall may block the package index. Ask for `pypi.org` and `files.pythonhosted.org` to be allowed, or start Anki once on an unfiltered connection — home Wi-Fi or a phone hotspot — so the one-time download can complete. After that, the blocked network is fine.
+3. **VPN or antivirus in the way?** Turn it off briefly, restart Anki, and let the download finish.
 
 ## Still stuck?
 

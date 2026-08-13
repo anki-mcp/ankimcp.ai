@@ -102,6 +102,99 @@ ngrok http --host-header=rewrite 3141
 
 {{< /tabs >}}
 
+## The add-on's other security layers
+
+{{< callout type="info" >}}
+**This section describes the Anki add-on** — the AnkiMCP server that runs inside Anki. The separate AnkiMCP CLI server is documented on its own; nothing below describes CLI behavior. Not sure which you use? See [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
+{{< /callout >}}
+
+<!-- TODO(cli-agent): Add the CLI's equivalents of these layers as sibling
+     content (either a parallel "The CLI's other security layers" H2 or tabs
+     inside each H3 below). Cover: whether the CLI has an API-key equivalent,
+     its CORS story, and how its media validation compares (the Node.js
+     implementation shares the same redirect limitation noted below).
+     Do not edit the add-on prose; add alongside it. -->
+
+The `Host`/`Origin` check above is the layer everybody gets, always on. The add-on has three more you can switch on when you need them. All three are **off by default**, and plain local use needs none of them.
+
+Each one is a key in the add-on's config — in Anki, **Tools → Add-ons → AnkiMCP Server → Config**. The `http_*` keys take effect after you restart Anki. Every key is listed in the [add-on configuration reference](/docs/reference/addon/configuration/).
+
+### An API key, so only your client gets in
+
+The `Host` check proves *where* a request claims to be going. It does not prove *who* sent it. If you put the add-on's HTTP server beyond your own machine, an API key makes every request prove it knows a shared secret first.
+
+Set `http_api_key` to a long random string (16 characters or more):
+
+```json
+{
+  "http_api_key": "a-long-random-secret-key"
+}
+```
+
+Every HTTP request must then carry a matching `Authorization: Bearer a-long-random-secret-key` header. Anything else is rejected with a `403`. This is the same idea AnkiConnect uses for its own optional key.
+
+Point your client at the key. With Claude Code:
+
+```bash
+claude mcp add anki --transport http http://127.0.0.1:3141/ --header "Authorization: Bearer a-long-random-secret-key"
+```
+
+A few things to know:
+
+- **HTTP only.** The managed tunnel signs in with your ankimcp.ai account, so `http_api_key` does not apply to it.
+- **An extra lock, not a replacement.** It sits *alongside* the `Host`/`Origin` check. Both apply independently.
+- **It pairs well with `http_path` and `http_allowed_hosts`** when you expose the server through a tunnel: a secret path hides the endpoint, the allow-list permits your proxy's name, and the key authenticates each request.
+- Surrounding spaces are stripped from the token a client presents, so a key configured *with* leading or trailing whitespace will never match. Don't add any.
+- Empty (the default) switches the layer off entirely.
+
+### CORS, for MCP clients that run in a browser
+
+Browsers refuse to let a web page read a response from another origin unless that server opts in. So if your MCP client *is* a web page — a hosted MCP Inspector, for instance — you have to name it:
+
+```json
+{
+  "cors_origins": ["https://inspector.example.com", "http://localhost:5173"],
+  "cors_expose_headers": ["mcp-protocol-version"]
+}
+```
+
+- `cors_origins` — the browser origins allowed to talk to the add-on. Empty by default, which means no browser page can. `["*"]` allows every site on the internet; don't use it outside a throwaway test.
+- `cors_expose_headers` — which response headers the browser page is allowed to read. The default, `mcp-protocol-version`, is the one a browser-based MCP client needs to negotiate the protocol version.
+
+{{< callout type="warning" >}}
+**CORS is not the same thing as the `Origin` check.** They're separate layers. A browser origin you allow in `cors_origins` must **also** be listed in `http_allowed_origins`, or DNS-rebinding protection still rejects it with a `403`.
+{{< /callout >}}
+
+### Media imports: file types and SSRF
+
+The `store_media_file` tool lets your AI put a picture or a sound into your collection — from raw data, a file on your disk, or a URL. A file path and a URL are both instructions to *your* computer to go fetch something, so the add-on checks them before anything is fetched.
+
+What it enforces out of the box:
+
+- **File paths** must point at an image, audio, or video file, judged by type. Filenames are stripped of path-traversal tricks (`../`, embedded separators, null bytes) before anything is written into your media folder.
+- **URLs** must be `http://` or `https://`. The hostname is resolved first, and the request is blocked if it lands on a private, loopback, link-local, reserved, or multicast address. This is the SSRF guard: it stops "please fetch this image" from being turned into a probe of the router, NAS, or work server sitting on your network.
+- **IPv6 transition ranges are blocked too** — NAT64, 6to4, Teredo, benchmarking, and AMT. Those can carry a private IPv4 address hidden inside an IPv6 literal. AMT is the interesting one: Python's own address classification treats it as an ordinary public address, so the add-on pins the full set itself rather than relying on whatever Python version Anki happens to ship.
+
+You can tighten or loosen this with three optional keys:
+
+```json
+{
+  "media_import_dir": "/Users/me/anki-media",
+  "media_allowed_types": ["application/pdf"],
+  "media_allowed_hosts": ["192.168.1.50", "my-nas.local"]
+}
+```
+
+- `media_import_dir` — confine file-path imports to this folder and its subfolders. Empty (the default) means no folder restriction.
+- `media_allowed_types` — permit extra file types beyond image, audio, and video.
+- `media_allowed_hosts` — let specific hosts through the private-network block, for example your own NAS.
+
+{{< callout type="warning" >}}
+**An honest limit.** The URL check happens *before* the download. A hostname that gives one answer to the check and a different one to the fetch, or a public URL that redirects to a private address, can still slip through. So keep `media_allowed_hosts` short, and only import media from sources you trust.
+{{< /callout >}}
+
+*The media path-traversal issue was responsibly disclosed by [Hideaki Takahashi](https://github.com/Koukyosyumei) (Columbia University).*
+
 ## Common questions
 
 **Do I need to change anything?**

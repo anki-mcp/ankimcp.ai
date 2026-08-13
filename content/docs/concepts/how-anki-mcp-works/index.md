@@ -81,6 +81,32 @@ The evidence here is early, so treat it with care. One 2025 randomized trial at 
 
 That's promising, but it's a single study, in one course, with about 180 students, using a carefully designed tutor. It is not settled science, and an AI tutor is not the same as a skilled human one.
 
+## How does the add-on run inside Anki?
+
+{{< callout type="info" >}}
+**This section describes the AnkiMCP add-on** — the version you install inside Anki, which runs the server there. The separate AnkiMCP CLI server works differently and is documented on its own. Not sure which you use? See [Add-on vs CLI](/docs/concepts/add-on-vs-cli/).
+{{< /callout >}}
+
+<!-- TODO(cli-agent): Add the CLI's architecture alongside this section (a
+     sibling H2, or tabs inside it), covering how the CLI process talks to
+     Anki through AnkiConnect rather than running inside Anki, what that
+     means for "Anki must be open", and the STDIO vs HTTP transports.
+     Keep the same plain-English voice. Do not rewrite the add-on prose. -->
+
+You don't need any of this to use AnkiMCP. It's here because "a program is changing my collection while I'm using it" is a fair thing to want explained.
+
+**The short version: your AI's requests go through Anki itself, one at a time, landing in exactly the same place your own clicks do.** Nothing reaches around Anki to edit your collection behind its back.
+
+Three things follow from that:
+
+- **Anki has to be open.** The server lives inside Anki. Close Anki and the server goes with it.
+- **Your decks, history and schedule stay consistent.** Every change runs through Anki's own code, so nothing gets corrupted and Anki's undo works normally.
+- **The add-on inherits Anki's own rules** — including [not being able to edit a note you're viewing in Browse](/docs/how-to/troubleshooting/).
+
+Curious how it's built? The internals are in the [add-on source](https://github.com/ankimcp/anki-mcp-server-addon).
+
+For the exact list of operations the AI can request, see the [add-on tools reference](/docs/reference/addon/tools/).
+
 ## What this does and doesn't promise
 
 Be realistic about the limits. The AI removes the busywork of building cards; it doesn't remove the thinking that makes cards stick.
