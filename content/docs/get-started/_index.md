@@ -23,8 +23,9 @@ The fastest way to start:
 - The [Knowledge Roadmap](/docs/anki-studio/knowledge-roadmap/) — a visual map of a subject wired to your real deck, showing what you've mastered and what's next.
 - The [Sandbox](/docs/anki-studio/sandbox/) — draft cards side by side with your AI and see them render live before anything touches your deck.
 - The [Media Library](/docs/anki-studio/media-library/) — images and audio stored once, reusable on any card your AI builds.
+- [Text to Speech](/docs/anki-studio/text-to-speech/) — natural voices that turn your text into card audio, saved straight into your media library.
 
-It comes with every account, and the free plan is enough to try all three.
+It comes with every account, and the free plan is enough to try all four.
 
 ## 3. Hosted Anki (Pro plan)
 

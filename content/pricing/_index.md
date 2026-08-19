@@ -42,6 +42,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>Secure <a href="/docs/concepts/remote-vs-local/">managed tunnel</a>, sign in once</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 signed-in requests / month</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless (no-sign-in) requests / month</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>100 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--remote-free" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
 </div>
@@ -60,6 +61,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in the free tier</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited requests, signed-in or not</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No monthly caps to think about</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Supports active development &amp; new features</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--remote-paid" href="https://web.ankimcp.ai/settings">Go unlimited</a>
@@ -80,6 +82,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span><a href="/docs/hosted-anki/">Hosted Anki</a>: your Anki runs in our cloud, always reachable by your AI</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Laptop can stay off — no local Anki needed</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>In-browser remote desktop access to your Anki</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>3,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Experimental — still being built out</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--pro" href="https://web.ankimcp.ai/settings">Get Hosted Anki</a>
@@ -124,6 +127,9 @@ Yes. Paid plans renew monthly and you can cancel anytime — your access stays a
 
 **What counts as a request, and what do the limits mean?**
 One request is one call your AI makes to Anki through the tunnel. A single instruction from you can use several requests — for example, "create 10 cards" may count as 10 requests if the AI adds them one by one, or fewer if it adds them in a batch. The free tier covers **100 signed-in** requests (from an AI app signed in with your account) and **1,000 authless** requests (through the private no-sign-in address you can enable with the **Authless access** toggle in your Tunnel Dashboard — it's off by default) per month. The Plus plan ($5/month) removes both limits.
+
+**What are text-to-speech credits?**
+They're your monthly allowance for the [Text to Speech](/docs/anki-studio/text-to-speech/) feature in Anki Studio, which turns text into card audio. **One credit is one billed character**, counted the way our speech provider counts it: letters, spaces, and punctuation all count, a Chinese character (also kanji in Japanese and hanja in Korean) counts as two, and the extra markup a style, rate, or pitch option adds is counted too. Every plan gets an allowance — **100 credits on the free tier, 1,000 on Plus, 3,000 on Pro**. Credits reset at the start of each calendar month (UTC), and unused credits don't carry over. A generation the speech provider refuses costs you nothing.
 
 ---
 

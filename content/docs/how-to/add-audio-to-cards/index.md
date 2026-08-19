@@ -6,7 +6,6 @@ keywords:
   - anki audio flashcards
   - add audio to anki cards
   - anki flashcards with audio
-  - anki text to speech
   - anki voice
   - does anki support audio flashcards
 weight: 6
@@ -34,13 +33,13 @@ That's the whole manual flow. The AI way below helps when you make many audio ca
 
 ## Adding audio with AI
 
-AnkiMCP doesn't make voice audio itself. Instead, you point your AI to an audio file, and AnkiMCP saves it into your Anki collection and adds it to a card. The rest of this guide shows that workflow, the methods that work, and the limits.
+Whatever the audio comes from — a file you already have, a link, or a voice generated for you — you point your AI to it, and AnkiMCP saves it into your Anki collection and adds it to a card. The rest of this guide shows that workflow, the methods that work, and the limits.
 
 ## What you need
 
 - **Your AI connected to Anki.** Do the [Connect Claude to Anki](/docs/how-to/connect-claude/) guide first.
 - **Anki open** on the same computer.
-- **An audio file** you want on a card. This can be a file on your computer, a public URL, or a file made by a separate audio MCP server (see below).
+- **An audio file** you want on a card. This can be a file on your computer, a public URL, a voice made by [Anki Studio's text to speech](/docs/anki-studio/text-to-speech/), or a file made by a separate audio MCP server (see below).
 
 **Time:** about 5 minutes.
 
@@ -52,7 +51,7 @@ You can give the AI the audio in three ways:
 
 1. **A file on your computer.** Tell the AI the file path. This is the fastest method.
 2. **A public URL.** The AI downloads the file and stores it. No extra tools needed.
-3. **A file from a TTS (text-to-speech) MCP server.** A separate server makes the voice audio, then AnkiMCP stores it.
+3. **Generated audio.** [Anki Studio's text to speech](/docs/anki-studio/text-to-speech/) makes the voice for you and saves the mp3 in your media library. A separate TTS (text-to-speech) MCP server works too.
 
 Avoid pasting raw audio data. File paths and URLs are faster and use far fewer tokens.
 
@@ -62,7 +61,7 @@ Prepare the audio file first, in one of three ways:
 
 - **Save a sound file on your computer** and note its full path — like `/Users/you/hola.mp3` on a Mac, or `C:\Users\you\hola.mp3` on Windows. Not sure how to copy a path? See the tip in [Add images to your cards](/docs/how-to/add-images-to-cards/#by-file-on-your-computer).
 - **Find a public link** to a pronunciation clip.
-- **Use a separate audio-generating MCP server** to make the voice. One example is the [ElevenLabs MCP server](https://github.com/elevenlabs/elevenlabs-mcp). It makes the audio file; AnkiMCP then stores it.
+- **Ask [Anki Studio](/docs/anki-studio/text-to-speech/) to make the voice.** It turns your text into an mp3 and saves it in your media library, ready to put on a card. An alternative is a separate audio-generating MCP server, such as the [ElevenLabs MCP server](https://github.com/elevenlabs/elevenlabs-mcp).
 
 <img src="finder-hola-mp3.png" width="700" alt="Finder with hola.mp3 selected in Downloads; the path bar at the bottom shows the full path anatoly, Downloads, hola.mp3." />
 
@@ -96,9 +95,7 @@ Find the card in Anki's **Browse** window. The field should contain a sound tag 
 
 ## Supported audio types
 
-AnkiMCP accepts common audio files. **MP3** is the safest and most common choice, and it plays on every Anki platform.
-
-<!-- VERIFY: confirm the full list of audio formats Anki supports (e.g. mp3, ogg, wav) -->
+AnkiMCP accepts common audio files. **MP3** is the safest and most common choice, and it plays on every Anki platform. If you route audio through your Studio [media library](/docs/anki-studio/media-library/), it accepts MP3 and WAV.
 
 The file path and URL methods only accept media files (audio, images, video). Other file types are blocked for safety.
 
@@ -113,13 +110,14 @@ Make sure the file is a real audio file and the name in the `[sound:...]` tag ma
 ## Common questions
 
 **Does AnkiMCP do text-to-speech?**
-No. AnkiMCP doesn't make voice audio. It stores and embeds audio files you provide. To turn text into speech, pair it with a separate TTS MCP server, then let AnkiMCP store the result.
+Yes, through [Anki Studio](/docs/anki-studio/text-to-speech/). Ask your AI for the audio, and Studio makes the mp3 and saves it in your media library. AnkiMCP then stores it in Anki and writes the sound tag. A separate TTS MCP server still works if you prefer one.
 
 **Does Anki support audio flashcards?**
 Yes. Anki plays audio with its `[sound:filename.mp3]` tag. AnkiMCP writes that tag for you, so you don't have to edit fields by hand.
 
 ## Next steps
 
+- [Text to speech](/docs/anki-studio/text-to-speech/) — let Anki Studio generate the voice audio for you.
 - [Add images to your cards](/docs/how-to/add-images-to-cards/) using the same media tools.
 - [Write better prompts for Anki](/docs/how-to/anki-ai-prompts/) so the AI makes the cards you want.
 

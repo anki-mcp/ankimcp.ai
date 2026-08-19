@@ -75,7 +75,7 @@ sitemap_priority: 1.0
   >}}
   {{< hextra/feature-card
     title="Anki Studio"
-    subtitle="See what you've mastered on a knowledge roadmap, draft cards live with your AI, and keep your card media in one place"
+    subtitle="See what you've mastered on a knowledge roadmap, draft cards live with your AI, turn text into card audio, and keep your media in one place"
     link="/docs/anki-studio/"
     class="hx-aspect-auto md:hx-aspect-[1.1/1] max-md:hx-min-h-[340px]"
     style="background: radial-gradient(ellipse at 50% 80%,rgba(20,184,166,0.15),hsla(0,0%,100%,0));"
