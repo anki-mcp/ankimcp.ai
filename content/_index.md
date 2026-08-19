@@ -24,7 +24,7 @@ sitemap_priority: 1.0
 
 <div class="hx:mb-6 hero-buttons">
 {{< hextra/hero-button text="Get Started" link="docs/get-started" >}}
-<button class="hextra-button-primary hx:inline-flex hx:items-center hx:gap-1.5 hx:rounded-full hx:px-6 hx:py-3 hx:text-base hx:font-semibold hx:leading-tight hx:transition-colors hx:bg-primary-600 hx:text-white hx:hover:bg-primary-700 hx:dark:bg-primary-600 hx:dark:hover:bg-primary-500 ml-onclick-form" onclick="ml('show', 'ZGJ6BF', true)" type="button">Newsletter</button>
+{{< hextra/hero-button text="Download Add-on" link="https://ankiweb.net/shared/info/124672614" >}}
 </div>
 
 <div class="hx:mt-6"></div>
