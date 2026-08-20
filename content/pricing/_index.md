@@ -42,6 +42,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>Secure <a href="/docs/concepts/remote-vs-local/">managed tunnel</a>, sign in once</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 signed-in requests / month</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless (no-sign-in) requests / month</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Tunnel disconnects after 24 hours of inactivity</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>100 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1 <a href="/docs/anki-studio/knowledge-roadmap/">knowledge roadmap</a></span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>30 MB <a href="/docs/anki-studio/media-library/">media library</a> storage</span></li>
@@ -63,6 +64,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Everything in the free tier</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited requests, signed-in or not</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No monthly caps to think about</li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Tunnel stays connected — no inactivity timeout</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>Unlimited <a href="/docs/anki-studio/knowledge-roadmap/">knowledge roadmaps</a></span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1 GB <a href="/docs/anki-studio/media-library/">media library</a> storage</span></li>
@@ -102,6 +104,7 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 | [Remote access](/docs/how-to/connect-chatgpt-to-anki/) via the managed tunnel | ✓ | ✓ | ✓ |
 | Signed-in requests / month | 100 | Unlimited | Unlimited |
 | Authless requests / month | 1,000 | Unlimited | Unlimited |
+| Tunnel inactivity timeout | Disconnects after 24 h idle | None | None |
 | [Text-to-speech](/docs/anki-studio/text-to-speech/) credits / month | 100 | 1,000 | 3,000 |
 | [Knowledge roadmaps](/docs/anki-studio/knowledge-roadmap/) | 1 | Unlimited | Unlimited |
 | [Media library](/docs/anki-studio/media-library/) storage | 30 MB | 1 GB | 1 GB |
@@ -144,7 +147,7 @@ Hosted Anki (included in the **$15/month Pro** plan) is a full copy of the real 
 Yes. Paid plans renew monthly and you can cancel anytime — your access stays active until the end of the period you've already paid for, and there's no automatic refund for unused time. Your first payment comes with a **14-day money-back guarantee**: just email [support@ankimcp.ai](mailto:support@ankimcp.ai). Payments are handled by Paddle as merchant of record, and refunds are issued through Paddle. See the [Terms of Service](/terms/) for the full details.
 
 **What counts as a request, and what do the limits mean?**
-One request is one call your AI makes to Anki through the tunnel. A single instruction from you can use several requests — for example, "create 10 cards" may count as 10 requests if the AI adds them one by one, or fewer if it adds them in a batch. The free tier covers **100 signed-in** requests (from an AI app signed in with your account) and **1,000 authless** requests (through the private no-sign-in address you can enable with the **Authless access** toggle in your Tunnel Dashboard — it's off by default) per month. The Plus plan ($5/month) removes both limits.
+One request is one call your AI makes to Anki through the tunnel. A single instruction from you can use several requests — for example, "create 10 cards" may count as 10 requests if the AI adds them one by one, or fewer if it adds them in a batch. The free tier covers **100 signed-in** requests (from an AI app signed in with your account) and **1,000 authless** requests (through the private no-sign-in address you can enable with the **Authless access** toggle in your Tunnel Dashboard — it's off by default) per month. On the free tier the tunnel also **disconnects after 24 hours of inactivity** — if your AI hasn't made a request for a day, you reconnect from the add-on or CLI before the next one. The Plus plan ($5/month) removes both request limits and keeps the tunnel connected with no inactivity timeout; Pro includes the same.
 
 **What are text-to-speech credits?**
 They're your monthly allowance for the [Text to Speech](/docs/anki-studio/text-to-speech/) feature in Anki Studio, which turns text into card audio. **One credit is one billed character**, counted the way our speech provider counts it: letters, spaces, and punctuation all count, a Chinese character (also kanji in Japanese and hanja in Korean) counts as two, and the extra markup a style, rate, or pitch option adds is counted too. Every plan gets an allowance — **100 credits on the free tier, 1,000 on Plus, 3,000 on Pro**. Credits reset at the start of each calendar month (UTC), and unused credits don't carry over. A generation the speech provider refuses costs you nothing.
