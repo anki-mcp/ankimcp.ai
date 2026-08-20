@@ -43,6 +43,8 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>100 signed-in requests / month</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>1,000 authless (no-sign-in) requests / month</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>100 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1 <a href="/docs/anki-studio/knowledge-roadmap/">knowledge roadmap</a></span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>30 MB <a href="/docs/anki-studio/media-library/">media library</a> storage</span></li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--remote-free" href="/docs/how-to/connect-chatgpt-to-anki/">Set up remote</a>
 </div>
@@ -62,6 +64,8 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Unlimited requests, signed-in or not</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>No monthly caps to think about</li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1,000 <a href="/docs/anki-studio/text-to-speech/">text-to-speech</a> credits / month</span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>Unlimited <a href="/docs/anki-studio/knowledge-roadmap/">knowledge roadmaps</a></span></li>
+<li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span><span>1 GB <a href="/docs/anki-studio/media-library/">media library</a> storage</span></li>
 <li class="is-yes"><span class="pricing-card__icon" aria-hidden="true">✓</span>Supports active development &amp; new features</li>
 </ul>
 <a class="pricing-card__cta pricing-card__cta--remote-paid" href="https://web.ankimcp.ai/settings">Go unlimited</a>
@@ -89,6 +93,20 @@ The [add-on](https://ankiweb.net/shared/info/124672614) and the [CLI](https://gi
 </div>
 </div>
 </div>
+
+## Compare plans
+
+| | Free | Plus ($5/mo) | Pro ($15/mo) |
+|---|---|---|---|
+| Local use — [add-on](https://ankiweb.net/shared/info/124672614) &amp; [CLI](https://github.com/ankimcp/anki-mcp-server) | ✓ | ✓ | ✓ |
+| [Remote access](/docs/how-to/connect-chatgpt-to-anki/) via the managed tunnel | ✓ | ✓ | ✓ |
+| Signed-in requests / month | 100 | Unlimited | Unlimited |
+| Authless requests / month | 1,000 | Unlimited | Unlimited |
+| [Text-to-speech](/docs/anki-studio/text-to-speech/) credits / month | 100 | 1,000 | 3,000 |
+| [Knowledge roadmaps](/docs/anki-studio/knowledge-roadmap/) | 1 | Unlimited | Unlimited |
+| [Media library](/docs/anki-studio/media-library/) storage | 30 MB | 1 GB | 1 GB |
+| [Hosted Anki](/docs/hosted-anki/) in our cloud | — | — | ✓ |
+| In-browser remote desktop to your Anki | — | — | ✓ |
 
 ## Why the local part is free — and stays free
 
