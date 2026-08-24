@@ -2,7 +2,10 @@
   "mcpServers": {
     "gsc": {
       "command": "/opt/homebrew/bin/uvx",
-      "args": ["mcp-search-console"]
+      "args": ["mcp-search-console"],
+      "env": {
+        "GSC_OAUTH_CLIENT_SECRETS_FILE": "${HOME}/.config/mcp-gsc/client_secrets.json"
+      }
     }
   }
 }
