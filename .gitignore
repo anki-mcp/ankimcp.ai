@@ -8,6 +8,9 @@ hugo_stats.json
 package.json
 package.hugo.json
 
+# Wrangler
+.wrangler/
+
 # OS
 .DS_Store
 Thumbs.db

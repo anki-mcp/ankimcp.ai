@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AnkiMCP Status</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #5b5b5b;
+    --border: #e2e2e2;
+    --ok-bg: #e6f6ec;
+    --ok-fg: #14532d;
+    --ok-dot: #22a55a;
+    --warn-bg: #fff7e6;
+    --warn-fg: #7a4a00;
+    --warn-dot: #e0a300;
+    --bad-bg: #fdecec;
+    --bad-fg: #7a1c1c;
+    --bad-dot: #d64545;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --fg: #f0f0f0;
+      --muted: #a0a0a0;
+      --border: #2a2d33;
+      --ok-bg: #103c22;
+      --ok-fg: #8ce0ac;
+      --warn-bg: #3d2f06;
+      --warn-fg: #ffd580;
+      --bad-bg: #3d1414;
+      --bad-fg: #ff9a9a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 2.5rem 1.25rem 3rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .notice {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.9rem 1.1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    background: var(--ok-bg);
+    color: var(--ok-fg);
+  }
+  .notice .dot {
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--ok-dot);
+    flex-shrink: 0;
+  }
+  ul.components {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  ul.components li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.85rem 1.1rem;
+    border-bottom: 1px solid var(--border);
+  }
+  ul.components li:last-child { border-bottom: none; }
+  .status-ok {
+    font-size: 0.85rem;
+    color: var(--ok-fg);
+    font-weight: 600;
+  }
+  footer {
+    margin-top: 2.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>AnkiMCP Status</h1>
+
+  <!-- ===================== EDIT HERE: current status notice =====================
+       Swap the <div class="notice"> block below for the appropriate one when
+       status changes, then restore the default "All systems operational" block
+       once resolved. Only one notice block should be uncommented at a time.
+
+  Maintenance example:
+  <div class="notice" style="background:var(--warn-bg);color:var(--warn-fg)">
+    <span class="dot" style="background:var(--warn-dot)"></span>
+    Scheduled maintenance in progress — Hosted Anki sync may be briefly unavailable.
+  </div>
+
+  Incident example:
+  <div class="notice" style="background:var(--bad-bg);color:var(--bad-fg)">
+    <span class="dot" style="background:var(--bad-dot)"></span>
+    Investigating an issue with Hosted Anki sync. Updates to follow.
+  </div>
+  ================================================================================ -->
+  <div class="notice">
+    <span class="dot"></span>
+    All systems operational
+  </div>
+  <!-- ===================== END EDIT HERE ===================== -->
+
+  <ul class="components">
+    <li>Website <span class="status-ok">Operational</span></li>
+    <li>Hosted Anki / API <span class="status-ok">Operational</span></li>
+    <li>Studio <span class="status-ok">Operational</span></li>
+    <li>Community Forum <span class="status-ok">Operational</span></li>
+  </ul>
+
+  <footer>
+    <p>Anki® is a registered trademark of Ankitects Pty Ltd. This is an independent community project not affiliated with Ankitects.</p>
+    <p><a href="https://ankimcp.ai">&larr; Back to ankimcp.ai</a></p>
+  </footer>
+</main>
+</body>
+</html>

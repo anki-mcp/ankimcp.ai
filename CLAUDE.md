@@ -19,10 +19,10 @@ This is a pure content repo. There is no test runner, no linter config, no CI ve
 
 ## Technology Stack
 
-- **Hugo** v0.151.0 extended (production) - Static site generator
+- **Hugo** v0.163.0 extended (production) - Static site generator
 - **Hextra theme** v0.12.1 - Installed as Hugo Module (NOT git submodule)
 - **Go** - Required for Hugo Modules. CI uses 1.21; `go.mod` declares 1.24.4 (local dev)
-- **GitHub Actions** - Deploys to GitHub Pages on push to `main` (`.github/workflows/hugo.yml`). The workflow's `submodules: recursive` checkout option is vestigial — the theme is a Hugo Module, not a submodule — but it's harmless.
+- **GitHub Actions** - Builds the site and deploys it to **Cloudflare Workers Static Assets** via `cloudflare/wrangler-action` on push to `main` (`.github/workflows/hugo.yml`). A second workflow (`.github/workflows/status.yml`) deploys the `status/` page independently. The main workflow's `submodules: recursive` checkout option is vestigial — the theme is a Hugo Module, not a submodule — but it's harmless.
 - **Umami Analytics** - Self-hosted at analytics.anatoly.dev
 - **MailerLite** - Newsletter integration (Form ID: `ZGJ6BF`, account: `1854759`)
 
@@ -100,6 +100,35 @@ When announcing new versions:
 3. **Update Schema.org** in `layouts/partials/custom/head-end.html`:
    - Update `softwareVersion` field
    - Update `releaseNotes` URL to new blog post
+
+## Deployment
+
+The site runs on **Cloudflare Workers Static Assets**, not GitHub Pages. Two independent Workers are deployed from this repo:
+
+- **`ankimcp-ai`** (root `wrangler.jsonc`, assets from `./public`) — the main site, built by Hugo and deployed by `.github/workflows/hugo.yml` on every push to `main` (except changes under `status/`).
+- **`ankimcp-status`** (`status/wrangler.jsonc`, assets from `status/`) — the hand-written status page, deployed by `.github/workflows/status.yml` only when `status/**` changes.
+
+Both configs currently have their `routes` (custom domains) commented out and `workers_dev: true` for the staging phase — see the cutover checklist below.
+
+### Updating the status page
+Edit `status/index.html` (the "EDIT HERE" block near the top holds the current notice), commit, and push — the `status.yml` workflow deploys it automatically. To deploy it locally instead: `npx wrangler deploy -c status/wrangler.jsonc`.
+
+Before running `wrangler deploy` for the **main site** locally, run `rm -rf public` first — Hugo doesn't clean stale files by default, and a leftover file from an old build (e.g. a stray `_redirects` or `CNAME`) would otherwise get uploaded as a static asset.
+
+### Cutover checklist (GitHub Pages → Cloudflare Workers)
+1. Create a Cloudflare API token with **Account · Workers Scripts: Edit** (account-scoped — Workers Scripts is not a per-zone permission), plus, scoped to zone `ankimcp.ai`, **Zone · DNS: Edit** and **Zone · Workers Routes: Edit**. Add it as the `CLOUDFLARE_API_TOKEN` repo secret, plus `CLOUDFLARE_ACCOUNT_ID` (the account ID from the Cloudflare dashboard).
+2. Push to `main` and verify the site on its `*.workers.dev` URL.
+3. In the Cloudflare dashboard, go to **Workers & Pages → ankimcp-ai → Settings → Domains & Routes → Add → Custom Domain**, enter `ankimcp.ai`, and when prompted about the existing apex A/AAAA records choose **"Override existing DNS record."** This swaps the apex atomically (no manual record deletion, no NXDOMAIN window) and provisions the certificate. Do not delete the apex records by hand first.
+   For `www`: change the existing `www` CNAME into a **proxied** placeholder `A` record, `www → 192.0.2.0` (a reserved originless address per RFC 5737 — Cloudflare intercepts the request before it ever reaches it). Then create a zone **Single Redirect** rule: when hostname equals `www.ankimcp.ai`, dynamic redirect to `concat("https://ankimcp.ai", http.request.uri.path)`, preserve query string, status 301. (The docs' simpler wildcard form is equivalent: match `https://www.ankimcp.ai/*`, redirect to `https://ankimcp.ai/$1` (dynamic) — either works.) Custom Domains require an exact hostname match, so `www` can't just be a second route on the same Worker — see https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#redirect-between-www-and-root-domain.
+4. Uncomment the `routes` block in `wrangler.jsonc` (apex only — `www` is handled by the redirect rule, not a route), then push, so the config file matches what the dashboard already created. Verify `https://ankimcp.ai` loads and `https://www.ankimcp.ai` redirects to it.
+5. Repeat for status: no DNS record needs to exist beforehand. Uncomment the `routes` block in `status/wrangler.jsonc`, then push.
+6. Once both custom domains are verified working, set `workers_dev: false` and `preview_urls: false` in both `wrangler.jsonc` and `status/wrangler.jsonc`, then push — otherwise the sites stay publicly reachable at their `*.workers.dev` URLs indefinitely.
+7. In the GitHub repo, go to **Settings → Pages** and unpublish the site.
+8. Rollback, if needed:
+   - Restore `static/CNAME` with contents `ankimcp.ai`, commit, and push to re-publish GitHub Pages.
+   - In the Cloudflare dashboard, remove the `ankimcp-ai` Worker's Custom Domain (Workers & Pages → ankimcp-ai → Settings → Domains & Routes).
+   - Re-add the apex DNS records, proxied: `A` records `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `AAAA` records `2606:50c0:8000::153`, `2606:50c0:8001::153`, `2606:50c0:8002::153`, `2606:50c0:8003::153`.
+   - Restore the `www` CNAME (or leave the redirect in place, if `www` should keep pointing at the apex) and remove the Single Redirect rule if no longer needed.
 
 ## Content Standards
 

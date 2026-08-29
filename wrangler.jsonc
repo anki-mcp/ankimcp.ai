@@ -1,0 +1,33 @@
+{
+	"name": "ankimcp-ai",
+	"compatibility_date": "2026-08-29",
+
+	// Pure static site — no Worker script. Requests are served directly
+	// from ./public (the Hugo build output) with no "main" entry.
+	"assets": {
+		"directory": "./public",
+		"not_found_handling": "404-page"
+		// html_handling defaults to "auto-trailing-slash", which matches Hugo's
+		// output: individual files (e.g. about.html) are served without a
+		// trailing slash, and section/leaf bundles (e.g. docs/faq/index.html)
+		// are served with one — no change needed here.
+	},
+
+	// Staging phase: verify on the *.workers.dev subdomain before cutover.
+	// Set both to false once the custom domain below is live and verified
+	// (see CLAUDE.md "Deployment" cutover checklist) — otherwise the site
+	// stays reachable as a public duplicate on workers.dev indefinitely.
+	"workers_dev": true,
+	"preview_urls": true,
+
+	// Cutover step: uncomment once the apex A/AAAA records for ankimcp.ai
+	// are removed from the zone (see CLAUDE.md "Deployment" cutover checklist).
+	// Wrangler will provision the custom-domain DNS record on next deploy.
+	// Do NOT add www.ankimcp.ai here — Custom Domains require an exact
+	// hostname match, so www needs its own redirect (a proxied placeholder
+	// DNS record + a zone Single Redirect rule), not a second route on this
+	// Worker. See https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#redirect-between-www-and-root-domain
+	// "routes": [
+	// 	{ "pattern": "ankimcp.ai", "custom_domain": true }
+	// ]
+}

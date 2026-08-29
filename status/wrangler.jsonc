@@ -1,0 +1,24 @@
+{
+	"name": "ankimcp-status",
+	"compatibility_date": "2026-08-29",
+
+	// "directory" is resolved relative to this config file's location
+	// (status/), so "./" serves everything in status/ except this file
+	// itself and anything listed in .assetsignore. No not_found_handling
+	// is set — there's no custom 404.html here, so the runtime default
+	// (plain 404 response) applies.
+	"assets": {
+		"directory": "./"
+	},
+
+	// Staging phase: verify on the *.workers.dev subdomain before cutover.
+	// Set both to false once the custom domain below is live and verified.
+	"workers_dev": true,
+	"preview_urls": true,
+
+	// Cutover: uncomment once ready to point status.ankimcp.ai here. No DNS
+	// record needs to exist beforehand — Wrangler provisions it on deploy.
+	// "routes": [
+	// 	{ "pattern": "status.ankimcp.ai", "custom_domain": true }
+	// ]
+}
