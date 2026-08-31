@@ -111,7 +111,7 @@ The site runs on **Cloudflare Workers Static Assets**, not GitHub Pages. Two ind
 Both configs currently have their `routes` (custom domains) commented out and `workers_dev: true` for the staging phase — see the cutover checklist below.
 
 ### Updating the status page
-Edit `status/index.html` (the "EDIT HERE" block near the top holds the current notice), commit, and push — the `status.yml` workflow deploys it automatically. To deploy it locally instead: `npx wrangler deploy -c status/wrangler.jsonc`.
+Edit `status/index.html` (the "EDIT HERE" block near the top holds the current notice and its "Last updated" timestamp — templates for maintenance/incident notices are inline as HTML comments), commit, and push — the `status.yml` workflow deploys it automatically. The page is a manually-posted announcements page, not a live monitoring dashboard — there's no per-component status list. To deploy it locally instead: `npx wrangler deploy -c status/wrangler.jsonc`.
 
 Before running `wrangler deploy` for the **main site** locally, run `rm -rf public` first — Hugo doesn't clean stale files by default, and a leftover file from an old build (e.g. a stray `_redirects` or `CNAME`) would otherwise get uploaded as a static asset.
 

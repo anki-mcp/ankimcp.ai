@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AnkiMCP Status</title>
+<title>AnkiMCP Service Announcements</title>
 <meta name="robots" content="noindex">
 <style>
   :root {
@@ -53,6 +53,10 @@
     font-size: 1.5rem;
     margin: 0 0 1.5rem;
   }
+  h2 {
+    font-size: 1rem;
+    margin: 2rem 0 0.5rem;
+  }
   .notice {
     display: flex;
     align-items: center;
@@ -70,27 +74,17 @@
     background: var(--ok-dot);
     flex-shrink: 0;
   }
-  ul.components {
-    list-style: none;
-    margin: 2rem 0 0;
-    padding: 0;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    overflow: hidden;
+  .last-updated {
+    margin: 0.6rem 0 0;
+    font-size: 0.8rem;
+    color: var(--muted);
   }
-  ul.components li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.85rem 1.1rem;
-    border-bottom: 1px solid var(--border);
+  .how-it-works {
+    font-size: 0.9rem;
+    color: var(--muted);
   }
-  ul.components li:last-child { border-bottom: none; }
-  .status-ok {
-    font-size: 0.85rem;
-    color: var(--ok-fg);
-    font-weight: 600;
-  }
+  .how-it-works p { margin: 0.5rem 0; }
+  .how-it-works a { color: inherit; }
   footer {
     margin-top: 2.5rem;
     padding-top: 1.25rem;
@@ -103,37 +97,69 @@
 </head>
 <body>
 <main>
-  <h1>AnkiMCP Status</h1>
+  <h1>AnkiMCP Service Announcements</h1>
 
-  <!-- ===================== EDIT HERE: current status notice =====================
-       Swap the <div class="notice"> block below for the appropriate one when
-       status changes, then restore the default "All systems operational" block
-       once resolved. Only one notice block should be uncommented at a time.
+  <!-- ===================== EDIT HERE ===================== -->
+  <!--
+    Swap the notice block below when there's something to announce, then
+    restore the default "no maintenance announced" block once resolved.
+    Only one notice block should be live (uncommented) at a time. Always
+    update the "Last updated" timestamp below when you edit this block.
 
-  Maintenance example:
-  <div class="notice" style="background:var(--warn-bg);color:var(--warn-fg)">
-    <span class="dot" style="background:var(--warn-dot)"></span>
-    Scheduled maintenance in progress — Hosted Anki sync may be briefly unavailable.
-  </div>
+    Components to reference: Website, Hosted Anki / API, Studio,
+    Community Forum.
 
-  Incident example:
-  <div class="notice" style="background:var(--bad-bg);color:var(--bad-fg)">
-    <span class="dot" style="background:var(--bad-dot)"></span>
-    Investigating an issue with Hosted Anki sync. Updates to follow.
-  </div>
-  ================================================================================ -->
+    Template — scheduled maintenance:
+    <div class="notice" style="background:var(--warn-bg);color:var(--warn-fg)">
+      <span class="dot" style="background:var(--warn-dot)"></span>
+      Scheduled maintenance
+    </div>
+    <p>
+      Posted 2026-09-01 14:00 UTC. Window: 2026-09-03 02:00–03:00 UTC
+      (~1 hour). Affects: Hosted Anki / API. The website and Studio are
+      unaffected; Hosted Anki sync may be briefly unavailable — avoid
+      starting large imports during the window.
+    </p>
+
+    Template — incident:
+    <div class="notice" style="background:var(--bad-bg);color:var(--bad-fg)">
+      <span class="dot" style="background:var(--bad-dot)"></span>
+      Investigating an incident
+    </div>
+    <p>
+      Posted 2026-09-03 02:14 UTC. Last update: 2026-09-03 02:40 UTC.
+      Affects: Hosted Anki / API. Sync requests began failing
+      intermittently around 02:10 UTC; we're investigating the cause.
+      Next update expected by 2026-09-03 03:15 UTC.
+    </p>
+    <p>
+      Resolved variant — append once fixed:
+      Resolved 2026-09-03 03:05 UTC. Sync requests are processing
+      normally again; root cause was &lt;summary&gt;.
+    </p>
+  -->
   <div class="notice">
-    <span class="dot"></span>
-    All systems operational
+    <span class="dot" style="background:var(--muted)"></span>
+    No maintenance is currently announced.
   </div>
+  <p class="last-updated">Last updated: 2026-08-31 12:00 UTC</p>
   <!-- ===================== END EDIT HERE ===================== -->
 
-  <ul class="components">
-    <li>Website <span class="status-ok">Operational</span></li>
-    <li>Hosted Anki / API <span class="status-ok">Operational</span></li>
-    <li>Studio <span class="status-ok">Operational</span></li>
-    <li>Community Forum <span class="status-ok">Operational</span></li>
-  </ul>
+  <h2>How this page works</h2>
+  <div class="how-it-works">
+    <p>
+      This page is updated by hand when maintenance is scheduled or when
+      we become aware of an issue affecting the Website, Hosted Anki /
+      API, Studio, or Community Forum. It is not backed by automated
+      monitoring.
+    </p>
+    <p>
+      The absence of a notice above does not guarantee that everything is
+      working. If you run into a problem that isn't listed here, please
+      report it on the <a href="https://forum.ankimcp.ai">community
+      forum</a>.
+    </p>
+  </div>
 
   <footer>
     <p>Anki® is a registered trademark of Ankitects Pty Ltd. This is an independent community project not affiliated with Ankitects.</p>
