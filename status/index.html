@@ -57,22 +57,36 @@
     font-size: 1rem;
     margin: 2rem 0 0.5rem;
   }
-  .notice {
+  .notice-card {
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+  }
+  .notice-title {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    padding: 0.9rem 1.1rem;
-    border-radius: 8px;
-    font-weight: 600;
-    background: var(--ok-bg);
-    color: var(--ok-fg);
+    margin: 0;
+    font-weight: 700;
   }
-  .notice .dot {
+  .notice-title .dot {
     width: 0.6rem;
     height: 0.6rem;
     border-radius: 50%;
-    background: var(--ok-dot);
     flex-shrink: 0;
+  }
+  .notice-window {
+    margin: 0.85rem 0 0.4rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+  }
+  .notice-body {
+    margin: 0 0 0.75rem;
+    font-weight: 400;
+  }
+  .notice-posted {
+    margin: 0;
+    font-size: 0.75rem;
+    opacity: 0.75;
   }
   .last-updated {
     margin: 0.6rem 0 0;
@@ -101,53 +115,66 @@
 
   <!-- ===================== EDIT HERE ===================== -->
   <!--
-    Swap the notice block below when there's something to announce, then
-    restore the default "no maintenance announced" block once resolved.
-    Only one notice block should be live (uncommented) at a time. Always
-    update the "Last updated" timestamp below when you edit this block.
+    Swap the notice card below when there's something to announce, then
+    restore a calm default (e.g. a short "no maintenance announced" card
+    using the ok palette) once resolved. Only one notice card should be
+    live (uncommented) at a time. Always update the "Last updated"
+    timestamp below when you edit this block.
+
+    Timestamps: UTC only, always written as "YYYY-MM-DD HH:MM UTC" —
+    no local time zones or location names anywhere on this page.
 
     Components to reference: Website, Hosted Anki / API, Studio,
     Community Forum.
 
     Template — scheduled maintenance:
-    <div class="notice" style="background:var(--warn-bg);color:var(--warn-fg)">
-      <span class="dot" style="background:var(--warn-dot)"></span>
-      Scheduled maintenance
+    <div class="notice-card" style="background:var(--warn-bg);color:var(--warn-fg)">
+      <p class="notice-title">
+        <span class="dot" style="background:var(--warn-dot)"></span>
+        Scheduled maintenance
+      </p>
+      <p class="notice-window">September 3, 2026 · 02:00–03:00 UTC (~1 hour)</p>
+      <p class="notice-body">
+        Hosted Anki / API will be unavailable during this window. Sync
+        resumes automatically afterwards — no action needed.
+      </p>
+      <p class="notice-posted">Posted 2026-09-01 14:00 UTC</p>
     </div>
-    <p>
-      Posted 2026-09-01 14:00 UTC. Window: 2026-09-03 02:00–03:00 UTC
-      (~1 hour). Affects: Hosted Anki / API. The website and Studio are
-      unaffected; Hosted Anki sync may be briefly unavailable — avoid
-      starting large imports during the window.
-    </p>
 
     Template — incident:
-    <div class="notice" style="background:var(--bad-bg);color:var(--bad-fg)">
-      <span class="dot" style="background:var(--bad-dot)"></span>
-      Investigating an incident
+    <div class="notice-card" style="background:var(--bad-bg);color:var(--bad-fg)">
+      <p class="notice-title">
+        <span class="dot" style="background:var(--bad-dot)"></span>
+        Investigating an incident
+      </p>
+      <p class="notice-window">Hosted Anki / API — sync failures</p>
+      <p class="notice-body">
+        Sync requests began failing intermittently around 02:10 UTC;
+        we're investigating the cause. Next update expected by
+        2026-09-03 03:15 UTC.
+      </p>
+      <p class="notice-posted">Posted 2026-09-03 02:14 UTC · Last update 2026-09-03 02:40 UTC</p>
     </div>
-    <p>
-      Posted 2026-09-03 02:14 UTC. Last update: 2026-09-03 02:40 UTC.
-      Affects: Hosted Anki / API. Sync requests began failing
-      intermittently around 02:10 UTC; we're investigating the cause.
-      Next update expected by 2026-09-03 03:15 UTC.
-    </p>
-    <p>
-      Resolved variant — append once fixed:
-      Resolved 2026-09-03 03:05 UTC. Sync requests are processing
-      normally again; root cause was &lt;summary&gt;.
-    </p>
+
+    Resolved variant — once fixed, replace the body and posted lines:
+      <p class="notice-body">
+        Resolved — sync requests are processing normally again; root
+        cause was &lt;summary&gt;.
+      </p>
+      <p class="notice-posted">Posted 2026-09-03 02:14 UTC · Resolved 2026-09-03 03:05 UTC</p>
   -->
-  <div class="notice" style="background:var(--warn-bg);color:var(--warn-fg)">
-    <span class="dot" style="background:var(--warn-dot)"></span>
-    Scheduled maintenance
+  <div class="notice-card" style="background:var(--warn-bg);color:var(--warn-fg)">
+    <p class="notice-title">
+      <span class="dot" style="background:var(--warn-dot)"></span>
+      Scheduled maintenance
+    </p>
+    <p class="notice-window">September 2, 2026 · 05:00–09:00 UTC (4 hours)</p>
+    <p class="notice-body">
+      All AnkiMCP services will be unavailable during this window. Sync
+      resumes automatically afterwards — no action needed.
+    </p>
+    <p class="notice-posted">Posted 2026-08-31 13:00 UTC</p>
   </div>
-  <p>
-    Posted 2026-08-31 13:00 UTC. Window: 2026-09-02 05:00–09:00 UTC
-    (4 hours) (08:00–12:00 Israel time). AnkiMCP services will be
-    unavailable during this window. Sync resumes automatically
-    afterwards; no user action needed.
-  </p>
   <p class="last-updated">Last updated: 2026-08-31 13:00 UTC</p>
   <!-- ===================== END EDIT HERE ===================== -->
 
