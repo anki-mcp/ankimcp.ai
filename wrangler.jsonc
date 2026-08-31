@@ -13,21 +13,16 @@
 		// are served with one — no change needed here.
 	},
 
-	// Staging phase: verify on the *.workers.dev subdomain before cutover.
-	// Set both to false once the custom domain below is live and verified
-	// (see CLAUDE.md "Deployment" cutover checklist) — otherwise the site
-	// stays reachable as a public duplicate on workers.dev indefinitely.
-	"workers_dev": true,
-	"preview_urls": true,
+	// Live on the ankimcp.ai custom domain (see below) — the *.workers.dev
+	// URL and preview URLs are disabled.
+	"workers_dev": false,
+	"preview_urls": false,
 
-	// Cutover step: uncomment once the apex A/AAAA records for ankimcp.ai
-	// are removed from the zone (see CLAUDE.md "Deployment" cutover checklist).
-	// Wrangler will provision the custom-domain DNS record on next deploy.
 	// Do NOT add www.ankimcp.ai here — Custom Domains require an exact
-	// hostname match, so www needs its own redirect (a proxied placeholder
+	// hostname match, so www is handled separately (a proxied placeholder
 	// DNS record + a zone Single Redirect rule), not a second route on this
 	// Worker. See https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#redirect-between-www-and-root-domain
-	// "routes": [
-	// 	{ "pattern": "ankimcp.ai", "custom_domain": true }
-	// ]
+	"routes": [
+		{ "pattern": "ankimcp.ai", "custom_domain": true }
+	]
 }

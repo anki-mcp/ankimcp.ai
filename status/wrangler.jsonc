@@ -11,14 +11,12 @@
 		"directory": "./"
 	},
 
-	// Staging phase: verify on the *.workers.dev subdomain before cutover.
-	// Set both to false once the custom domain below is live and verified.
-	"workers_dev": true,
-	"preview_urls": true,
+	// Live on the status.ankimcp.ai custom domain (see below) — the
+	// *.workers.dev URL and preview URLs are disabled.
+	"workers_dev": false,
+	"preview_urls": false,
 
-	// Cutover: uncomment once ready to point status.ankimcp.ai here. No DNS
-	// record needs to exist beforehand — Wrangler provisions it on deploy.
-	// "routes": [
-	// 	{ "pattern": "status.ankimcp.ai", "custom_domain": true }
-	// ]
+	"routes": [
+		{ "pattern": "status.ankimcp.ai", "custom_domain": true }
+	]
 }
