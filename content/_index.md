@@ -6,7 +6,13 @@ layout: hextra-home
 sitemap_priority: 1.0
 ---
 
-<div class="hx:mt-6 hx:mb-6">
+<div class="hx:mt-6 hx:mb-4 hx:flex hx:justify-center">
+{{< hextra/hero-badge link="/blog/paddle-account-closure/" class="payments-update-badge" >}}
+📢 Payments update
+{{< /hextra/hero-badge >}}
+</div>
+
+<div class="hx:mb-6">
 {{< hextra/hero-headline >}}
   AnkiMCP — Connect Claude & ChatGPT&nbsp;<br class="hx:sm:block hx:hidden" />to Your Anki Flashcards
 {{< /hextra/hero-headline >}}

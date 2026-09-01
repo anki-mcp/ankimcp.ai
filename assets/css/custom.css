@@ -420,6 +420,28 @@ body {
 }
 .dark .zoom-image-caption { color: #98a2b3; }
 
+/* Homepage hero badge — payments update announcement
+   ----------------------------------------------------------------------------
+   hextra/hero-badge's default pill is a low-contrast gray, and the theme
+   ships a build-time-compiled CSS bundle (see layouts/partials/head.html:
+   production/local builds both load the prebuilt `css/compiled/main.css`,
+   never a live Tailwind scan of this project's content), so any hx:-prefixed
+   utility class not already present in that bundle (e.g. hx:bg-amber-50,
+   hx:border-amber-400) silently renders nothing. A plain custom class here,
+   styled directly, is the only reliable way to recolor it. */
+.payments-update-badge {
+  background: #fffbeb !important; /* amber-50 */
+  border-color: #fbbf24 !important; /* amber-400 */
+  color: #78350f !important; /* amber-900 */
+  font-weight: 500 !important;
+}
+
+.dark .payments-update-badge {
+  background: rgba(251, 191, 36, 0.1) !important; /* amber-400 @ 10% */
+  border-color: rgba(251, 191, 36, 0.4) !important; /* amber-400 @ 40% */
+  color: #fcd34d !important; /* amber-300 */
+}
+
 /* "Sign in" navbar button — the menu entry pointing at the dashboard.
    The theme offers no per-item class, so target it by destination. */
 .hextra-nav-container a[href^="https://web.ankimcp.ai"] {
