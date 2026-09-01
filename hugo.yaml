@@ -87,6 +87,11 @@ params:
   images:
     - /images/og-image.png
 
+  banner:
+    key: 'maintenance-2026-09'
+    message: |
+      🚧 **Scheduled maintenance** — Sep 2, 05:00–09:00 UTC, all services will be unavailable. [Status updates →](https://status.ankimcp.ai/)
+
   analytics:
     umami:
       serverURL: https://analytics.anatoly.dev

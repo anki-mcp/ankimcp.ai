@@ -26,3 +26,6 @@ content/docs/faq.md
 
 # SEO analysis documents (not for production)
 SEO/
+
+# Customer data exports (PII, never commit)
+*.csv
