@@ -88,9 +88,9 @@ params:
     - /images/og-image.png
 
   banner:
-    key: 'maintenance-ongoing-2026-09-02'
+    key: 'maintenance-complete-2026-09-02'
     message: |
-      🚧 **Maintenance in progress** — services unavailable until ~09:00 UTC. [Live status →](https://status.ankimcp.ai/)
+      ✅ **Maintenance completed** — all services are back online. [Status →](https://status.ankimcp.ai/)
 
   analytics:
     umami:
