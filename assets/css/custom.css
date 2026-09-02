@@ -450,6 +450,24 @@ body > .hextra-max-page-width { width: 100%; }
   color: #fcd34d !important; /* amber-300 */
 }
 
+/* Blog post inline update notices — same amber palette as .payments-update-badge,
+   used for a raw-HTML block inside a markdown post body (blockquote's default
+   prose styling is muted/italic, the opposite of what an update notice needs). */
+.blog-update-notice {
+  background: #fffbeb; /* amber-50 */
+  border-left: 4px solid #fbbf24; /* amber-400 */
+  color: #78350f; /* amber-900 */
+  padding: 0.9rem 1.1rem;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+}
+
+.dark .blog-update-notice {
+  background: rgba(251, 191, 36, 0.1); /* amber-400 @ 10% */
+  border-left-color: rgba(251, 191, 36, 0.4); /* amber-400 @ 40% */
+  color: #fcd34d; /* amber-300 */
+}
+
 /* "Sign in" navbar button — the menu entry pointing at the dashboard.
    The theme offers no per-item class, so target it by destination. */
 .hextra-nav-container a[href^="https://web.ankimcp.ai"] {
