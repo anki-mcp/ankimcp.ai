@@ -18,6 +18,10 @@ If you connect an AI that runs on the **same computer** as Anki — Claude Deskt
 
 You only pay when you want **remote access**: letting a web AI like ChatGPT or claude.ai, or your phone, reach your Anki from another device. That travels through the managed tunnel, which has a **free tier** to get started and the **Plus plan** ($5/month) for heavier use. And if you'd rather not keep your own computer running at all, the **Pro plan** ($15/month) adds **Hosted Anki** — a full copy of Anki running on our cloud servers, reachable by your AI around the clock even when your laptop is off.
 
+{{< callout type="warning" emoji="⏸️" >}}
+**New subscriptions are temporarily paused** while we transition to a new payment provider — existing plans are unaffected. [Read more →](/blog/paddle-account-closure/)
+{{< /callout >}}
+
 ## What's free and what's paid
 
 {{< callout emoji="🎉" >}}
@@ -144,7 +148,7 @@ The **Plus plan is $5 per month** for unlimited remote access. The **Pro plan is
 Hosted Anki (included in the **$15/month Pro** plan) is a full copy of the real Anki app running on our cloud servers instead of your computer. Your AI can reach it any time — even with your laptop off — and you can open it yourself in your browser through a built-in remote desktop. Your collection and media live on our servers, and AnkiWeb sync is supported (you sign in to AnkiWeb yourself inside the remote desktop; we never store your AnkiWeb password). It's an **experimental** feature we're still building out: instances sleep after about an hour of inactivity and wake automatically on your next AI request (a 30–60 second cold start), and deleting an instance is permanent, so keep your own backups. See the [Hosted Anki docs](/docs/hosted-anki/) for the full picture.
 
 **Can I cancel or get a refund?**
-Yes. Paid plans renew monthly and you can cancel anytime — your access stays active until the end of the period you've already paid for, and there's no automatic refund for unused time. Your first payment comes with a **14-day money-back guarantee**: just email [support@ankimcp.ai](mailto:support@ankimcp.ai). Payments are handled by Paddle as merchant of record, and refunds are issued through Paddle. See the [Terms of Service](/terms/) for the full details.
+New paid subscriptions and renewals are **temporarily paused** while we transition between payment providers — see [our update](/blog/paddle-account-closure/). If you already have a paid plan, it's unaffected and keeps running as normal; you can cancel anytime, and your access stays active until the end of the period you've already paid for, with no automatic refund for unused time. Your first payment comes with a **14-day money-back guarantee**: just email [support@ankimcp.ai](mailto:support@ankimcp.ai). Refunds are handled per the [Terms of Service](/terms/).
 
 **What counts as a request, and what do the limits mean?**
 One request is one call your AI makes to Anki through the tunnel. A single instruction from you can use several requests — for example, "create 10 cards" may count as 10 requests if the AI adds them one by one, or fewer if it adds them in a batch. The free tier covers **100 signed-in** requests (from an AI app signed in with your account) and **1,000 authless** requests (through the private no-sign-in address you can enable with the **Authless access** toggle in your Tunnel Dashboard — it's off by default) per month. On the free tier the tunnel also **disconnects after 24 hours of inactivity** — if your AI hasn't made a request for a day, you reconnect from the add-on or CLI before the next one. The Plus plan ($5/month) removes both request limits and keeps the tunnel connected with no inactivity timeout; Pro includes the same.

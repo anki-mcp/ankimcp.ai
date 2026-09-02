@@ -6,7 +6,7 @@ sitemap_priority: 0.3
 
 ## Privacy Policy
 
-**Effective Date:** August 19, 2026
+**Effective Date:** September 2, 2026
 
 {{< callout type="info" >}}
 **The short version.** This summary is for convenience only — the full policy below is what applies.
@@ -98,7 +98,11 @@ We store:
 - **Tier history:** an audit trail of tier changes (upgrades, downgrades) with timestamps.
 - **Expiration date:** when your current subscription period ends (for paid plans).
 
-Payments for paid tiers are processed by **[Paddle](https://www.paddle.com)** (Paddle.com Market Limited and its affiliates) as the **merchant of record**. Your payment details — card number, billing address, and related checkout information (which may include your IP address, collected by Paddle for tax-location and fraud-prevention purposes) — are collected and processed **by Paddle on Paddle's own checkout**, under [Paddle's Privacy Policy](https://www.paddle.com/legal/privacy). They never reach our servers, and we do not store any card numbers. From Paddle we receive the information needed to operate your subscription: your subscription status, plan, and billing events (such as renewals, cancellations, and refunds).
+Payments for paid tiers are handled by our third-party Payment Provider — see the [Terms of Service (Payments section)](/terms/#payments-refunds-and-cancellation) for the current status. Your payment details — card number, billing address, and related checkout information (which may include your IP address, collected for tax-location and fraud-prevention purposes) — are collected and processed by the Payment Provider on its own checkout pages, under its own privacy policy. Card numbers never reach our servers and we do not store them. Where the Payment Provider acts as merchant of record, it is the seller of record for your purchase and an independent controller of the payment data it collects.
+
+{{< payment-provider >}}
+
+Payments were processed by Paddle (merchant of record) until September 1, 2026. Paddle retains the payment data it collected under its own [privacy policy](https://www.paddle.com/legal/privacy).
 
 ##### Service Monitoring (OpenTelemetry)
 
@@ -148,7 +152,8 @@ We rely on the following third-party services:
 | Cloudflare | Network edge for SaaS connections (TLS, DDoS protection) | [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/) |
 | Umami (self-hosted) | Anonymous analytics | [Umami Privacy](https://umami.is/privacy) |
 | MailerLite | Newsletter delivery | [MailerLite Privacy Policy](https://www.mailerlite.com/legal/privacy-policy) |
-| Paddle | Payment processing (merchant of record) | [Paddle Privacy Policy](https://www.paddle.com/legal/privacy) |
+| Payment Provider (see Terms) | Payment processing (currently paused — transitioning providers) | See Terms of Service |
+| Paddle (until Sep 1, 2026) | Payment processing (historical — retains past payment data) | [Paddle Privacy Policy](https://www.paddle.com/legal/privacy) |
 | Microsoft Azure (AI Speech) | Speech synthesis — text you submit for audio generation is processed by Microsoft Azure | [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement) |
 | Discourse (self-hosted) | Community forum | [Discourse Privacy Policy](https://www.discourse.org/privacy) |
 | Keycloak (self-hosted) | Authentication for forum, SaaS accounts, and LLM OAuth | [Keycloak Privacy](https://www.keycloak.org/privacy) |
@@ -157,7 +162,7 @@ We rely on the following third-party services:
 | NATS (self-hosted) | Internal event streaming between SaaS services | N/A (self-hosted, no third-party access) |
 | OpenTelemetry (self-hosted) | SaaS service health monitoring | N/A (self-hosted, no third-party access) |
 
-**A note on self-hosted infrastructure:** PostgreSQL, NATS, Keycloak, and OpenTelemetry are all hosted on AnkiMCP-controlled infrastructure. Apart from the third-party services listed above — in particular Paddle for payments and Microsoft Azure for speech synthesis — your SaaS data is stored and processed on that infrastructure. When you use text-to-speech, the text you submit is sent to Microsoft Azure to be turned into audio; the generated audio file is then stored in your media library, together with a description that records the text it was made from.
+**A note on self-hosted infrastructure:** PostgreSQL, NATS, Keycloak, and OpenTelemetry are all hosted on AnkiMCP-controlled infrastructure. Apart from the third-party services listed above — in particular our Payment Provider for payments and Microsoft Azure for speech synthesis — your SaaS data is stored and processed on that infrastructure. When you use text-to-speech, the text you submit is sent to Microsoft Azure to be turned into audio; the generated audio file is then stored in your media library, together with a description that records the text it was made from.
 
 ### 4. Your Rights
 
@@ -179,7 +184,7 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 **SaaS users** additionally have the right to:
 
 - **Access your data** — view your account information, connection history, and subscription status through the SaaS dashboard.
-- **Delete your account** — request complete deletion of your SaaS account and all associated data by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai). Account deletion removes your user record, OAuth client mappings, and subscription history. This action is irreversible.
+- **Delete your account** — request complete deletion of your SaaS account and all associated data by contacting [support@ankimcp.ai](mailto:support@ankimcp.ai). Account deletion removes your user record, OAuth client mappings, and subscription history, except records we are legally required to retain (for example for tax or accounting purposes). This action is irreversible.
 - **Cancel your subscription** — downgrade from a paid tier to the free tier at any time through the dashboard.
 - **Disconnect your client** — disconnect your local AnkiMCP add-on or CLI from the tunnel at any time, immediately stopping all data transit through our servers.
 - **Delete Hosted Anki data** — if you use Hosted Anki, delete your hosted instance at any time to permanently remove the collection and media stored for it from our servers.
@@ -195,7 +200,7 @@ Since we use cookieless, anonymous analytics, there is no personal website analy
 - **SaaS account data** (email, name, avatar, Keycloak ID) is retained for the lifetime of your account and deleted upon account deletion
 - **Service logs** are retained for up to **31 days** and then automatically purged. IP addresses of tunnel and MCP connections are not logged
 - **OAuth client registrations** are retained while your account is active. They are deleted when you delete your account
-- **Subscription history and usage statistics** (tier changes, monthly request counts, timestamps) are retained for the lifetime of your account for audit purposes and deleted upon account deletion
+- **Subscription history and usage statistics** (tier changes, monthly request counts, timestamps) are retained for the lifetime of your account for audit purposes and deleted upon account deletion, except records we are legally required to retain (for example for tax or accounting purposes), which are kept for the statutory period and then deleted
 - **Diagnostic traces** are retained for up to **30 days** and **performance metrics** for up to **7 days**, then automatically purged. This data does not contain flashcard content
 - **In-memory tunnel state** (active connection data) exists only while your client is connected and is lost when the connection ends or the server restarts
 - **Media library files** (uploaded files and generated audio, including the source text stored in a file's description) are retained until you delete them and are **permanently deleted upon account deletion**
