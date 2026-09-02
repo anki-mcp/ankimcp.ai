@@ -33,6 +33,22 @@
   {{- $ogType = "article" -}}
 {{- end -}}
 
+{{- $ogImageAlt := "" -}}
+{{- if $ogDescription -}}
+  {{- $ogImageAlt = $ogDescription -}}
+{{- else -}}
+  {{- $ogImageAlt = site.Title -}}
+{{- end -}}
+
+{{- /* images.Config only returns dimensions, so the type is derived from the
+       file extension for images that aren't Hugo resources (e.g. static/).
+       images.Config only supports raster formats — calling it on an SVG
+       hard-fails the build, so dimensions are only looked up for the
+       formats it understands; other known extensions (e.g. .svg) still get
+       an og:image:type but no width/height. */}}
+{{- $ogImageExtType := dict ".jpg" "image/jpeg" ".jpeg" "image/jpeg" ".png" "image/png" ".gif" "image/gif" ".webp" "image/webp" ".svg" "image/svg+xml" -}}
+{{- $ogImageRasterExt := slice ".jpg" ".jpeg" ".png" ".gif" ".webp" -}}
+
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ $ogDescription }}">
 <meta property="og:type" content="{{ $ogType }}">
@@ -43,22 +59,54 @@
     {{- with $.Resources.GetMatch . }}
       <!-- If the string matches a page resource, use that -->
       <meta property="og:image" content="{{ .Permalink }}">
+      <meta property="og:image:width" content="{{ .Width }}">
+      <meta property="og:image:height" content="{{ .Height }}">
+      <meta property="og:image:type" content="{{ .MediaType.Type }}">
+      <meta property="og:image:alt" content="{{ $ogImageAlt }}">
     {{- else }}
       <!-- Otherwise treat it as a site/global path -->
+      {{- $imagePath := strings.TrimPrefix "/" . -}}
+      {{- $staticPath := printf "static/%s" $imagePath -}}
       {{- $image := . -}}
       {{- if hasPrefix $image "/" -}}
         {{- $image = relURL (strings.TrimPrefix "/" $image) -}}
       {{- end -}}
       <meta property="og:image" content="{{ $image | absURL }}">
+      {{- $ext := lower (path.Ext $staticPath) }}
+      {{- if fileExists $staticPath }}
+        {{- if in $ogImageRasterExt $ext }}
+          {{- $ic := images.Config $staticPath }}
+          <meta property="og:image:width" content="{{ $ic.Width }}">
+          <meta property="og:image:height" content="{{ $ic.Height }}">
+        {{- end }}
+        {{- with index $ogImageExtType $ext }}
+        <meta property="og:image:type" content="{{ . }}">
+        {{- end }}
+      {{- end }}
+      <meta property="og:image:alt" content="{{ $ogImageAlt }}">
     {{- end }}
   {{- end }}
 {{- else -}}
   {{- with $.Site.Params.images }}
     {{- $image := index . 0 -}}
+    {{- $imagePath := strings.TrimPrefix "/" $image -}}
+    {{- $staticPath := printf "static/%s" $imagePath -}}
     {{- if hasPrefix $image "/" -}}
       {{- $image = relURL (strings.TrimPrefix "/" $image) -}}
     {{- end -}}
     <meta property="og:image" content="{{ $image | absURL }}">
+    {{- $ext := lower (path.Ext $staticPath) }}
+    {{- if fileExists $staticPath }}
+      {{- if in $ogImageRasterExt $ext }}
+        {{- $ic := images.Config $staticPath }}
+        <meta property="og:image:width" content="{{ $ic.Width }}">
+        <meta property="og:image:height" content="{{ $ic.Height }}">
+      {{- end }}
+      {{- with index $ogImageExtType $ext }}
+      <meta property="og:image:type" content="{{ . }}">
+      {{- end }}
+    {{- end }}
+    <meta property="og:image:alt" content="{{ $ogImageAlt }}">
   {{- end }}
 {{- end -}}
 
@@ -79,10 +127,18 @@
 {{- end -}}
 
 {{- with .Params.audio }}<meta property="og:audio" content="{{ . }}">{{ end }}
-{{- with .Params.locale }}
+{{- $ogLocale := "" -}}
+{{- with .Params.locale -}}
+  {{- $ogLocale = . -}}
+{{- else -}}
+  {{- with site.Params.opengraph.locale -}}
+    {{- $ogLocale = . -}}
+  {{- end -}}
+{{- end -}}
+{{- with $ogLocale }}
 <meta property="og:locale" content="{{ . }}">
 {{ end }}
-{{- with .Site.Params.title }}
+{{- with site.Title }}
 <meta property="og:site_name" content="{{ . }}">
 {{ end }}
 {{- with .Params.videos }}

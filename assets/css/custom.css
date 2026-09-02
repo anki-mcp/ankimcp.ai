@@ -31,6 +31,14 @@ body {
   min-height: 100vh;
 }
 
+/* Body is a flex column (above). The blog single layout's page row carries
+   hx:mx-auto, and an auto cross-axis margin opts a flex item out of
+   `stretch`, so the row sizes to fit-content and floors at min-content — a
+   long whitespace-nowrap breadcrumb then pushes the page wider than the
+   viewport on mobile. Scoped to that row only: an unscoped `body > *` would
+   also stomp the skip-link's sr-only width when it's focused. */
+body > .hextra-max-page-width { width: 100%; }
+
 [class*="hx:min-h-[calc(100vh-var(--navbar-height))]"] {
   min-height: 0 !important;
 }
