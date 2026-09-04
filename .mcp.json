@@ -6,6 +6,10 @@
       "env": {
         "GSC_OAUTH_CLIENT_SECRETS_FILE": "${HOME}/.config/mcp-gsc/client_secrets.json"
       }
+    },
+    "claude-usage": {
+      "command": "npx",
+      "args": ["-y", "@anatoly314/claude-usage-mcp"]
     }
   }
 }
