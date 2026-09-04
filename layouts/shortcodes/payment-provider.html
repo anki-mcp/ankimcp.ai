@@ -2,16 +2,26 @@
   EDIT HERE — single source of truth for the current payment provider state.
   Used in content/terms/_index.md and content/privacy/_index.md via the payment-provider shortcode.
 
-  STATE: PAUSED
+  STATE: LIVE (Polar Software, Inc., merchant of record, since September 2026)
 
-  To go live with a merchant-of-record provider (e.g. Polar.sh), replace the
-  "Current state" block below with the MOR template, filled in:
+  To switch to another merchant-of-record provider, replace the block below
+  with this template, filled in (and update the third-party table in
+  content/privacy/_index.md). To pause payments again, use the PAUSED template
+  further down.
 
   <p>Payments for paid tiers are processed by <strong>[Provider Legal Name]</strong>
   (<a href="[URL]">provider.com</a>), which acts as the merchant of record for
   your purchase. [Provider]'s <a href="[buyer terms URL]">buyer terms</a> and
   <a href="[privacy policy URL]">privacy policy</a> apply to your purchase in
   addition to these Terms.</p>
+
+  PAUSED template:
+
+  <p><strong>Payments are currently paused.</strong> New paid subscriptions and renewals are temporarily unavailable while we transition to a new payment provider. Existing paid periods remain fully active and will not be cut short.</p>
+  <p>While payments are paused, refund requests for earlier purchases may take longer than usual — email <a href="mailto:support@ankimcp.ai">support@ankimcp.ai</a> and we will settle them as soon as possible.</p>
 -->
-<p><strong>Payments are currently paused.</strong> New paid subscriptions and renewals are temporarily unavailable while we transition to a new payment provider. Existing paid periods remain fully active and will not be cut short. See <a href="/blog/paddle-account-closure/">our update</a>.</p>
-<p>While payments are paused, refund requests for earlier purchases may take longer than usual — email <a href="mailto:support@ankimcp.ai">support@ankimcp.ai</a> and we will settle them as soon as possible.</p>
+<p>Payments for paid tiers are processed by <strong>Polar Software, Inc.</strong>
+(<a href="https://polar.sh">polar.sh</a>), which acts as the merchant of record for
+your purchase. Polar's <a href="https://polar.sh/legal/checkout-buyer-terms">buyer terms</a> and
+<a href="https://polar.sh/legal/privacy-policy">privacy policy</a> apply to your purchase in
+addition to these Terms.</p>

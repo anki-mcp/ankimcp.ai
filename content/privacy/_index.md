@@ -152,7 +152,7 @@ We rely on the following third-party services:
 | Cloudflare | Network edge for SaaS connections (TLS, DDoS protection) | [Cloudflare Privacy Policy](https://www.cloudflare.com/privacypolicy/) |
 | Umami (self-hosted) | Anonymous analytics | [Umami Privacy](https://umami.is/privacy) |
 | MailerLite | Newsletter delivery | [MailerLite Privacy Policy](https://www.mailerlite.com/legal/privacy-policy) |
-| Payment Provider (see Terms) | Payment processing (currently paused — transitioning providers) | See Terms of Service |
+| Polar Software, Inc. (merchant of record) | Payment processing and checkout (since Sep 2026) | [Polar Privacy Policy](https://polar.sh/legal/privacy-policy) |
 | Paddle (until Sep 1, 2026) | Payment processing (historical — retains past payment data) | [Paddle Privacy Policy](https://www.paddle.com/legal/privacy) |
 | Microsoft Azure (AI Speech) | Speech synthesis — text you submit for audio generation is processed by Microsoft Azure | [Microsoft Privacy Statement](https://privacy.microsoft.com/privacystatement) |
 | Discourse (self-hosted) | Community forum | [Discourse Privacy Policy](https://www.discourse.org/privacy) |
