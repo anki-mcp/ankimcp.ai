@@ -8,7 +8,7 @@ keywords: ["ankimcp paddle", "payment provider closed", "ankimcp subscription", 
 sitemap_priority: 0.6
 ---
 
-<div class="blog-update-notice"><strong>Update — September 3, 2026:</strong> Good news: we've been approved by <a href="https://polar.sh">Polar.sh</a>, our new payment provider (a merchant of record, like Paddle was). Payments are scheduled to return during this Friday's maintenance window (September 4, 05:00–09:00 UTC). Existing subscribers: your access continues as-is; we'll email you before any billing resumes.</div>
+<div class="blog-update-notice blog-update-notice--resolved"><strong>Update — September 4, 2026:</strong> Payments are back. We're live on <a href="https://polar.sh">Polar.sh</a>, our new payment provider (a merchant of record, like Paddle was). New subscriptions and renewals are working again. Existing subscribers: your access carried over uninterrupted, and we'll email you before any billing resumes.</div>
 
 Today I received an email from Paddle — the payment provider behind AnkiMCP subscriptions — saying they've closed our account effective immediately, after a review. No specific reason was given beyond their standard categories; I've asked for details and will update this post if I learn more.
 

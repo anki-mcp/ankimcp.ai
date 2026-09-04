@@ -468,6 +468,20 @@ body > .hextra-max-page-width { width: 100%; }
   color: #fcd34d; /* amber-300 */
 }
 
+/* Green variant for updates that announce a resolution rather than a
+   pending change — amber reads as "still a problem". */
+.blog-update-notice--resolved {
+  background: #ecfdf5; /* emerald-50 */
+  border-left-color: #34d399; /* emerald-400 */
+  color: #064e3b; /* emerald-900 */
+}
+
+.dark .blog-update-notice--resolved {
+  background: rgba(52, 211, 153, 0.1); /* emerald-400 @ 10% */
+  border-left-color: rgba(52, 211, 153, 0.4); /* emerald-400 @ 40% */
+  color: #6ee7b7; /* emerald-300 */
+}
+
 /* "Sign in" navbar button — the menu entry pointing at the dashboard.
    The theme offers no per-item class, so target it by destination. */
 .hextra-nav-container a[href^="https://web.ankimcp.ai"] {

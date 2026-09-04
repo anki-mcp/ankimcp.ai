@@ -88,9 +88,9 @@ params:
     - /images/og-image.png
 
   banner:
-    key: 'maintenance-complete-2026-09-02'
+    key: 'payments-back-2026-09-04'
     message: |
-      ✅ **Maintenance completed** — all services are back online. [Status →](https://status.ankimcp.ai/)
+      ✅ **Payments are back** — we're live on a new provider, and subscriptions work again. [Read the update →](/blog/paddle-account-closure/)
 
   analytics:
     umami:
